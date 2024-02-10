@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-Exercícios sobre os comandos básicos em C
-*/
-
 //1. Faça um programa que imprima o seu nome.
 
 void q01()
@@ -306,13 +302,9 @@ void q20()
     printf("US$%.2f = R$%.2f \n", valor, valor * cotacao);
 }
 
-/*
-Função main
-*/
-
 int main()
 {
-    q19();
+    q20();
 
     return 0;
 }
