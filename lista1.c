@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+Exercícios sobre os comandos básicos em C
+*/
+
 //1. Faça um programa que imprima o seu nome.
 
 void q01()
@@ -110,16 +114,16 @@ void q09()
 
 void q10()
 {
-    float n1, n2, n3, m;
+    float n1, n2, n3, media;
 
     printf("Digite três números. \n");
     scanf("%f", &n1);
     scanf("%f", &n2);
     scanf("%f", &n3);
 
-    m = (n1 = n2 = n3) / 3;
+    media = (n1 + n2 + n3) / 3;
 
-    printf("Média aritmética: %.2f \n", m);
+    printf("Média aritmética: %.2f \n", media);
 }
 
 //11. Faça um programa que leia dois números reais e calcule as
@@ -187,16 +191,53 @@ void q14()
 //    do desconto desejado e imprima o valor do desconto e o valor
 //    do produto subtraindo o desconto.
 
+void q15()
+{
+    float valor, percentual;
+
+    printf("Digite o valor do produto e o percentual de desconto. \n");
+    scanf("%f", &valor);
+    scanf("%f", &percentual);
+    percentual = percentual / 100;
+
+    printf("Valor do desconto: R$%.2f \n", valor * percentual);
+    printf("Valor final: R$%.2f \n", valor - (valor * percentual));
+}
+
 //16. Faça um programa que calcule o reajuste do salário de um
 //    funcionário. Para isso, o programa deverá ler o salário atual
 //    do funcionário e ler o percentual de reajuste. Ao final imprimir
 //    o valor do novo salário.
+
+void q16()
+{
+    float valor, percentual, valorreajuste;
+
+    printf("Digite o valor do salário e o percentual de reajuste. \n");
+    scanf("%f", &valor);
+    scanf("%f", &percentual);
+    percentual = percentual / 100;
+
+    valorreajuste = percentual * valor;
+
+    printf("Salário reajustado: R$%.2f \n", valor + valorreajuste);
+}
 
 //17. Faça um programa que calcule a conversão entre graus centígrados
 //    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 //    com base na fórmula a seguir. Após calcular o programa deve
 //    imprimir o resultado da conversão.
 //    F = (9 x C +160) / 5
+
+void q17()
+{
+    float temperatura;
+
+    printf("Digite a temperatura a ser convertida (°C). \n");
+    scanf("%f", &temperatura);
+
+    printf("%.2f°C = %.2f°F \n", temperatura, (9 * temperatura + 160) / 5);
+}
 
 //18. Faça um programa que calcule a quantidade de litros de combustível
 //    consumidos em uma viagem, sabendo-se que o carro tem autonomia de
@@ -211,6 +252,18 @@ void q14()
 //    Ao final, o programa deverá imprimir a distância percorrida e a
 //    quantidade de litros consumidos na viagem.
 
+void q18()
+{
+    float t, v;
+
+    printf("Digite o tempo decorrido na viagem (h) e a velocidade média (km/h). \n");
+    scanf("%f", &t);
+    scanf("%f", &v);
+
+    printf("Distância percorrida: %.2fkm \n", t * v);
+    printf("Quantidade de combustível consumido: %.2fL \n", (t * v) / 12);
+}
+
 //19. Faça um programa que calcule o valor de uma prestação em atraso.
 //    Para isso, o programa deve ler o valor da prestação vencida, a
 //    taxa periódica de juros e o período de atraso. Ao final, o
@@ -218,13 +271,48 @@ void q14()
 //    de atraso, os juros que serão cobrados pelo período de atraso, o
 //    valor da prestação acrescido dos juros. Considere juros simples.
 
+void q19()
+{
+    float valor, taxajuros, valorjuros;
+    int atraso;
+
+    printf("Digite o valor da prestação vencida, a taxa periódica de juros (%%/mês) e o período de atraso (meses). \n");
+    scanf("%f", &valor);
+    scanf("%f", &taxajuros);
+    taxajuros = taxajuros / 100;
+    scanf("%d", &atraso);
+
+    valorjuros = valor * (atraso * taxajuros);
+
+    printf("Valor da prestação: R$%.2f \n", valor);
+    printf("Período de atraso: %d meses \n", atraso);
+    printf("Taxa de juros: %.2f%% ao mês \n", taxajuros * 100);
+    printf("Valor dos juros: R$%.2f \n", valorjuros);
+    printf("Valor da prestação acrescido dos juros: R$%.2f \n", valor + valorjuros);
+}
+
 //20. Faça um programa que efetue a apresentação do valor da conversão
 //    em real (R$) de um valor lido em dólar (US$). Para isso, será
 //    necessário também ler o valor da cotação do dólar.
 
+void q20()
+{
+    float valor, cotacao;
+    
+    printf("Digite o valor a ser convertido (US$) e a cotação atual do dólar. \n");
+    scanf("%f", &valor);
+    scanf("%f", &cotacao);
+
+    printf("US$%.2f = R$%.2f \n", valor, valor * cotacao);
+}
+
+/*
+Função main
+*/
+
 int main()
 {
-    q14();
+    q19();
 
     return 0;
 }
