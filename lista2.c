@@ -6,7 +6,22 @@
 
 void q01()
 {
+    int x, y, soma;
 
+    printf("Digite dois números inteiros. \n");
+    scanf("%d", &x);
+    scanf("%d", &y);
+
+    soma = x + y;
+
+    if(soma > 10)
+    {
+        printf("Soma dos números digitados: %d \n", soma);
+    }
+    else
+    {
+        printf("A soma dos números digitados é menor que 10. \n");
+    }
 }
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20,
@@ -15,34 +30,85 @@ void q01()
 
 void q02()
 {
+    int x, y, soma;
 
+    printf("Digite dois números inteiros. \n");
+    scanf("%d", &x);
+    scanf("%d", &y);
+
+    soma = x + y;
+
+    if(soma > 20)
+    {
+        printf("%d \n", soma + 8);
+    }
+    else
+    {
+        printf("%d \n", soma - 5);
+    }
 }
 
 //3. Faça um programa que leia um número e imprima uma das duas mensagens: "É múltiplo de 3"ou "Não é múltiplo de 3".
 
 void q03()
 {
-	
+	int x;
+
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &x);
+
+    if(x % 3 == 0)
+    {
+        printf("%d múltiplo de 3. \n", x);
+    }
+    else
+    {
+        printf("%d não é múltiplo de 3. \n", x);
+    }
 }
 
 //4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
 void q04()
 {
-	
+	int x;
+
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &x);
+
+    if(x % 5 == 0)
+    {
+        printf("%d é divisível por 5. \n", x);
+    }
+    else
+    {
+        printf("%d não é divisível por 5. \n", x);
+    }
 }
 
 //5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
 void q05()
 {
+	int x;
 
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &x);
+
+    if((x % 3 == 0) && (x % 7 == 0))
+    {
+        printf("%d é divisível por 3 e por 7. \n", x);
+    }
+    else
+    {
+        printf("%d não é divisível por 3 e por 7. \n", x);
+    }
 }
 
 //6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
-//estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
-//bruto. Faça um programa em linguagem C que permita entrar com o salário bruto e o
-//valor da prestação e informar se o empréstimo pode ou não ser concedido.
+//   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
+//   bruto. Faça um programa em linguagem C que permita entrar com o salário bruto e o
+//   valor da prestação e informar se o empréstimo pode ou não ser concedido.
 
 void q06()
 {
@@ -50,7 +116,7 @@ void q06()
 }
 
 //7. Faça um programa que leia um número e indique se o número está compreendido
-//entre 20 e 50 ou não.
+//   entre 20 e 50 ou não.
 
 void q07()
 {
@@ -58,7 +124,7 @@ void q07()
 }
 
 //8. Faça um programa que leia um número e imprima uma das mensagens: 
-//"Maior do que 20", "Igual a 20"ou "Menor do que 20".
+//   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
 
 void q08()
 {
@@ -66,8 +132,8 @@ void q08()
 }
 
 //9. Faça um programa que permita entrar com o ano de nascimento da pessoa e como ano
-//atual. O programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o
-//ano de nascimento informado é válido.
+//   atual. O programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o
+//   ano de nascimento informado é válido.
 
 void q09()
 {
@@ -75,7 +141,7 @@ void q09()
 }
 
 //10. Faça um programa que leia três números inteiros e imprima os três em ordem
-//crescente.
+//   crescente.
 
 void q10()
 {
@@ -90,9 +156,9 @@ void q11()
 }
 
 //12. Faça um programa que leia a idade de uma pessoa e informe:
-//• Se é maior de idade
-//• Se é menor de idade
-//• Se é maior de 65 anos
+//   • Se é maior de idade
+//   • Se é menor de idade
+//   • Se é maior de 65 anos
 
 void q12()
 {
@@ -109,12 +175,12 @@ void q13()
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
-//desconto do INSS segundo a tabela seguir:
-//Salário Faixa de Desconto
-//Menor ou igual à R$600,00 Isento
-//Maior que R$600,00 e menor ou igual a R$1200,00 20%
-//Maior que R$1200,00 e menor ou igual a R$2000,00 25%
-//Maior que R$2000,00 30%
+//    desconto do INSS segundo a tabela seguir:
+//    Salário Faixa de Desconto
+//    Menor ou igual à R$600,00 Isento
+//    Maior que R$600,00 e menor ou igual a R$1200,00 20%
+//    Maior que R$1200,00 e menor ou igual a R$2000,00 25%
+//    Maior que R$2000,00 30%
 
 void q14()
 {
@@ -122,7 +188,7 @@ void q14()
 }
 
 //15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
-//da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
+//    da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
 
 void q15()
 {
@@ -130,13 +196,13 @@ void q15()
 }
 
 //16. A confederação brasileira de natação irá promover eliminatórias para o próximo
-//mundial. Faça um programa que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
-//Categoria Idade
-//Infantil A 5 - 7 anos
-//Infantil B 8 - 10 anos
-//Juvenil A 11 - 13 anos
-//Juvenil B 14 - 17 anos
-//Sênior maiores de 18 anos
+//    mundial. Faça um programa que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
+//    Categoria Idade
+//    Infantil A 5 - 7 anos
+//    Infantil B 8 - 10 anos
+//    Juvenil A 11 - 13 anos
+//    Juvenil B 14 - 17 anos
+//    Sênior maiores de 18 anos
 
 void q16()
 {
@@ -170,7 +236,7 @@ void q18()
 
 //19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores para cada estado
 //    Sabendo-se que os arqueiros de uma equipe não obtiveram o mesmo número de pontos, criar um programa que informe
-//   se uma equipe foi classificada, de acordo com a seguinte especificação:
+//    se uma equipe foi classificada, de acordo com a seguinte especificação:
 //    • Ler os pontos obtidos por cada jogador da equipe;
 //    • Mostrar esses valores em ordem decrescente;
 //    • Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles, caso contrário, imprimir a mensagem "Equipe desclassificada".
@@ -209,7 +275,7 @@ void q21()
 //22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de
 //    combustível, sabendo-se que umcarro tipo C faz 12 kmcom umlitro de gasolina, um tipo B faz 9 kme o tipo C, 8 kmpor litro.
 
-void questao22()
+void q22()
 {
 	
 }
