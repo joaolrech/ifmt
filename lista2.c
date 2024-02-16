@@ -252,91 +252,91 @@ void q25()
 
 int main()
 {
-	const char menu[1000] = "\n================================\n            PROGRAMAS\n================================\n[1]  - Adição\n[2]  - Adição 2\n[3]  - Múltiplo\n[4]  - Múltiplo 2\n[5]  - Múltiplo 3\n[6]  - Crédito\n[7]  - Intervalo\n[8]  - Menor/Maior\n[9]  - Idade\n[10] - Crescente\n[11] - Maior\n[12] - Idade 2\n[13] - Situação Aluno\n[14] - INSS\n[15] - Valor de Venda\n[16] - Natação\n[17] - Plano de Saúde\n[18] - Mês do Ano\n[19] - Arco e Flecha\n[20] - Crédito Especial\n[21] - Biblioteca\n[22] - Consumo Combustível\n[23] - Calorias\n[24] - Emplacamento\n[25] - Intimação\n================================\n";
+    const char menu[1000] = "\n================================\n            PROGRAMAS\n================================\n[1]  - Adição\n[2]  - Adição 2\n[3]  - Múltiplo\n[4]  - Múltiplo 2\n[5]  - Múltiplo 3\n[6]  - Crédito\n[7]  - Intervalo\n[8]  - Menor/Maior\n[9]  - Idade\n[10] - Crescente\n[11] - Maior\n[12] - Idade 2\n[13] - Situação Aluno\n[14] - INSS\n[15] - Valor de Venda\n[16] - Natação\n[17] - Plano de Saúde\n[18] - Mês do Ano\n[19] - Arco e Flecha\n[20] - Crédito Especial\n[21] - Biblioteca\n[22] - Consumo Combustível\n[23] - Calorias\n[24] - Emplacamento\n[25] - Intimação\n================================\n";
 	
     printf("%s", menu);
 
-	int opcao;
+    int opcao;
 
-	printf("Digite a questão a ser executada: \n");
-	scanf("%d", &opcao);
+    printf("Digite a questão a ser executada: \n");
+    scanf("%d", &opcao);
 
-	switch(opcao)
+    switch(opcao)
     {
-		case 1:
-			q01();
-			break;
-		case 2:
-			q02();
-			break;
-		case 3:
-			q03();
-			break;			
-		case 4:
-			q04();
-			break;
+    	case 1:
+    		q01();
+    		break;
+    	case 2:
+    		q02();
+    		break;
+    	case 3:
+    		q03();
+    		break;			
+    	case 4:
+    		q04();
+    		break;
         case 5:
-			q05();
-			break;
+    		q05();
+    		break;
         case 6:
-			q06();
-			break;
+    		q06();
+    		break;
         case 7:
-			q07();
-			break;
+    		q07();
+    		break;
         case 8:
-			q08();
-			break;
+    		q08();
+    		break;
         case 9:
-			q09();
-			break;
+    		q09();
+    		break;
         case 10:
-			q10();
-			break;
+    		q10();
+    		break;
         case 11:
-			q11();
-			break;
+    		q11();
+    		break;
         case 12:
-			q12();
-			break;
+    		q12();
+    		break;
         case 13:
-			q13();
-			break;
+    		q13();
+    		break;
         case 14:
-			q14();
-			break;
+    		q14();
+    		break;
         case 15:
-			q15();
-			break;
+    		q15();
+    		break;
         case 16:
-			q16();
-			break;
+    		q16();
+    		break;
         case 17:
-			q17();
-			break;
+    		q17();
+    		break;
         case 18:
-			q18();
-			break;
+    		q18();
+    		break;
         case 19:
-			q19();
-			break;
+    		q19();
+    		break;
         case 20:
-			q20();
-			break;
+    		q20();
+    		break;
         case 21:
-			q21();
-			break;
+    		q21();
+    		break;
         case 22:
-			q22();
-			break;
+    		q22();
+    		break;
         case 23:
-			q24();
-			break;
+    		q24();
+    		break;
         case 25:
-			q25();
-			break;
-			printf("Opção inválida. \n");
-	}
+    		q25();
+    		break;
+    		printf("Opção inválida. \n");
+    }
 	
 	return 0;
 }
