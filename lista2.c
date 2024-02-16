@@ -335,6 +335,7 @@ int main()
         case 25:
     		q25();
     		break;
+        default:
     		printf("Opção inválida. \n");
     }
 	
