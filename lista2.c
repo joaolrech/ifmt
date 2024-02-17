@@ -292,19 +292,19 @@ void q13()
     printf("Digite o nome, a nota da prova 1 e a nota da prova 2. \n");
     scanf(" %99[^\n]", nome);
     scanf("%f", &p1);
-	scanf("%f", &p2);
+    scanf("%f", &p2);
 
-	m = (p1 + p2) / 2;
+    m = (p1 + p2) / 2;
 
     printf("Nome: %s \n", nome);
     printf("Média: %.2f \n", m);
 
     if(m >= 7)
-		printf("Aprovado. \n");
-	else if(m < 3)
-		printf("Reprovado. \n");
-	else
-		printf("Prova final. \n");
+        printf("Aprovado. \n");
+    else if(m < 3)
+        printf("Reprovado. \n");
+    else
+        printf("Prova final. \n");
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
