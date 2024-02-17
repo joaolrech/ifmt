@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<math.h>
+#include <math.h>
 
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
 
@@ -433,10 +433,6 @@ void q25()
 
 int main()
 {
-    const char menu[1000] = "\n================================\n            PROGRAMAS\n================================\n[1]  - Adição\n[2]  - Adição 2\n[3]  - Múltiplo\n[4]  - Múltiplo 2\n[5]  - Múltiplo 3\n[6]  - Crédito\n[7]  - Intervalo\n[8]  - Menor/Maior\n[9]  - Idade\n[10] - Crescente\n[11] - Maior\n[12] - Idade 2\n[13] - Situação Aluno\n[14] - INSS\n[15] - Valor de Venda\n[16] - Natação\n[17] - Plano de Saúde\n[18] - Mês do Ano\n[19] - Arco e Flecha\n[20] - Crédito Especial\n[21] - Biblioteca\n[22] - Consumo Combustível\n[23] - Calorias\n[24] - Emplacamento\n[25] - Intimação\n================================\n";
-	
-    printf("%s", menu);
-
     int opcao;
 
     printf("Digite a questão a ser executada: \n");
@@ -519,6 +515,5 @@ int main()
         default:
     		printf("Opção inválida. \n");
     }
-
     return 0;
 }
