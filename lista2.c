@@ -112,7 +112,20 @@ void q05()
 
 void q06()
 {
+    float salario, prestacao;
 
+    printf("Digite seu salário e o valor da prestação desejada. \n");
+    scanf("%f", &salario);
+    scanf("%f", &prestacao);
+
+    if(prestacao > (salario * 0.3))
+    {
+        printf("O empréstimo não pode ser concedido. \n");
+    }
+    else
+    {
+        printf("O empréstimo pode ser concedido. \n");
+    }
 }
 
 //7. Faça um programa que leia um número e indique se o número está compreendido
@@ -120,7 +133,19 @@ void q06()
 
 void q07()
 {
+	int x;
 
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &x);
+
+    if((x >= 20) && (x <= 50))
+    {
+        printf("%d está entre 20 e 50. \n", x);
+    }
+    else
+    {
+        printf("%d não está entre 20 e 50. \n", x);
+    }
 }
 
 //8. Faça um programa que leia um número e imprima uma das mensagens: 
@@ -128,7 +153,23 @@ void q07()
 
 void q08()
 {
-	
+	int x;
+
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &x);
+
+    if(x > 20)
+    {
+        printf("O número digitado é maior do que 20. \n");
+    }
+    else if(x < 20)
+    {
+        printf("O número digitado é menor do que 20. \n");
+    }
+    else
+    {
+        printf("O número digitado é igual a 20. \n");
+    }
 }
 
 //9. Faça um programa que permita entrar com o ano de nascimento da pessoa e como ano
@@ -137,22 +178,80 @@ void q08()
 
 void q09()
 {
-	
+	int nascimento, idade, anoatual;
+
+    printf("Digite o ano em que você nasceu e o ano em que estamos. \n");
+    scanf("%d", &nascimento);
+    scanf("%d", &anoatual);
+
+    idade = anoatual - nascimento;
+
+    if(idade > 150 || idade < 0)
+    {
+        printf("Ano de nascimento inválido.");
+    }
+    else
+    {
+        printf("Idade: %d \n", idade);
+    }
 }
 
-//10. Faça um programa que leia três números inteiros e imprima os três em ordem
-//   crescente.
+//10. Faça um programa que leia três números inteiros e imprima os três em ordem crescente.
 
 void q10()
 {
+	int a, b, c;
 
+	printf("Digite 3 números inteiros. \n");
+	scanf("%d", &a);
+	scanf("%d", &b);
+	scanf("%d", &c);
+
+	if(a <= b && b <= c)
+	{
+        printf("%d, %d, %d \n", a, b, c);
+    }
+	else if(a <= c && c <= b)
+    {
+        printf("%d, %d, %d \n", a, c, b);
+    }
+    else if(b <= a && a <= c)
+    {
+        printf("%d, %d, %d \n", b, a, c);
+    }
+    else if(b <= c && c <= a)
+    {
+        printf("%d, %d, %d \n", b, c, a);
+    }
+    else if(c <= a && a <= b)
+    {
+        printf("%d, %d, %d \n", c, a, b);
+    }
+    else if(c <= b && b <= a)
+    {
+        printf("%d, %d, %d \n", c, b, a);
+    }
 }
 
 //11. Faça um programa que leia 3 números e imprima o maior deles.
 
 void q11()
 {
-	
+	int a, b, c;
+
+	printf("Digite 3 números inteiros. \n");
+	scanf("%d", &a);
+	scanf("%d", &b);
+	scanf("%d", &c);
+
+	if(a > b && a > c)
+		printf("Maior número: %d \n", a);
+	else if(b > a && b > c)
+		printf("Maior número: %d \n", b);
+	else if(c > a && c > b)
+		printf("Maior número: %d \n", c);
+	else
+		printf("Números iguais foram digitados. \n");
 }
 
 //12. Faça um programa que leia a idade de uma pessoa e informe:
@@ -162,7 +261,23 @@ void q11()
 
 void q12()
 {
-	
+	int idade;
+
+    printf("Digite sua idade. \n");
+    scanf("%d", &idade);
+
+    if(idade < 18)
+    {
+        printf("Você é menor de idade. \n");
+    }
+    else if(idade >= 18 && idade < 65)
+    {
+        printf("Você é maior de idade. \n");
+    }
+    else if (idade >= 65)
+    {
+        printf("Você é idoso. \n");
+    }
 }
 
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
