@@ -317,7 +317,7 @@ void q13()
 
 void q14()
 {
-	float salario;
+    float salario;
 
     printf("Digite seu salário. \n");
     scanf("%f", &salario);
@@ -337,7 +337,7 @@ void q14()
 
 void q15()
 {
-	float valor;
+    float valor;
 
     printf("Digite o valor de compra produto. \n");
     scanf("%f", &valor);
@@ -359,23 +359,23 @@ void q15()
 
 void q16()
 {
-	int i;
+    int i;
 
-	printf("Digite a idade do nadador. \n");
-	scanf("%d", &i);
+    printf("Digite a idade do nadador. \n");
+    scanf("%d", &i);
 
-	if(i >= 5 && i <= 7)
-		printf("Categoria infantil A. \n");
-	else if(i >= 8 && i <= 10)
-		printf("Categoria infantil B. \n");
-	else if(i >= 11 && i <= 13)
-		printf("Categoria juvenil A. \n");
-	else if(i >= 14 && i <= 17)
-		printf("Categoria juvenil B. \n");
-	else if(i >= 18)
-		printf("Categoria sênior. \n");
-	else
-		printf("O nadador não possui a idade mínima de 5 anos. \n");
+    if(i >= 5 && i <= 7)
+    	printf("Categoria infantil A. \n");
+    else if(i >= 8 && i <= 10)
+    	printf("Categoria infantil B. \n");
+    else if(i >= 11 && i <= 13)
+    	printf("Categoria juvenil A. \n");
+    else if(i >= 14 && i <= 17)
+    	printf("Categoria juvenil B. \n");
+    else if(i >= 18)
+    	printf("Categoria sênior. \n");
+    else
+    	printf("O nadador não possui a idade mínima de 5 anos. \n");
 }
 
 //17. Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer
@@ -391,7 +391,7 @@ void q16()
 
 void q17()
 {
-	char nome[99];
+    char nome[99];
     int idade;
 
     printf("Digite seu nome e sua idade. \n");
@@ -420,7 +420,7 @@ void q17()
 
 void q18()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro entre 1 e 12. \n");
     scanf("%d", &x);
