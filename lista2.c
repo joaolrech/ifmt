@@ -515,13 +515,52 @@ void q23()
 
 }
 
-//24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dosmotoristas o DUT.
+//24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dos motoristas o DUT.
 //    Sabendo-se que o mês em que o emplacamento do carro deve ser renovado é determinado pelo último número da
-//    placa do mesmo, faça um programa que, a partir da leitura da placa do carro, informe omês em que o emplacamento deve ser renovado.
+//    placa do mesmo, faça um programa que, a partir da leitura da placa do carro, informe o mês em que o emplacamento deve ser renovado.
 
 void q24()
 {
-	
+    char placa[7];
+
+    printf("Digite a placa do veículo. \n");
+    scanf(" %s", placa);
+
+    printf("%s \n", placa);
+
+    switch(placa[6])
+    {
+        case '1':
+            printf("O emplacamento deve ser renovado em janeiro. \n");
+            break;
+        case '2':
+            printf("O emplacamento deve ser renovado em fevereiro. \n");
+            break;
+        case '3':
+            printf("O emplacamento deve ser renovado em março. \n");
+            break;
+        case '4':
+            printf("O emplacamento deve ser renovado em abril. \n");
+            break;
+        case '5':
+            printf("O emplacamento deve ser renovado em maio. \n");
+            break;
+        case '6':
+            printf("O emplacamento deve ser renovado em junho. \n");
+            break;
+        case '7':
+            printf("O emplacamento deve ser renovado em julho. \n");
+            break;
+        case '8':
+            printf("O emplacamento deve ser renovado em agosto. \n");
+            break;
+        case '9':
+            printf("O emplacamento deve ser renovado em setembro. \n");
+            break;
+        case '0':
+            printf("O emplacamento deve ser renovado em outubro. \n");
+            break;
+    }
 }
 
 //25. A prefeitura contratou uma firma especializada para manter os níveis de poluição considerados ideais
@@ -614,6 +653,9 @@ int main()
     	    q22();
     	    break;
         case 23:
+    	    q23();
+    	    break;
+        case 24:
     	    q24();
     	    break;
         case 25:
