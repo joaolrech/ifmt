@@ -281,12 +281,30 @@ void q12()
 }
 
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
-//    prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens:
+//    prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens:
 //    "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
 
 void q13()
 {
-	
+    char nome[99];
+    float p1, p2, m;
+
+    printf("Digite o nome, a nota da prova 1 e a nota da prova 2. \n");
+    scanf(" %99[^\n]", nome);
+    scanf("%f", &p1);
+	scanf("%f", &p2);
+
+	m = (p1 + p2) / 2;
+
+    printf("Nome: %s \n", nome);
+    printf("Média: %.2f \n", m);
+    
+    if(m >= 7)
+		printf("Aprovado. \n");
+	else if(m < 3)
+		printf("Reprovado. \n");
+	else
+		printf("Prova final. \n");
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
@@ -440,80 +458,80 @@ int main()
 
     switch(opcao)
     {
-    	  case 1:
-    		    q01();
-    		    break;
-    	  case 2:
-    		    q02();
-    		    break;
-    	  case 3:
-    		    q03();
-    		    break;			
-    	  case 4:
-    		    q04();
-    		    break;
+        case 1:
+            q01();
+    		break;
+    	case 2:
+    		q02();
+    		break;
+    	case 3:
+    		q03();
+    		break;			
+    	case 4:
+    		q04();
+    		break;
         case 5:
-    		    q05();
-    		    break;
+    		q05();
+    	    break;
         case 6:
-    		    q06();
-    		    break;
+    	    q06();
+    	    break;
         case 7:
-    		    q07();
-    		    break;
+    	    q07();
+    	    break;
         case 8:
-    		    q08();
-    		    break;
+    	    q08();
+    	    break;
         case 9:
-    		    q09();
-    		    break;
+    	    q09();
+    	    break;
         case 10:
-    		    q10();
-    		    break;
+    	    q10();
+    	    break;
         case 11:
-    		    q11();
-    		    break;
+    	    q11();
+    	    break;
         case 12:
-    		    q12();
-    		    break;
+    	    q12();
+    	    break;
         case 13:
-    		    q13();
-    		    break;
+    	    q13();
+    	    break;
         case 14:
-    		    q14();
-    		    break;
+    	    q14();
+    	    break;
         case 15:
-    		    q15();
-    		    break;
+    	    q15();
+    	    break;
         case 16:
-    		    q16();
-    		    break;
+    	    q16();
+    	    break;
         case 17:
-    		    q17();
-    		    break;
+    	    q17();
+    	    break;
         case 18:
-    		    q18();
-    		    break;
+    	    q18();
+    	    break;
         case 19:
-    		    q19();
-    		    break;
+    	    q19();
+    	    break;
         case 20:
-    		    q20();
-    		    break;
+    	    q20();
+    	    break;
         case 21:
-    		    q21();
-    		    break;
+    	    q21();
+    	    break;
         case 22:
-    		    q22();
-    		    break;
+    	    q22();
+    	    break;
         case 23:
-    		    q24();
-    		    break;
+    	    q24();
+    	    break;
         case 25:
-    		    q25();
-    		    break;
+    	    q25();
+    	    break;
         default:
-    		    printf("Opção inválida. \n");
+    	    printf("Opção inválida. \n");
     }
     return 0;
 }
