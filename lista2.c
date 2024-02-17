@@ -317,15 +317,35 @@ void q13()
 
 void q14()
 {
-	
+	float salario;
+
+    printf("Digite seu salário. \n");
+    scanf("%f", &salario);
+
+    if(salario <= 600)
+        printf("Isento. \n");
+    else if(salario > 600 && salario <= 1200)
+        printf("Desconto: R$%.2f \n", salario * 0.2);
+    else if(salario > 1200 && salario <= 2000)
+        printf("Desconto: R$%.2f \n", salario * 0.25);
+    else
+        printf("Desconto: R$%.2f \n", salario * 0.3);
 }
 
-//15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
+//15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o valor
 //    da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
 
 void q15()
 {
-	
+	float valor;
+
+    printf("Digite o valor de compra produto. \n");
+    scanf("%f", &valor);
+
+    if(valor < 20)
+        printf("Valor de venda: R$%.2f \n", valor * 1.45);
+    else
+        printf("Valor de venda: R$%.2f \n", valor * 1.3);
 }
 
 //16. A confederação brasileira de natação irá promover eliminatórias para o próximo
@@ -339,11 +359,27 @@ void q15()
 
 void q16()
 {
-	
+	int i;
+
+	printf("Digite a idade do nadador. \n");
+	scanf("%d", &i);
+
+	if(i >= 5 && i <= 7)
+		printf("Categoria infantil A. \n");
+	else if(i >= 8 && i <= 10)
+		printf("Categoria infantil B. \n");
+	else if(i >= 11 && i <= 13)
+		printf("Categoria juvenil A. \n");
+	else if(i >= 14 && i <= 17)
+		printf("Categoria juvenil B. \n");
+	else if(i >= 18)
+		printf("Categoria sênior. \n");
+	else
+		printf("O nadador não possui a idade mínima de 5 anos. \n");
 }
 
 //17. Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer
-//    pesquisas para descobrir um bom plano, não muito caro. Umvendedor de um plano de saúde apresentou a tabela a seguir.
+//    pesquisas para descobrir um bom plano, não muito caro. Um vendedor de um plano de saúde apresentou a tabela a seguir.
 //    Faça um programa que entre com o nome e a idade de uma pessoa e imprima o nome e o valor que ela deverá pagar.
 //    Idade Valor
 //    Até 10 anos R$30,00
@@ -355,16 +391,81 @@ void q16()
 
 void q17()
 {
-	
+	char nome[99];
+    int idade;
+
+    printf("Digite seu nome e sua idade. \n");
+    scanf(" %99[^\n]", nome);
+    scanf("%d", &idade);
+
+    printf("Nome: %s \n", nome);
+
+    if(idade <= 10)
+        printf("Valor: R$30.00 \n");
+    else if(idade > 10 && idade <= 29)
+        printf("Valor: R$60.00 \n");
+    else if( idade > 29 && idade <= 45)
+        printf("Valor: R$120.00 \n");
+    else if( idade > 45 && idade <= 59)
+        printf("Valor: R$150.00 \n");
+    else if( idade > 59 && idade <= 65)
+        printf("Valor: R$250.00 \n");
+    else
+        printf("Valor: R$400.00 \n");
 }
 
 //18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente.
-//    Caso o usuário digite umnúmero fora desse intervalo, deverá aparecer uma mensagem informando que
+//    Caso o usuário digite um número fora desse intervalo, deverá aparecer uma mensagem informando que
 //    não existe mês com este número. Utilize o switch para este problema.
 
 void q18()
 {
-	
+	int x;
+
+    printf("Digite um número inteiro entre 1 e 12. \n");
+    scanf("%d", &x);
+
+    switch(x)
+    {
+        case 1:
+            printf("Janeiro. \n");
+            break;
+        case 2:
+            printf("Fevereiro. \n");
+            break;
+        case 3:
+            printf("Março. \n");
+            break;
+        case 4:
+            printf("Abril. \n");
+            break;
+        case 5:
+            printf("Maio. \n");
+            break;
+        case 6:
+            printf("Junho. \n");
+            break;
+        case 7:
+            printf("Julho. \n");
+            break;
+        case 8:
+            printf("Agosto. \n");
+            break;
+        case 9:
+            printf("Setembro. \n");
+            break;
+        case 10:
+            printf("Outubro. \n");
+            break;
+        case 11:
+            printf("Novembro. \n");
+            break;
+        case 12:
+            printf("Dezembro. \n");
+            break;
+        default:
+            printf("Não existe mês com este número. \n");
+    }
 }
 
 //19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores para cada estado
