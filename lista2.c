@@ -451,12 +451,12 @@ void q25()
 
 int main()
 {
-    int opcao;
+    int questao;
 
     printf("Digite a questão a ser executada: \n");
-    scanf("%d", &opcao);
+    scanf("%d", &questao);
 
-    switch(opcao)
+    switch(questao)
     {
         case 1:
             q01();
