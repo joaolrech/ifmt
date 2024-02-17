@@ -200,15 +200,15 @@ void q09()
 
 void q10()
 {
-	int a, b, c;
+    int a, b, c;
 
-	printf("Digite 3 números inteiros. \n");
-	scanf("%d", &a);
-	scanf("%d", &b);
-	scanf("%d", &c);
+    printf("Digite 3 números inteiros. \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
 
-	if(a <= b && b <= c)
-	{
+    if(a <= b && b <= c)
+    {
         printf("%d, %d, %d \n", a, b, c);
     }
 	else if(a <= c && c <= b)
@@ -262,7 +262,7 @@ void q11()
 void q12()
 {
     int idade;
-    
+
     printf("Digite sua idade. \n");
     scanf("%d", &idade);
 
