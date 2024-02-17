@@ -298,7 +298,7 @@ void q13()
 
     printf("Nome: %s \n", nome);
     printf("Média: %.2f \n", m);
-    
+
     if(m >= 7)
 		printf("Aprovado. \n");
 	else if(m < 3)
@@ -460,25 +460,25 @@ int main()
     {
         case 1:
             q01();
-    		break;
-    	case 2:
-    		q02();
-    		break;
-    	case 3:
-    		q03();
-    		break;			
-    	case 4:
-    		q04();
-    		break;
+            break;
+        case 2:
+            q02();
+            break;
+        case 3:
+            q03();
+            break;			
+        case 4:
+            q04();
+            break;
         case 5:
-    		q05();
-    	    break;
+            q05();
+            break;
         case 6:
-    	    q06();
-    	    break;
+            q06();
+            break;
         case 7:
-    	    q07();
-    	    break;
+            q07();
+            break;
         case 8:
     	    q08();
     	    break;
