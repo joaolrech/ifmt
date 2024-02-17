@@ -52,7 +52,7 @@ void q02()
 
 void q03()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro. \n");
     scanf("%d", &x);
@@ -71,7 +71,7 @@ void q03()
 
 void q04()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro. \n");
     scanf("%d", &x);
@@ -90,7 +90,7 @@ void q04()
 
 void q05()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro. \n");
     scanf("%d", &x);
