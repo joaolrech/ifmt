@@ -304,7 +304,75 @@ void q20()
 
 int main()
 {
-    q20();
+    int questao;
 
+    printf("Digite a questão a ser executada: \n");
+    scanf("%d", &questao);
+
+    switch(questao)
+    {
+        case 1:
+            q01();
+            break;
+        case 2:
+            q02();
+            break;
+        case 3:
+            q03();
+            break;			
+        case 4:
+            q04();
+            break;
+        case 5:
+            q05();
+            break;
+        case 6:
+            q06();
+            break;
+        case 7:
+            q07();
+            break;
+        case 8:
+    	    q08();
+    	    break;
+        case 9:
+    	    q09();
+    	    break;
+        case 10:
+    	    q10();
+    	    break;
+        case 11:
+    	    q11();
+    	    break;
+        case 12:
+    	    q12();
+    	    break;
+        case 13:
+    	    q13();
+    	    break;
+        case 14:
+    	    q14();
+    	    break;
+        case 15:
+    	    q15();
+    	    break;
+        case 16:
+    	    q16();
+    	    break;
+        case 17:
+    	    q17();
+    	    break;
+        case 18:
+    	    q18();
+    	    break;
+        case 19:
+    	    q19();
+    	    break;
+        case 20:
+    	    q20();
+    	    break;
+        default:
+    	    printf(" inválida. \n");
+    }
     return 0;
 }
