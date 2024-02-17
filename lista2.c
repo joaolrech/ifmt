@@ -465,7 +465,7 @@ void q18()
 
 void q19()
 {
-	
+    
 }
 
 //20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de acordo com o saldomédio no último ano.
@@ -479,7 +479,7 @@ void q19()
 
 void q20()
 {
-	
+
 }
 
 //21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do livro que será emprestado,
@@ -491,7 +491,7 @@ void q20()
 
 void q21()
 {
-	
+
 }
 
 //22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de
@@ -499,7 +499,7 @@ void q21()
 
 void q22()
 {
-	
+
 }
 
 //23. Crie um programa que informe a quantidade total de calorias de uma refeição a partir da escolha do
@@ -574,7 +574,7 @@ void q24()
 
 void q25()
 {
-	
+
 }
 
 int main()
