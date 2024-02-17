@@ -133,7 +133,7 @@ void q06()
 
 void q07()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro. \n");
     scanf("%d", &x);
@@ -153,7 +153,7 @@ void q07()
 
 void q08()
 {
-	int x;
+    int x;
 
     printf("Digite um número inteiro. \n");
     scanf("%d", &x);
@@ -178,7 +178,7 @@ void q08()
 
 void q09()
 {
-	int nascimento, idade, anoatual;
+    int nascimento, idade, anoatual;
 
     printf("Digite o ano em que você nasceu e o ano em que estamos. \n");
     scanf("%d", &nascimento);
