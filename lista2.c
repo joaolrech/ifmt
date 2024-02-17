@@ -237,21 +237,21 @@ void q10()
 
 void q11()
 {
-	int a, b, c;
+    int a, b, c;
 
-	printf("Digite 3 números inteiros. \n");
-	scanf("%d", &a);
-	scanf("%d", &b);
-	scanf("%d", &c);
+    printf("Digite 3 números inteiros. \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
 
-	if(a > b && a > c)
-		printf("Maior número: %d \n", a);
-	else if(b > a && b > c)
-		printf("Maior número: %d \n", b);
-	else if(c > a && c > b)
-		printf("Maior número: %d \n", c);
-	else
-		printf("Números iguais foram digitados. \n");
+    if(a > b && a > c)
+    	printf("Maior número: %d \n", a);
+    else if(b > a && b > c)
+    	printf("Maior número: %d \n", b);
+    else if(c > a && c > b)
+    	printf("Maior número: %d \n", c);
+    else
+    	printf("Números iguais foram digitados. \n");
 }
 
 //12. Faça um programa que leia a idade de uma pessoa e informe:
@@ -261,8 +261,8 @@ void q11()
 
 void q12()
 {
-	int idade;
-
+    int idade;
+    
     printf("Digite sua idade. \n");
     scanf("%d", &idade);
 
