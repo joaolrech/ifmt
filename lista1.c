@@ -306,7 +306,7 @@ int main()
 {
     int questao;
 
-    printf("Digite a questão a ser executada: \n");
+    printf("Digite a questão a ser executada. \n");
     scanf("%d", &questao);
 
     switch(questao)
