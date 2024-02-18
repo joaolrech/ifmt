@@ -15,13 +15,9 @@ void q01()
     soma = x + y;
 
     if(soma > 10)
-    {
         printf("Soma dos números digitados: %d \n", soma);
-    }
     else
-    {
         printf("A soma dos números digitados é menor que 10. \n");
-    }
 }
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20,
@@ -39,13 +35,9 @@ void q02()
     soma = x + y;
 
     if(soma > 20)
-    {
         printf("%d \n", soma + 8);
-    }
     else
-    {
         printf("%d \n", soma - 5);
-    }
 }
 
 //3. Faça um programa que leia um número e imprima uma das duas mensagens: "É múltiplo de 3"ou "Não é múltiplo de 3".
@@ -58,13 +50,9 @@ void q03()
     scanf("%d", &x);
 
     if(x % 3 == 0)
-    {
         printf("%d múltiplo de 3. \n", x);
-    }
     else
-    {
         printf("%d não é múltiplo de 3. \n", x);
-    }
 }
 
 //4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
@@ -77,13 +65,9 @@ void q04()
     scanf("%d", &x);
 
     if(x % 5 == 0)
-    {
         printf("%d é divisível por 5. \n", x);
-    }
     else
-    {
         printf("%d não é divisível por 5. \n", x);
-    }
 }
 
 //5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
@@ -96,13 +80,9 @@ void q05()
     scanf("%d", &x);
 
     if((x % 3 == 0) && (x % 7 == 0))
-    {
         printf("%d é divisível por 3 e por 7. \n", x);
-    }
     else
-    {
         printf("%d não é divisível por 3 e por 7. \n", x);
-    }
 }
 
 //6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
@@ -119,13 +99,9 @@ void q06()
     scanf("%f", &prestacao);
 
     if(prestacao > (salario * 0.3))
-    {
         printf("O empréstimo não pode ser concedido. \n");
-    }
     else
-    {
         printf("O empréstimo pode ser concedido. \n");
-    }
 }
 
 //7. Faça um programa que leia um número e indique se o número está compreendido
@@ -139,13 +115,9 @@ void q07()
     scanf("%d", &x);
 
     if((x >= 20) && (x <= 50))
-    {
         printf("%d está entre 20 e 50. \n", x);
-    }
     else
-    {
         printf("%d não está entre 20 e 50. \n", x);
-    }
 }
 
 //8. Faça um programa que leia um número e imprima uma das mensagens: 
@@ -159,20 +131,14 @@ void q08()
     scanf("%d", &x);
 
     if(x > 20)
-    {
         printf("O número digitado é maior do que 20. \n");
-    }
     else if(x < 20)
-    {
         printf("O número digitado é menor do que 20. \n");
-    }
     else
-    {
         printf("O número digitado é igual a 20. \n");
-    }
 }
 
-//9. Faça um programa que permita entrar com o ano de nascimento da pessoa e como ano
+//9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o ano
 //   atual. O programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o
 //   ano de nascimento informado é válido.
 
@@ -187,13 +153,9 @@ void q09()
     idade = anoatual - nascimento;
 
     if(idade > 150 || idade < 0)
-    {
-        printf("Ano de nascimento inválido.");
-    }
+        printf("Ano de nascimento inválido. \n");
     else
-    {
         printf("Idade: %d \n", idade);
-    }
 }
 
 //10. Faça um programa que leia três números inteiros e imprima os três em ordem crescente.
@@ -255,17 +217,11 @@ void q12()
     scanf("%d", &idade);
 
     if(idade < 18)
-    {
         printf("Você é menor de idade. \n");
-    }
     else if(idade >= 18 && idade < 65)
-    {
         printf("Você é maior de idade. \n");
-    }
     else if (idade >= 65)
-    {
         printf("Você é idoso. \n");
-    }
 }
 
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
