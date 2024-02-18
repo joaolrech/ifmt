@@ -346,13 +346,13 @@ void q17()
 
     if(idade <= 10)
         printf("Valor: R$30.00 \n");
-    else if(idade > 10 && idade <= 29)
+    else if(idade <= 29)
         printf("Valor: R$60.00 \n");
-    else if( idade > 29 && idade <= 45)
+    else if(idade <= 45)
         printf("Valor: R$120.00 \n");
-    else if( idade > 45 && idade <= 59)
+    else if(idade <= 59)
         printf("Valor: R$150.00 \n");
-    else if( idade > 59 && idade <= 65)
+    else if(idade <= 65)
         printf("Valor: R$250.00 \n");
     else
         printf("Valor: R$400.00 \n");
@@ -421,10 +421,34 @@ void q18()
 
 void q19()
 {
-    
+    int pontos[3], i;
+
+    for(i = 0; i < 3; i++)
+    {
+        printf("Digite os pontos do jogador %d. \n", i + 1);
+        scanf("%d", &pontos[i]);
+    }
+
+    if(pontos[0] >= pontos[1] && pontos[1] >= pontos[2])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[0], pontos[1], pontos[2]);
+    else if(pontos[0] >= pontos[2] && pontos[2] >= pontos[1])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[0], pontos[2], pontos[1]);
+    else if(pontos[1] >= pontos[0] && pontos[0] >= pontos[2])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[1], pontos[0], pontos[2]);
+    else if(pontos[1] >= pontos[2] && pontos[2] >= pontos[0])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[1], pontos[2], pontos[0]);
+    else if(pontos[2] >= pontos[0] && pontos[0] >= pontos[1])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[2], pontos[0], pontos[1]);
+    else if(pontos[2] >= pontos[1] && pontos[1] >= pontos[0])
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[2], pontos[1], pontos[0]);
+
+    if(pontos[0] + pontos[1] + pontos[2] > 100)
+        printf("Média: %.2f \n", (pontos[0] + pontos[1] + pontos[2]) / 3.0);
+    else
+        printf("Equipe desclassificada. \n");
 }
 
-//20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de acordo com o saldomédio no último ano.
+//20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de acordo com o saldo médio no último ano.
 //    Faça um programa que leia o saldo médio de um cliente e calcule o valor do crédito de acordo com a tabela a seguir.
 //    O programa deve imprimir uma mensagem informando o saldo médio e o valor de crédito.
 //    Saldo Médio Percentual
@@ -435,7 +459,22 @@ void q19()
 
 void q20()
 {
+    float saldo, credito;
 
+    printf("Digite seu saldo médio no último ano. \n");
+    scanf("%f", &saldo);
+
+    if(saldo <= 500)
+        credito = 0;
+    else if(saldo <= 1000)
+        credito = saldo * 0.3;
+    else if(saldo <= 3000)
+        credito = saldo * 0.4;
+    else
+        credito = saldo * 0.5;
+
+    printf("Saldo médio: R$%.2f \n", saldo);
+    printf("Crédito disponível: R$%.2f \n", credito);
 }
 
 //21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do livro que será emprestado,
@@ -447,15 +486,46 @@ void q20()
 
 void q21()
 {
+    int tipo;
+    char nome[99];
 
+    printf("Digite o nome do livro e o tipo de usuário. \n");
+    printf("0 - Professor, 1 - Aluno \n");
+    scanf(" %99[^\n]", nome);
+    scanf("%d", &tipo);
+
+    printf("Nome do livro: %s \n", nome);
+
+    if(tipo == 0)
+        printf("Você terá 10 dias para devolver o livro emprestado. \n")
+    else if(tipo == 1)
+        printf("Você terá 3 dias para devolver o livro emprestado. \n");
+    else
+        printf("Tipo inválido. \n");
 }
 
 //22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de
-//    combustível, sabendo-se que umcarro tipo C faz 12 kmcom umlitro de gasolina, um tipo B faz 9 kme o tipo C, 8 kmpor litro.
+//    combustível, sabendo-se que um carro tipo C faz 12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C, 8 km por litro.
 
 void q22()
 {
+    char tipo;
+    float km, consumo;
 
+    printf("Digite a distância do percurso (km) e o tipo de carro. \n");
+    scanf("%f", &km);
+    scanf(" %c", &tipo);
+
+    if(tipo == 'A')
+        consumo = km / 12.0;
+    else if(tipo == 'B')
+        consumo = km / 9.0;
+    else if(tipo == 'C')
+        consumo = km / 8.0;
+    else
+        printf("Tipo de carro inválido. \n");
+
+    printf("Consumo estimado de combustível: %.1fL \n", consumo);
 }
 
 //23. Crie um programa que informe a quantidade total de calorias de uma refeição a partir da escolha do
@@ -468,7 +538,72 @@ void q22()
 
 void q23()
 {
+    int prato, sobremesa, bebida, cal = 0, keepprato = 0, keepsobremesa = 0, keepbebida = 0;
 
+    do
+    {
+        printf("Digite o prato desejado. \n");
+        printf("1 - Vegetariano, 2 - Peixe, 3 - Frango, 4 - Carne \n");
+        scanf("%d", &prato);
+
+        if(prato == 1)
+            cal = cal + 180;
+        else if(prato == 2)
+            cal = cal + 230;
+        else if(prato == 3)
+            cal = cal + 250;
+        else if(prato == 4)
+            cal = cal + 350;
+        else
+        {
+            printf("Opção inválida. \n");
+            keepprato = 1;
+        }
+    } while(keepprato == 1);
+
+    do
+    {
+        printf("Digite a sobremesa desejada. \n");
+        printf("1 - Abacaxi, 2 - Sorvete diet, 3 - Mousse diet, 4 - Mousse chocolate \n");
+        scanf("%d", &sobremesa);
+
+            if(sobremesa == 1)
+            cal = cal + 75;
+        else if(sobremesa == 2)
+            cal = cal + 110;
+        else if(sobremesa == 3)
+            cal = cal + 170;
+        else if(sobremesa == 4)
+            cal = cal + 200;
+        else
+        {
+            printf("Opção inválida. \n");
+            keepsobremesa = 1;
+        }
+    } while(keepsobremesa == 1);
+
+    do
+    {
+        printf("Digite a bebida desejada. \n");
+        printf("1 - Chá, 2 - Suco de laranja, 3 - Suco de melão, 4 - Refrigerante diet \n");
+        scanf("%d", &bebida);
+
+        if(bebida == 1)
+            cal = cal + 20;
+        else if(bebida == 2)
+            cal = cal + 70;
+        else if(bebida == 3)
+            cal = cal + 100;
+        else if(bebida == 4)
+            cal = cal + 75;
+        else
+        {
+            printf("Opção inválida. \n");
+            keepbebida = 1;
+        }
+    } while(keepbebida == 1);
+
+    printf("Quantidade total de calorias: %d \n", cal);
 }
 
 //24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dos motoristas o DUT.
@@ -524,13 +659,25 @@ void q24()
 //    Sabendo-se que a escala utilizada varia de 0,05 e que o índice de poluição aceitável é até 0,25, fazer um programa que
 //    possa imprimir intimações de acordo com o índice e a tabela a seguir:
 //    Índice Indústrias que receberão intimação
-//    0,3 1º gurpo
+//    0,3 1º grupo
 //    0,4 1º e 2º grupos
 //    0,5 1º, 2º e 3º grupos
 
 void q25()
 {
+    float indice;
 
+    printf("Digite o índice de poluição. \n");
+    scanf("%f", &indice);
+
+    if (indice >= 0.3 && indice < 0.4)
+        printf("1º grupo. \n");
+    else if (indice >= 0.4 && indice < 0.5)
+        printf("1º e 2º grupo. \n");
+    else if (indice >= 0.5)
+        printf("1º, 2º e 3º grupo. \n");
+    else
+        printf("Índice de poluição aceitável. \n");
 }
 
 int main()
