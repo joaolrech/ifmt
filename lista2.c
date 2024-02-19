@@ -557,7 +557,8 @@ void q23()
             printf("Opção inválida. \n");
             keepprato = 1;
         }
-    } while(keepprato == 1);
+    }
+    while(keepprato == 1);
 
     do
     {
@@ -565,7 +566,7 @@ void q23()
         printf("1 - Abacaxi, 2 - Sorvete diet, 3 - Mousse diet, 4 - Mousse chocolate \n");
         scanf("%d", &sobremesa);
 
-            if(sobremesa == 1)
+        if(sobremesa == 1)
             cal = cal + 75;
         else if(sobremesa == 2)
             cal = cal + 110;
@@ -578,7 +579,8 @@ void q23()
             printf("Opção inválida. \n");
             keepsobremesa = 1;
         }
-    } while(keepsobremesa == 1);
+    }
+    while(keepsobremesa == 1);
 
     do
     {
@@ -599,7 +601,8 @@ void q23()
             printf("Opção inválida. \n");
             keepbebida = 1;
         }
-    } while(keepbebida == 1);
+    }
+    while(keepbebida == 1);
 
     printf("Quantidade total de calorias: %d \n", cal);
 }
