@@ -159,7 +159,7 @@ void q08()
 void q09()
 {
     int x, o;
-    float idade, cont1 = 0, cont2 = 0, cont3 = 0, somaidades;
+    float idade, cont1 = 0, cont2 = 0, cont3 = 0, somaidades = 0;
 
     for(x = 0; x < 20; x ++)
     {
