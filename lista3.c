@@ -143,7 +143,36 @@ void q07()
 
 void q08()
 {
-    
+    int i;
+    float sal[10], al[10];
+    char nome[10][99];
+
+    for(i = 0; i < 3; i ++)
+    {
+        al[i] = 0;
+
+        printf("Digite o nome. \n");
+        scanf(" %99[^\n]", nome[i]);
+        printf("Digite o salário bruto. \n");
+        scanf("%f", &sal[i]);
+
+        if(sal[i] >= 2300)
+            al[i] = sal[i] * 0.15;
+        else if(sal[i] >= 1300 && sal[i] < 2300)
+            al[i] = sal[i] * 0.1;
+    }
+
+    for(i = 0; i < 3; i ++)
+    {
+        printf("Nome: %s \n", nome[i]);
+        
+        if(al[i] == 0)
+            printf("Isento. \n");
+        else
+            printf("Valor da alíquota: R$%.2f \n", al[i]);
+
+        printf("\n");
+    }
 }
 
 //9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
@@ -192,13 +221,12 @@ void q09()
 }
 
 //10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
-//que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
-//jogadores, crie um programa que apresente as seguintes informações:
-//
-//• O peso médio e a idade média de cada um dos times;
-//• O atleta mais pesado de cada time;
-//• O atleta mais jovem de cada time;
-//• O peso médio e a idade média de todos os participantes.
+//   que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
+//   jogadores, crie um programa que apresente as seguintes informações:
+//   • O peso médio e a idade média de cada um dos times;
+//   • O atleta mais pesado de cada time;
+//   • O atleta mais jovem de cada time;
+//   • O peso médio e a idade média de todos os participantes.
 
 void q10()
 {
@@ -206,12 +234,26 @@ void q10()
 }
 
 //11. Construa um programa que leia vários números e informe quantos números
-//entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
-//deverá cessar sua execução.
+//    entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
+//    deverá cessar sua execução.
 
 void q11()
 {
-    
+    int x, num, cont = 0;
+
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &num);
+
+    while(x != 0)
+    {
+        if(num >= 100 && num <= 200)
+            cont ++;
+
+        printf("Digite um número inteiro. \n");
+        scanf("%d", &num);
+    }
+
+    printf("Quantidade de números digitados entre 100 e 200: %d \n", cont);
 }
 
 //12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
