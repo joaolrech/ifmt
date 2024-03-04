@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 //1. Faça um programa que imprima todos os números de 1 até 100.
 
@@ -147,7 +148,7 @@ void q08()
     float sal[10], al[10];
     char nome[10][99];
 
-    for(i = 0; i < 3; i ++)
+    for(i = 0; i < 10; i ++)
     {
         al[i] = 0;
 
@@ -162,7 +163,7 @@ void q08()
             al[i] = sal[i] * 0.1;
     }
 
-    for(i = 0; i < 3; i ++)
+    for(i = 0; i < 10; i ++)
     {
         printf("Nome: %s \n", nome[i]);
         
@@ -221,16 +222,60 @@ void q09()
 }
 
 //10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
-//   que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
-//   jogadores, crie um programa que apresente as seguintes informações:
-//   • O peso médio e a idade média de cada um dos times;
-//   • O atleta mais pesado de cada time;
-//   • O atleta mais jovem de cada time;
-//   • O peso médio e a idade média de todos os participantes.
+//    que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
+//    jogadores, crie um programa que apresente as seguintes informações:
+//    • O peso médio e a idade média de cada um dos times;
+//    • O atleta mais pesado de cada time;
+//    • O atleta mais jovem de cada time;
+//    • O peso médio e a idade média de todos os participantes.
 
 void q10()
-{
-    
+{   int i, j, idade, menoridade = -1;
+    char nomepais[99][30], nomeatleta[99][12], atletapesado[99], atletajovem[99];
+    float somapeso, somaidade, peso, maiorpeso = 0, somageralpeso = 0, somageralidade = 0;
+
+    for(i = 0; i < 30; i ++)
+    {   
+        somapeso = 0;
+        somaidade = 0;
+
+        printf("Digite o nome do país. \n");
+        scanf(" %99[^\n]", nomepais[i]);
+
+        for(j = 0; j < 12; j ++)
+        {   
+            printf("Digite o nome, o peso e a idade do atleta número %d \n", i + 1);
+            scanf(" %99[^\n]", nomeatleta[j]);
+            scanf("%f", &peso);
+            scanf("%d", &idade);
+
+            somapeso += peso;
+            somaidade += idade;
+
+            if(idade < menoridade)
+            {   
+                menoridade = idade;
+                strcpy(atletajovem, nomeatleta[j]);
+            }
+
+            if(peso > maiorpeso)
+            {   
+                maiorpeso = peso;
+                strcpy(atletapesado, nomeatleta[j]);
+            }
+        }
+
+        somageralidade += somaidade;
+        somageralpeso += somapeso;
+
+        printf("Peso médio dos atletas do(a) %s: %f \n", nomepais[i], somapeso / 12);
+        printf("Idade média dos atletas do(a) %s: %f \n", nomepais[i], somaidade / 12);
+        printf("Atleta mais pesado do(a) %s: %s \n", nomepais[i], atletapesado);
+        printf("Atleta mais jovem do(a) %s: %s \n", nomepais[i], atletajovem);
+    }
+
+    printf("Peso médio de todos os participantes: %f \n", somageralpeso / (12 * 30));
+    printf("Idade média de todos os participantes: %f \n", somageralidade / (12 * 30));
 }
 
 //11. Construa um programa que leia vários números e informe quantos números
@@ -257,50 +302,145 @@ void q11()
 }
 
 //12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
-//ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
-//ano, fazer um programa que calcule e imprima o tempo necessário para que a
-//população do país A ultrapasse a população do país B.
+//    ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
+//    ano, fazer um programa que calcule e imprima o tempo necessário para que a
+//    população do país A ultrapasse a população do país B.
 
 void q12()
 {
+    float a = 5000000, b = 7000000;
+    int anos = 0;
 
+    while(a <= b)
+    {
+        a *= 1.03;
+        b *= 1.02;
+
+        anos ++;
+    }
+    
+    printf("Tempo necessário: %d anos. \n", anos);
 }
 
 //13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
-//de consumo. Para cada consumidor, são digitados os seguintes dados:
-//• número do consumidor
-//• quantidade de kWh consumidos durante o mês
-//• tipo (código) do consumidor
-//1-residencial, preço em reais por kWh = 0,3
-//2-comercial, preço em reais por kWh = 0,5
-//3-industrial, preço em reais por kWh = 0,7
-//Os dados devem ser lidos até que seja encontrado o consumidor com número 0
-//(zero). O programa deve calcular e imprimir:
-//• O custo total para cada consumidor
-//• O total de consumo para os três tipos de consumidor
-//• Amédia de consumo dos tipos 1 e 2
+//    de consumo. Para cada consumidor, são digitados os seguintes dados:
+//    • número do consumidor
+//    • quantidade de kWh consumidos durante o mês
+//    • tipo (código) do consumidor
+//    1 - residencial, preço em reais por kWh = 0,3
+//    2 - comercial, preço em reais por kWh = 0,5
+//    3 - industrial, preço em reais por kWh = 0,7
+//    Os dados devem ser lidos até que seja encontrado o consumidor com número 0
+//    (zero). O programa deve calcular e imprimir:
+//    • O custo total para cada consumidor
+//    • O total de consumo para os três tipos de consumidor
+//    • A média de consumo dos tipos 1 e 2
 
 void q13()
 {
-    
+    int nc, tc, i, count = 0, keep = 0;
+    float c, p, sres = 0, scom = 0, sind = 0;
+
+    printf("Digite o número do consumidor. \n");
+    scanf("%d", &nc);
+
+    while(nc != 0)
+    {
+        if(keep == 0)
+        {
+            printf("Digite a quantidade de kWh consumidos. \n");
+            scanf("%f", &c);
+        }
+
+        printf("Digite o tipo do consumidor. \n");
+        printf("1 - Residencial, 2 - Comercial, 3 - Industrial. \n");
+        scanf("%d", &tc);
+
+        switch(tc)
+        {
+            case 1:
+                p = c * 0.3;
+                sres += c;
+                count ++;
+                keep = 0;
+                break;
+            case 2:
+                p = c * 0.5;
+                scom += c;
+                count ++;
+                keep = 0;
+                break;
+            case 3:
+                p = c * 0.7;
+                sind += c;
+                keep = 0;
+                break;
+            default:
+                printf("Tipo inválido. \n");
+                keep = 1;
+        }
+
+        if(keep == 0)
+        {
+            printf("Custo do consumidor %d: R$%.2f \n", nc, p);
+            printf("Digite o número do consumidor. \n");
+            scanf("%d", &nc);
+        }
+    }
+
+    printf("Consumo total residencial: %.0fkWh \n", sres);
+    printf("Consumo total comercial: %.0fkWh \n", scom);
+    printf("Consumo total industrial: %.0fkWh \n", sind);
+    printf("Consumo médio de residencial e comercial: %.2fkWh \n", (sres + scom) / count);
 }
 
-//14. Faça umprograma que leia vários números inteiros e apresente o fatorial de cada
-//número. O algoritmo encerra quando se digita um número menor do que 1.
+//14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
+//    número. O algoritmo encerra quando se digita um número menor do que 1.
 
 void q14()
 {
-    
+    int num, i;
+    unsigned long fatorial;
+
+    printf("Digite um número inteiro. \n");
+    scanf("%d", &num);
+
+    while(num > 1)
+    {
+        fatorial = 1;
+
+        for(i = 1; i <= num; i ++)
+            fatorial *= i;
+
+        printf("%lu \n", fatorial);
+
+        printf("Digite um número inteiro. \n");
+        scanf("%d", &num);
+    }
 }
 
 //15. Faça um programa que permita entrar com a idade de várias pessoas e
-//imprima:
-//• total de pessoas com menos de 21 anos
-//• total de pessoas com mais de 50 anos
+//    imprima:
+//    • total de pessoas com menos de 21 anos
+//    • total de pessoas com mais de 50 anos
 
 void q15()
 {
-    
+    int i, novos = 0, velhos = 0, idade;
+
+    for(i = 0; i < 99; i ++)
+    {
+        printf("Digite sua idade. \n");
+        scanf("%d", &idade);
+
+        if(i < 21)
+            novos ++;
+        else if(i > 50)
+            velhos ++;
+    }
+
+    printf("Total de pessoas com menos de 21 anos: %d \n", novos);
+    printf("Total de pessoas com mais de 50 anos: %d \n", velhos);
 }
 
 //16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
@@ -351,7 +491,7 @@ void q18()
 //• quantidade de alunos aprovados;
 //• média de cada turma;
 //• percentual de reprovados.
-//Obs.: Considere aprovado comnota >= 7.0
+//Obs.: Considere aprovado com nota >= 7.0
 
 void q19()
 {
