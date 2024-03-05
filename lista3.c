@@ -444,54 +444,87 @@ void q15()
 }
 
 //16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
-//sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
-//números inteiros lidos. Para isso, basta subtrair o divisor ao dividendo, sucessivamente,
-//até que o resultado seja menor do que o divisor. O número de subtrações
-//realizadas corresponde ao quociente inteiro e o valor restante da subtração corresponde
-//ao resto. Suponha que os números lidos sejam positivos e que o dividendo
-//seja maior do que o divisor.
+//    sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
+//    números inteiros lidos. Para isso, basta subtrair o divisor ao dividendo, sucessivamente,
+//    até que o resultado seja menor do que o divisor. O número de subtrações
+//    realizadas corresponde ao quociente inteiro e o valor restante da subtração corresponde
+//    ao resto. Suponha que os números lidos sejam positivos e que o dividendo
+//    seja maior do que o divisor.
 
 void q16()
 {
-    
+    int a, b, cont = 0;
+
+    printf("Digite dois números inteiros positivos, em ordem decrescente. \n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    while(a > b)
+    {
+        a -= b;
+
+        cont ++;
+    }
+
+    printf("Quociente: %d \n", cont);
+    printf("Resto: %d \n", a);
 }
 
 //17. Crie um programa que possa ler um conjunto de pedidos de compra e
-//calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
-//• número de pedido
-//72 Aula 3. Estruturas de Iteração
-//• data do pedido (dia, mês, ano)
-//• preço unitário
-//• quantidade
-//O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
-//como número do pedido.
+//    calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
+//    • número de pedido
+//    • data do pedido (dia, mês, ano)
+//    • preço unitário
+//    • quantidade
+//    O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
+//    como número do pedido.
 
 void q17()
 {
-    
+    char data[10];
+    float preco, precototal = 0;
+    int quant, num;
+
+    printf("Digite o número do pedido. \n");
+    scanf("%d", &num);
+
+    while(num != 0)
+    {
+        printf("Digite a data, o preço unitário e a quantidade desejada. \n");
+        scanf(" %10[^\n]", data);
+        scanf("%f", &preco);
+        scanf("%d", &quant);
+
+        precototal += (preco * quant);
+
+        printf("Digite o número do pedido. \n");
+        scanf("%d", &num);
+    }
+
+    printf("Valor total: R$%.2f \n", precototal);
 }
 
 //18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
-//serviços diários de:
-//• R$15,00, se o número de dias for menor que 10;
-//• R$8,00, se o número de dias for maior ou igual a 10;
-//Faça umprograma que imprima o nome, a conta e o número da conta de cada
-//cliente e ao final o total faturado pela pousada.
-//O programa deverá ler novos clientes até que o usuário digite 0 (zero) como
-//número da conta.
+//    serviços diários de:
+//    • R$15,00, se o número de dias for menor que 10;
+//    • R$8,00, se o número de dias for maior ou igual a 10;
+//    Faça um programa que imprima o nome, a conta e o número da conta de cada
+//    cliente e ao final o total faturado pela pousada.
+//    O programa deverá ler novos clientes até que o usuário digite 0 (zero) como
+//    número da conta.
 
 void q18()
 {
     
 }
 
-//19. Emuma Universidade, os alunos das turmas de informática fizeram uma prova
-//de algoritmos. Cada turma possui um número de alunos. Criar um programa que
-//imprima:
-//• quantidade de alunos aprovados;
-//• média de cada turma;
-//• percentual de reprovados.
-//Obs.: Considere aprovado com nota >= 7.0
+//19. Em uma Universidade, os alunos das turmas de informática fizeram uma prova
+//    de algoritmos. Cada turma possui um número de alunos. Criar um programa que
+//    imprima:
+//    • quantidade de alunos aprovados;
+//    • média de cada turma;
+//    • percentual de reprovados.
+//    Obs.: Considere aprovado com nota >= 7.0
 
 void q19()
 {
@@ -516,7 +549,6 @@ void q19()
 //• o número de pessoas moradoras do Rio de Janeiro, torcedores de outros
 //clubes;
 //• o número de pessoas de Niterói torcedoras do Fluminense
-//3.12. Exercícios da Aula 73
 //Obs.: O programa encerra quando se digita 0 para o time.
 
 void q20()
