@@ -947,5 +947,6 @@ int main()
         default:
     	    printf("Opção inválida. \n");
     }
+    
     return 0;
 }
