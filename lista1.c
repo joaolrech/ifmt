@@ -371,7 +371,7 @@ int main()
     	    q20();
     	    break;
         default:
-    	    printf(" inválida. \n");
+    	    printf("Opção inválida. \n");
     }
     return 0;
 }
