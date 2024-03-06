@@ -515,7 +515,36 @@ void q17()
 
 void q18()
 {
-    
+    char nome[99];
+    int num, preco, dias, total = 0;
+
+    printf("Digite o número da sua conta. \n");
+    scanf("%d", &num);
+
+    while(num != 0)
+    {
+        printf("Digite seu nome e a quantidade de diárias. \n");
+        scanf(" %99[^\n]", nome);
+        scanf("%d", &dias);
+
+        preco = dias * 30;
+
+        if(dias < 10)
+            preco += 15 * dias;
+        else if(dias >= 10)
+            preco += 8 * dias;
+
+        total += preco;
+
+        printf("Nome: %s \n", nome);
+        printf("Número da conta: %d \n", num);
+        printf("Valor: R$%d.00 \n", preco);
+
+        printf("Digite o número da sua conta. \n");
+        scanf("%d", &num);
+    }
+
+    printf("Total faturado pela pousada: R$%d.00 \n", total);
 }
 
 //19. Em uma Universidade, os alunos das turmas de informática fizeram uma prova
@@ -528,44 +557,140 @@ void q18()
 
 void q19()
 {
-    
+    int turmas, alunos, i, j, aprovados = 0, reprovados = 0;
+    float nota, totalalunos = 0;
+
+    printf("Digite o número de turmas. \n");
+    scanf("%d", &turmas);
+
+    float media[turmas];
+
+    for(i = 0; i < turmas; i ++)
+    {
+        media[i] = 0;
+
+        printf("Digite o número de alunos na turma %d. \n", i + 1);
+        scanf("%d", &alunos);
+
+        totalalunos += alunos;
+
+        for(j = 0; j < alunos; j ++)
+        {
+            printf("Digite a nota do aluno %d. \n", j + 1);
+            scanf("%f", &nota);
+
+            media[i] += nota / alunos;
+
+            if(nota >=7)
+                aprovados ++;
+            else
+                reprovados ++;
+        }
+    }
+
+    printf("Quantidade de alunos aprovados: %d \n", aprovados);
+    for(i = 0; i < turmas; i ++)
+        printf("Média da turma %d: %.2f \n", i + 1, media[i]);
+    printf("Percentual de alunos reprovados: %.2f%% \n", (reprovados / totalalunos) * 100);
 }
 
 //20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
-//• Qual o seu time de coração?
-//1-Fluminense;
-//2-Botafogo;
-//3-Vasco;
-//4-Flamengo;
-//5-Outros
-//• Onde você mora?
-//1-RJ;
-//2-Niterói;
-//3-Outros
-//• Qual o seu salário?
-//Faça um programa que imprima:
-//• o número de torcedores por clube;
-//• a média salarial dos torcedores do Botafogo;
-//• o número de pessoas moradoras do Rio de Janeiro, torcedores de outros
-//clubes;
-//• o número de pessoas de Niterói torcedoras do Fluminense
-//Obs.: O programa encerra quando se digita 0 para o time.
+//    • Qual o seu time de coração?
+//    1 - Fluminense;
+//    2 - Botafogo;
+//    3 - Vasco;
+//    4 - Flamengo;
+//    5 - Outros
+//    • Onde você mora?
+//    1 - RJ;
+//    2 - Niterói;
+//    3 - Outros
+//    • Qual o seu salário?
+//    Faça um programa que imprima:
+//    • o número de torcedores por clube;
+//    • a média salarial dos torcedores do Botafogo;
+//    • o número de pessoas moradoras do Rio de Janeiro, torcedores de outros clubes;
+//    • o número de pessoas de Niterói torcedoras do Fluminense
+//    Obs.: O programa encerra quando se digita 0 para o time.
 
 void q20()
 {
-    
+    int time, endereco, contflu = 0, contbot = 0, contvas = 0, contfla = 0, contoutro = 0, contnitflu = 0;
+    float salario, somasalariobot;
+
+    printf("Qual o seu time de coração? \n");
+    printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+    scanf("%d", &time);
+
+    while(time != 0)
+    {
+        if(time < 0 || time > 5)
+        {
+            printf("Opção inválida. \n");
+
+            printf("Qual o seu time de coração? \n");
+            printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+            scanf("%d", &time);
+
+            continue;
+        }
+
+        printf("Onde você mora? \n");
+        printf("1 - Rio de Janeiro, 2 - Niterói, 3 - Outro \n");
+        scanf("%d", &endereco);
+
+        printf("Qual o seu salário? \n");
+        scanf("%f", &salario);
+
+        switch(time)
+        {
+            case 1:
+                contflu ++;
+                if(endereco == 2)
+                    contnitflu ++;
+                break;
+            case 2:
+                contbot ++;
+                somasalariobot += salario;
+                break;
+            case 3:
+                contvas ++;
+                break;
+            case 4:
+                contfla ++;
+                break;
+            case 5:
+                if(endereco == 1)
+                    contoutro ++;
+        }
+
+        printf("Qual o seu time de coração? \n");
+        printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+        scanf("%d", &time);
+    }
+
+    printf("Quantidade de torcedores do Fluminense: %d \n", contflu);
+    printf("Quantidade de torcedores do Botafogo: %d \n", contbot);
+    printf("Quantidade de torcedores do Vasco: %d \n", contvas);
+    printf("Quantidade de torcedores do Flamengo: %d \n", contfla);
+    if(contbot == 0)
+        printf("Não há dados suficientes para calcular a média salarial dos torcedores do Botafogo. \n");
+    else
+        printf("Média salarial dos torcedores do Botafogo: R$%.2f \n", somasalariobot / contbot);
+    printf("Quantidade de pessoas que moram no Rio de Janeiro e torcem para outros clubes: %d \n", contoutro);
+    printf("Quantidade de pessoas que moram em Niterói e torcem para o Fluminense: %d \n", contnitflu);
 }
 
-//21. Emuma universidade cada aluno possui os seguintes dados:
-//• Renda pessoal;
-//• Renda familiar;
-//• Total gasto com alimentação;
-//• Total gasto com outras despesas;
-//Faça um programa que imprima a porcentagem dos alunos que gasta acima de
-//R$200,00 com outras despesas. O número de alunos com renda pessoal maior
-//que a renda familiar e a porcentagem gasta com alimentação e outras despesas
-//em relação às rendas pessoal e familiar.
-//Obs.: O programa encerra quando se digita 0 para a renda pessoal.
+//21. Em uma universidade cada aluno possui os seguintes dados:
+//    • Renda pessoal;
+//    • Renda familiar;
+//    • Total gasto com alimentação;
+//    • Total gasto com outras despesas;
+//    Faça um programa que imprima a porcentagem dos alunos que gasta acima de
+//    R$200,00 com outras despesas. O número de alunos com renda pessoal maior
+//    que a renda familiar e a porcentagem gasta com alimentação e outras despesas
+//    em relação às rendas pessoal e familiar.
+//    Obs.: O programa encerra quando se digita 0 para a renda pessoal.
 
 void q21()
 {
