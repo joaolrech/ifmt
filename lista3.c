@@ -662,6 +662,7 @@ void q20()
             case 5:
                 if(endereco == 1)
                     contoutro ++;
+                break;
         }
 
         printf("Qual o seu time de coração? \n");
