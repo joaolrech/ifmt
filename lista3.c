@@ -830,19 +830,58 @@ void q29()
     
 }
 
-//30. Faça um programa que receba a idade e o estado civil (C-casado, S-solteiro, Vviúvo
-//e D-desquitado ou separado) de várias pessoas. Calcule e imprima:
-//• a quantidade de pessoas casadas;
-//• a quantidade de pessoas solteiras;
-//• amédia das idades das pessoas viúvas;
-//• a porcentagem de pessoas desquitadas ou separadas dentre todas as pessoas
-//analisadas.
-//Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
-//idade.
+//30. Faça um programa que receba a idade e o estado civil (C - casado, S - solteiro, V - viúvo
+//    e D - desquitado ou separado) de várias pessoas. Calcule e imprima:
+//    • a quantidade de pessoas casadas;
+//    • a quantidade de pessoas solteiras;
+//    • a média das idades das pessoas viúvas;
+//    • a porcentagem de pessoas desquitadas ou separadas dentre todas as pessoas
+//    analisadas.
+//    Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
+//    idade.
 
 void q30()
 {
-    
+    int idade, contcasado = 0, contsolteiro = 0, contseparado = 0, contviuvo = 0;
+    float somaidadeviuvo = 0, contgeral = 0;
+    char ec;
+
+    printf("Digite sua idade. \n");
+    scanf("%d", &idade);
+
+    while(idade >= 0)
+    {
+        printf("Digite seu estado civil. \n");
+        printf("C - Casado, S - Solteiro, V - Viúvo, D - Desquitado ou separado. \n");
+        scanf("%c", &ec);
+
+        switch(ec)
+        {
+            case 'C':
+                contcasado ++;
+                break;
+            case 'S':
+                contsolteiro ++;
+                break;
+            case 'V':
+                contviuvo ++;
+                somaidadeviuvo += idade;
+                break;
+            case 'D':
+                contseparado ++;
+                break;
+        }
+
+        contgeral ++;
+
+        printf("Digite sua idade. \n");
+        scanf("%d", &idade);
+    }
+
+    printf("Quantidade de pessoas casadas: %d \n", contcasado);
+    printf("Quantidade de pessoas solteiras: %d \n", contsolteiro);
+    printf("Média das idades as pessoas viúvas: %.2f \n", somaidadeviuvo / contviuvo);
+    printf("Percentual de pessoas desquitadas ou separadas: %.2f \n", (contseparado / contgeral) * 100);
 }
 
 int main()
