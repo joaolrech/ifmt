@@ -627,7 +627,7 @@ void q20()
 
     while(time != 0)
     {
-        if(time < 0 || time > 5)
+        if(time < 1 || time > 5)
         {
             printf("Opção inválida. \n");
 
@@ -841,7 +841,7 @@ void q25()
 }
 
 //26. Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma
-//    certa cidade, em umdeterminado dia. Para cada casa visitada foram fornecidos o
+//    certa cidade, em um determinado dia. Para cada casa visitada foram fornecidos o
 //    número do canal (4, 5, 7, 12) e o número de pessoas que estavam assistindo a ele
 //    naquela casa. Se a televisão estivesse desligada, nada seria anotado, ou seja, esta
 //    casa não entraria na pesquisa. Criar um programa que:
@@ -852,7 +852,53 @@ void q25()
 
 void q26()
 {
-    
+    int canal, cont4 = 0, cont5 = 0, cont7 = 0, cont12 = 0, audiencia;
+    float contgeral = 0;
+
+    printf("Digite o canal que está sendo assistido. \n");
+    scanf("%d", &canal);
+
+    while(canal != 0)
+    {
+        if(canal != 4 && canal != 5 && canal != 7 && canal != 12)
+        {
+            printf("Opção inválida. \n");
+
+            printf("Digite o canal que está sendo assistido. \n");
+            scanf("%d", &canal);
+
+            continue;
+        }
+
+        printf("Digite quantas pessoas estão assistindo. \n");
+        scanf("%d", &audiencia);
+
+        switch(canal)
+        {
+            case 4:
+                cont4 += audiencia;
+                break;
+            case 5:
+                cont5 += audiencia;
+                break;
+            case 7:
+                cont7 += audiencia;
+                break;
+            case 12:
+                cont12 += audiencia;
+                break;
+        }
+
+        contgeral += audiencia;
+
+        printf("Digite o canal que está sendo assistido. \n");
+        scanf("%d", &canal);
+    }
+
+    printf("Percentual de audiência do canal 4: %.2f%% \n", (cont4 / contgeral) * 100);
+    printf("Percentual de audiência do canal 5: %.2f%% \n", (cont5 / contgeral) * 100);
+    printf("Percentual de audiência do canal 7: %.2f%% \n", (cont7 / contgeral) * 100);
+    printf("Percentual de audiência do canal 12: %.2f%% \n", (cont12 / contgeral) * 100);
 }
 
 //27. Crie um programa que calcule e imprima o CR do período para os alunos de
@@ -861,8 +907,8 @@ void q26()
 //    • quantidade de disciplinas cursadas;
 //    • notas em cada disciplina;
 //    Além do CR de cada aluno, o programa deve imprimir o melhor CR dos
-//    alunos que cursaram5 ou mais disciplinas.
-//    • fim da entrada de dados é marcada por uma matrícula inválida (matrículas
+//    alunos que cursaram 5 ou mais disciplinas.
+//    • o fim da entrada de dados é marcada por uma matrícula inválida (matrículas
 //    válidas de 1 a 5000);
 //    • CR do aluno é igual à média aritmética de suas notas.
 
