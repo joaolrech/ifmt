@@ -230,9 +230,9 @@ void q09()
 //    • O peso médio e a idade média de todos os participantes.
 
 void q10()
-{   int i, j, idade, menoridade = -1;
+{   int i, j, idade, menoridade = 999;
     char nomepais[99][30], nomeatleta[99][12], atletapesado[99], atletajovem[99];
-    float somapeso, somaidade, peso, maiorpeso = 0, somageralpeso = 0, somageralidade = 0;
+    float somapeso, somaidade, peso, maiorpeso = -1, somageralpeso = 0, somageralidade = 0;
 
     for(i = 0; i < 30; i ++)
     {   
@@ -244,7 +244,7 @@ void q10()
 
         for(j = 0; j < 12; j ++)
         {   
-            printf("Digite o nome, o peso e a idade do atleta número %d \n", i + 1);
+            printf("Digite o nome, o peso e a idade do atleta número %d \n", j + 1);
             scanf(" %99[^\n]", nomeatleta[j]);
             scanf("%f", &peso);
             scanf("%d", &idade);
@@ -426,9 +426,12 @@ void q14()
 
 void q15()
 {
-    int i, novos = 0, velhos = 0, idade;
+    int i, novos = 0, velhos = 0, idade, quant;
 
-    for(i = 0; i < 99; i ++)
+    printf("Digite a quantidade de pessoas. \n");
+    scanf("%d", &quant);
+
+    for(i = 0; i < quant; i ++)
     {
         printf("Digite sua idade. \n");
         scanf("%d", &idade);
@@ -699,47 +702,113 @@ void q21()
 }
 
 //22. Crie um programa que ajude o DETRAN a saber o total de recursos que foram
-//arrecadados com a aplicação de multas de trânsito.
-//O algoritmo deve ler as seguintes informações para cada motorista:
-//• número da carteira de motorista (de 1 a 4327);
-//• número demultas;
-//• valor de cada uma das multas.
-//Deve ser impresso o valor da dívida para cada motorista e ao final da leitura o
-//total de recursos arrecadados (somatório de todas as multas). O programa deverá
-//imprimir tambémo número da carteira domotorista que obteve o maior número
-//de multas.
-//Obs.: O programa encerra ao ler a carteira de motorista de valor 0.
+//    arrecadados com a aplicação de multas de trânsito.
+//    O algoritmo deve ler as seguintes informações para cada motorista:
+//    • número da carteira de motorista (de 1 a 4327);
+//    • número de multas;
+//    • valor de cada uma das multas.
+//    Deve ser impresso o valor da dívida para cada motorista e ao final da leitura o
+//    total de recursos arrecadados (somatório de todas as multas). O programa deverá
+//    imprimir tambémo número da carteira do motorista que obteve o maior número
+//    de multas.
+//    Obs.: O programa encerra ao ler a carteira de motorista de valor 0.
 
 void q22()
 {
-    
+    int num, quant, i;
+    float somageral = 0, soma, valor;
+
+    printf("Digite o número da carteira de motorista. \n");
+    scanf("%d", &num);
+
+    while(num != 0)
+    {
+        printf("Digite o número de multas. \n");
+        scanf("%d", &quant);
+
+        soma = 0;
+
+        for(i = 0; i < quant; i ++)
+        {
+            printf("Digite o valor da multa %d. \n", i + 1);
+            scanf("%f", &valor);
+
+            soma += valor;
+        }
+
+        printf("Dívida do motorista %d: R$%.2f \n", num, soma);
+
+        somageral += soma;
+
+        printf("Digite o número da carteira de motorista. \n");
+        scanf("%d", &num);
+    }
+
+    printf("Total de recursos arrecadados: R$%.2f \n", somageral);
 }
 
 //23. Crie um programa que leia um conjunto de informações (nome, sexo, idade, peso
-//e altura) dos atletas que participaram de uma olimpíada, e informar:
-//• a atleta do sexo feminino mais alta;
-//• o atleta do sexomasculinomais pesado;
-//• amédia de idade dos atletas.
-//Obs.: Deverão se lidos dados dos atletas até que seja digitado o nome @ para um
-//atleta.
-//Para resolver este exercício, consulte a aula 7 que aborda o tratamento de strings,
-//como comparação e atribuição de textos.
+//    e altura) dos atletas que participaram de uma olimpíada, e informar:
+//    • a atleta do sexo feminino mais alta;
+//    • o atleta do sexo masculino mais pesado;
+//    • a média de idade dos atletas.
+//    Obs.: Deverão se lidos dados dos atletas até que seja digitado o nome @ para um
+//    atleta.
+//    Para resolver este exercício, consulte a aula 7 que aborda o tratamento de strings,
+//    como comparação e atribuição de textos.
 
 void q23()
 {
-    
+    char nome[99], mulheralta[99], homempesado[99];
+    int sexo, idade, contador = 0;
+    float peso, altura, somaidade = 0, maioralturamulher = -1, maiorpesohomem = -1;
+
+    printf("Digite o nome do atleta. \n");
+    scanf(" %99[^\n]", nome);
+
+    while(nome[0] != '@')
+    {
+        printf("Digite o gênero do atleta. \n");
+        printf("0 - Feminino, 1 - Masculino. \n");
+        scanf("%d", &sexo);
+        printf("Digite a idade, a altura e o peso do atleta. \n");
+        scanf("%d", &idade);
+        scanf("%f", &altura);
+        scanf("%f", &peso);
+
+        if(sexo == 0 && altura > maioralturamulher)
+        {   
+            maioralturamulher = altura;
+            strcpy(mulheralta, nome);
+        }
+
+        if(sexo == 1 && peso > maiorpesohomem)
+        {   
+            maiorpesohomem = peso;
+            strcpy(homempesado, nome);
+        }
+
+        somaidade += idade;
+        contador++;
+
+        printf("Digite o nome do atleta. \n");
+        scanf(" %99[^\n]", nome);
+    }
+
+    printf("Atleta do sexo feminino mais alta: %s \n", mulheralta);
+    printf("Atleta do sexo masculino mais pesado: %s \n", homempesado);
+    printf("Média de idade dos atletas: %.2f \n", somaidade / contador);
 }
 
 //24. Faça um programa que calcule quantos litros de gasolina são usados em uma
-//viagem, sabendo que um carro faz 10 km/litro. O usuário fornecerá a velocidade
-//do carro e o período de tempo que viaja nesta velocidade para cada trecho do
-//percurso. Então, usando as fórmulas distância = tempo x velocidade e litros
-//consumidos = distância / 10, o programa computará, para todos os valores nãonegativos
-//de velocidade, os litros de combustível consumidos. O programa deverá
-//imprimir a distância e o número de litros de combustível gastos naquele trecho.
-//Deverá imprimir também o total de litros gastos na viagem. O programa encerra
-//quando o usuário informar umvalor negativo de velocidade.
-//74 Aula 3. Estruturas de Iteração
+//    viagem, sabendo que um carro faz 10 km/litro. O usuário fornecerá a velocidade
+//    do carro e o período de tempo que viaja nesta velocidade para cada trecho do
+//    percurso. Então, usando as fórmulas distância = tempo x velocidade e litros
+//    consumidos = distância / 10, o programa computará, para todos os valores nãonegativos
+//    de velocidade, os litros de combustível consumidos. O programa deverá
+//    imprimir a distância e o número de litros de combustível gastos naquele trecho.
+//    Deverá imprimir também o total de litros gastos na viagem. O programa encerra
+//    quando o usuário informar umvalor negativo de velocidade.
 
 void q24()
 {
@@ -747,24 +816,24 @@ void q24()
 }
 
 //25. Faça umprograma que calcule o imposto de renda de umgrupo de contribuintes,
-//considerando que:
-//a) os dados de cada contribuinte (CIC, número de dependentes e renda bruta
-//anual) serão fornecidos pelo usuário via teclado;
-//b) para cada contribuinte será feito umabatimento de R$600 por dependente;
-//c) a renda líquida é obtida diminuindo-se o abatimento com os dependentes
-//da renda bruta anual;
-//d) para saber quanto o contribuinte deve pagar de imposto, utiliza-se a tabela
-//a seguir:
-//Renda Líquida Imposto
-//até R$1000 Isento
-//de R$1001 a R$5000 15%
-//acima de R$5000 25%
-//e) o valor de CIC igual a zero indica final de dados;
-//f ) o programa deverá imprimir, para cada contribuinte, o número do CIC e o
-//imposto a ser pago;
-//g) ao final o programa deverá imprimir o total do imposto arrecadado pela
-//Receita Federal e o número de contribuintes isentos;
-//h) leve em consideração o fato de o primeiro CIC informado poder ser zero.
+//    considerando que:
+//    a) os dados de cada contribuinte (CIC, número de dependentes e renda bruta
+//    anual) serão fornecidos pelo usuário via teclado;
+//    b) para cada contribuinte será feito umabatimento de R$600 por dependente;
+//    c) a renda líquida é obtida diminuindo-se o abatimento com os dependentes
+//    da renda bruta anual;
+//    d) para saber quanto o contribuinte deve pagar de imposto, utiliza-se a tabela
+//    a seguir:
+//    Renda Líquida Imposto
+//    até R$1000 Isento
+//    de R$1001 a R$5000 15%
+//    acima de R$5000 25%
+//    e) o valor de CIC igual a zero indica final de dados;
+//    f ) o programa deverá imprimir, para cada contribuinte, o número do CIC e o
+//    imposto a ser pago;
+//    g) ao final o programa deverá imprimir o total do imposto arrecadado pela
+//    Receita Federal e o número de contribuintes isentos;
+//    h) leve em consideração o fato de o primeiro CIC informado poder ser zero.
 
 void q25()
 {
@@ -772,14 +841,14 @@ void q25()
 }
 
 //26. Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma
-//certa cidade, em umdeterminado dia. Para cada casa visitada foram fornecidos o
-//número do canal (4, 5, 7, 12) e o número de pessoas que estavam assistindo a ele
-//naquela casa. Se a televisão estivesse desligada, nada seria anotado, ou seja, esta
-//casa não entraria na pesquisa. Criar um programa que:
-//• Leia um número indeterminado de dados, isto é, o número do canal e o
-//número de pessoas que estavam assistindo;
-//• Calcule e imprima a porcentagem de audiência em cada canal.
-//Obs.: Para encerrar a entrada de dados, digite o número do canal zero.
+//    certa cidade, em umdeterminado dia. Para cada casa visitada foram fornecidos o
+//    número do canal (4, 5, 7, 12) e o número de pessoas que estavam assistindo a ele
+//    naquela casa. Se a televisão estivesse desligada, nada seria anotado, ou seja, esta
+//    casa não entraria na pesquisa. Criar um programa que:
+//    • Leia um número indeterminado de dados, isto é, o número do canal e o
+//    número de pessoas que estavam assistindo;
+//    • Calcule e imprima a porcentagem de audiência em cada canal.
+//    Obs.: Para encerrar a entrada de dados, digite o número do canal zero.
 
 void q26()
 {
@@ -787,47 +856,120 @@ void q26()
 }
 
 //27. Crie um programa que calcule e imprima o CR do período para os alunos de
-//computação. Para cada aluno, o algoritmo deverá ler:
-//• número da matrícula;
-//• quantidade de disciplinas cursadas;
-//• notas em cada disciplina;
-//Além do CR de cada aluno, o programa deve imprimir o melhor CR dos
-//alunos que cursaram5 ou mais disciplinas.
-//• fim da entrada de dados é marcada por uma matrícula inválida (matrículas
-//válidas de 1 a 5000);
-//• CR do aluno é igual à média aritmética de suas notas.
+//    computação. Para cada aluno, o algoritmo deverá ler:
+//    • número da matrícula;
+//    • quantidade de disciplinas cursadas;
+//    • notas em cada disciplina;
+//    Além do CR de cada aluno, o programa deve imprimir o melhor CR dos
+//    alunos que cursaram5 ou mais disciplinas.
+//    • fim da entrada de dados é marcada por uma matrícula inválida (matrículas
+//    válidas de 1 a 5000);
+//    • CR do aluno é igual à média aritmética de suas notas.
 
 void q27()
 {
     
 }
 
-//28. Construa umprograma que receba a idade, a altura e o peso de várias pessoas,
-//Calcule e imprima:
-//3.12. Exercícios da Aula 75
-//• a quantidade de pessoas com idade superior a 50 anos;
-//• amédia das alturas das pessoas com idade entre 10 e 20 anos;
-//• a porcentagem de pessoas com peso inferior a 40 quilos entre todas as
-//pessoas analisadas.
+//28. Construa um programa que receba a idade, a altura e o peso de várias pessoas,
+//    Calcule e imprima:
+//    • a quantidade de pessoas com idade superior a 50 anos;
+//    • a média das alturas das pessoas com idade entre 10 e 20 anos;
+//    • a porcentagem de pessoas com peso inferior a 40 quilos, dentre todas as
+//    pessoas analisadas.
 
 void q28()
 {
-    
+    int i, idade, quant, contmais50 = 0, contmid = 0, contleve = 0;
+    float altura, peso, somaalturamid = 0, contgeral = 0;
+
+    printf("Digite a quantidade de pessoas. \n");
+    scanf("%d", &quant);
+
+    for(i = 0; i < quant; i ++)
+    {
+        printf("Digite sua idade, altura e peso. \n");
+        scanf("%d", &idade);
+        scanf("%f", &altura);
+        scanf("%f", &peso);
+
+        if(idade > 50)
+            contmais50 ++;
+        if(idade >= 10 && idade <= 20)
+        {
+            somaalturamid += altura;
+            contmid ++;
+        }
+        if(peso < 40)
+            contleve ++;
+
+        contgeral ++;
+    }
+
+    printf("Quantidade de pessoas com idade superior a 50 anos: %d \n", contmais50);
+    printf("Média das alturas das pessoas com idade entre 10 e 20 anos: %.2f \n", somaalturamid / contmid);
+    printf("Percentual de pessoas com peso inferior a 40 quilos: %.2f%% \n", (contleve / contgeral) * 100);
 }
 
 //29. Construa um programa que receba o valor e o código de várias mercadorias
-//vendidas em umdeterminado dia. Os códigos obedecem a lista a seguir:
-//L-limpeza
-//A-Alimentação
-//H-Higiene
-//Calcule e imprima:
-//• o total vendido naquele dia, com todos os códigos juntos;
-//• o total vendido naquele dia em cada um dos códigos.
-//Obs.: Para encerrar a entrada de dados, digite o valor da mercadoria zero.
+//    vendidas em um determinado dia. Os códigos obedecem a lista a seguir:
+//    L - limpeza
+//    A - Alimentação
+//    H - Higiene
+//    Calcule e imprima:
+//    • o total vendido naquele dia, com todos os códigos juntos;
+//    • o total vendido naquele dia em cada um dos códigos.
+//    Obs.: Para encerrar a entrada de dados, digite o valor da mercadoria zero.
 
 void q29()
 {
-    
+    char cod;
+    float preco, totalgeral = 0, totall = 0, totala = 0, totalh = 0;
+
+    printf("Digite o código da mercadoria. \n");
+    printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+    scanf("%c", &cod);
+
+    while(cod != '0')
+    {
+        if(cod != 'L' && cod != 'A'  && cod != 'H')
+        {
+            printf("Opção inválida. \n");
+
+            printf("Digite o código da mercadoria. \n");
+            printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+            scanf("%c", &cod);
+
+            continue;
+        }
+
+        printf("Digite o preço da mercadoria. \n");
+        scanf("%f", &preco);
+
+        totalgeral += preco;
+
+        switch(cod)
+        {
+            case 'L':
+                totall += preco;
+                break;
+            case 'A':
+                totala += preco;
+                break;
+            case 'H':
+                totalh += preco;
+                break;
+        }
+
+        printf("Digite o código da mercadoria. \n");
+        printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+        scanf(" %c", &cod);
+    }
+
+    printf("Total vendido: R$%.2f \n", totalgeral);
+    printf("Total vendido em limpeza: R$%.2f \n", totall);
+    printf("Total vendido em alimentação: R$%.2f \n", totala);
+    printf("Total vendido em higiene: R$%.2f \n", totalh);
 }
 
 //30. Faça um programa que receba a idade e o estado civil (C - casado, S - solteiro, V - viúvo
@@ -881,7 +1023,7 @@ void q30()
     printf("Quantidade de pessoas casadas: %d \n", contcasado);
     printf("Quantidade de pessoas solteiras: %d \n", contsolteiro);
     printf("Média das idades as pessoas viúvas: %.2f \n", somaidadeviuvo / contviuvo);
-    printf("Percentual de pessoas desquitadas ou separadas: %.2f \n", (contseparado / contgeral) * 100);
+    printf("Percentual de pessoas desquitadas ou separadas: %.2f%% \n", (contseparado / contgeral) * 100);
 }
 
 int main()
