@@ -706,11 +706,9 @@ void q21()
 
     while(rp != 0)
     {
-        printf("Digite sua renda familiar. \n");
+        printf("Digite sua renda familiar, o total gasto com alimentação e o total gasto com outras despesas. \n");
         scanf("%f", &rf);
-        printf("Digite o total gasto com alimentação. \n");
         scanf("%f", &ga);
-        printf("Digite o total gasto com outras despesas. \n");
         scanf("%f", &go);
 
         if(go > 200)
@@ -721,7 +719,7 @@ void q21()
 
         contgeral ++;
 
-        printf("Percentual de gastos: %.2f%%", ((ga + go) / (rf + rp)) * 100);
+        printf("Percentual de gastos do aluno %.0f: %.2f%%", contgeral, ((ga + go) / (rf + rp)) * 100);
 
         printf("Digite sua renda pessoal. \n");
         scanf("%f", &rp);
