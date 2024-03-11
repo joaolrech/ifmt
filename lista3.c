@@ -698,7 +698,37 @@ void q20()
 
 void q21()
 {
-    
+    float rp, rf, ga, go, contgeral = 0;
+    int contgo = 0, contrico = 0;
+
+    printf("Digite sua renda pessoal. \n");
+    scanf("%f", &rp);
+
+    while(rp != 0)
+    {
+        printf("Digite sua renda familiar. \n");
+        scanf("%f", &rf);
+        printf("Digite o total gasto com alimentação. \n");
+        scanf("%f", &ga);
+        printf("Digite o total gasto com outras despesas. \n");
+        scanf("%f", &go);
+
+        if(go > 200)
+            contgo ++;
+        
+        if(rp > rf)
+            contrico ++;
+
+        contgeral ++;
+
+        printf("Percentual de gastos: %.2f%%", ((ga + go) / (rf + rp)) * 100);
+
+        printf("Digite sua renda pessoal. \n");
+        scanf("%f", &rp);
+    }
+
+    printf("Percentual de alunos que gastam acima de R$200.00 com outras despesas: %.2f%% \n", (contgo / contgeral) * 100);
+    printf("Número de alunos com renda pessoal maior do que a renda familiar: %d \n", contrico);
 }
 
 //22. Crie um programa que ajude o DETRAN a saber o total de recursos que foram
