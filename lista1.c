@@ -193,7 +193,7 @@ void q15()
     printf("Digite o valor do produto e o percentual de desconto. \n");
     scanf("%f", &valor);
     scanf("%f", &percentual);
-    percentual = percentual / 100;
+    percentual /= 100;
 
     printf("Valor do desconto: R$%.2f \n", valor * percentual);
     printf("Valor final: R$%.2f \n", valor - (valor * percentual));
@@ -211,7 +211,7 @@ void q16()
     printf("Digite o valor do salário e o percentual de reajuste. \n");
     scanf("%f", &valor);
     scanf("%f", &percentual);
-    percentual = percentual / 100;
+    percentual /= 100;
 
     valorreajuste = percentual * valor;
 
@@ -274,7 +274,7 @@ void q19()
     printf("Digite o valor da prestação vencida, a taxa periódica de juros (%%/mês) e o período de atraso (meses). \n");
     scanf("%f", &valor);
     scanf("%f", &taxajuros);
-    taxajuros = taxajuros / 100;
+    taxajuros /= 100;
     scanf("%d", &atraso);
 
     valorjuros = valor * (atraso * taxajuros);
