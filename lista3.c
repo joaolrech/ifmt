@@ -832,32 +832,49 @@ void q23()
 //    viagem, sabendo que um carro faz 10 km/litro. O usuário fornecerá a velocidade
 //    do carro e o período de tempo que viaja nesta velocidade para cada trecho do
 //    percurso. Então, usando as fórmulas distância = tempo x velocidade e litros
-//    consumidos = distância / 10, o programa computará, para todos os valores nãonegativos
+//    consumidos = distância / 10, o programa computará, para todos os valores não negativos
 //    de velocidade, os litros de combustível consumidos. O programa deverá
 //    imprimir a distância e o número de litros de combustível gastos naquele trecho.
 //    Deverá imprimir também o total de litros gastos na viagem. O programa encerra
-//    quando o usuário informar umvalor negativo de velocidade.
+//    quando o usuário informar um valor negativo de velocidade.
 
 void q24()
 {
-    
+    float velocidade, distancia = 0, tempo;
+
+    printf("Digite a velocidade (km/h). \n");
+    scanf("%f", &velocidade);
+
+    while(velocidade >= 0)
+    {
+        printf("Digite quanto tempo permaneceu na velocidade digitada (h). \n");
+        scanf("%f", &tempo);
+
+        distancia += velocidade * tempo;
+
+        printf("Digite a velocidade (km/h). \n");
+        scanf("%f", &velocidade);
+    }
+
+    printf("Distância percorrida: %.2fkm \n", distancia);
+    printf("Consumo de combustível: %.2fL \n", distancia / 10);
 }
 
-//25. Faça umprograma que calcule o imposto de renda de umgrupo de contribuintes,
+//25. Faça um programa que calcule o imposto de renda de um grupo de contribuintes,
 //    considerando que:
 //    a) os dados de cada contribuinte (CIC, número de dependentes e renda bruta
 //    anual) serão fornecidos pelo usuário via teclado;
-//    b) para cada contribuinte será feito umabatimento de R$600 por dependente;
+//    b) para cada contribuinte será feito um abatimento de R$600 por dependente;
 //    c) a renda líquida é obtida diminuindo-se o abatimento com os dependentes
 //    da renda bruta anual;
 //    d) para saber quanto o contribuinte deve pagar de imposto, utiliza-se a tabela
 //    a seguir:
-//    Renda Líquida Imposto
-//    até R$1000 Isento
-//    de R$1001 a R$5000 15%
-//    acima de R$5000 25%
+//    Renda Líquida         Imposto
+//    até R$1000            Isento
+//    de R$1001 a R$5000    15%
+//    acima de R$5000       25%
 //    e) o valor de CIC igual a zero indica final de dados;
-//    f ) o programa deverá imprimir, para cada contribuinte, o número do CIC e o
+//    f) o programa deverá imprimir, para cada contribuinte, o número do CIC e o
 //    imposto a ser pago;
 //    g) ao final o programa deverá imprimir o total do imposto arrecadado pela
 //    Receita Federal e o número de contribuintes isentos;
