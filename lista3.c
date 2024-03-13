@@ -882,7 +882,48 @@ void q24()
 
 void q25()
 {
-    
+    int cic, dependentes, i, contisento = 0;
+    float renda, imposto, somaimposto = 0;
+
+    printf("Digite o seu CIC. \n");
+    scanf("%d", &cic);
+
+    while(cic != 0)
+    {
+        printf("Digite o número de dependentes e a renda bruta anual. \n");
+        scanf("%d", &dependentes);
+        scanf("%f", &renda);
+
+        for(i = 0; i < dependentes; i ++)
+        {
+            renda -= 600;
+        }
+
+        if(renda <= 1000)
+        {
+            imposto = 0;
+            contisento ++;
+        }
+        else if(renda > 1000 && renda <= 5000)
+            imposto = renda * 0.15;
+        else if(renda > 5000)
+            imposto = renda * 0.25;
+
+        somaimposto += imposto;
+
+        printf("Número do CIC: %d \n", cic);
+
+        if(imposto == 0)
+        printf("Isento. \n");
+        else
+        printf("Imposto a ser pago: R$%.2f \n", imposto);
+
+        printf("Digite o seu CIC. \n");
+        scanf("%d", &cic);
+    }
+
+    printf("Total de imposto arrecadado pela Receita Federal: R$%.2f \n", somaimposto);
+    printf("Quantidade de contribuintes isentos: %d \n", contisento);
 }
 
 //26. Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma
@@ -959,7 +1000,42 @@ void q26()
 
 void q27()
 {
-    
+    int matricula, disciplinas, i;
+    float nota, somanota, cr, melhorcr = -1;
+
+    printf("Digite o número da matrícula. \n");
+    scanf("%d", &matricula);
+
+    while(matricula >= 1 && matricula <=5000)
+    {
+        printf("Digite a quantidade de disciplinas cursadas. \n");
+        scanf("%d", &disciplinas);
+
+        somanota = 0;
+
+        for(i = 0; i < disciplinas; i ++)
+        {
+            printf("Digite a nota da disciplina %d. \n", i + 1);
+            scanf("%f", &nota);
+
+            somanota += nota;
+        }
+
+        cr = somanota / disciplinas;
+
+        printf("CR: %.2f \n", cr);
+
+        if(disciplinas >= 5 && cr > melhorcr)
+            melhorcr = cr;
+
+        printf("Digite o número da matrícula. \n");
+        scanf("%d", &matricula);
+    }
+
+    if(cr == -1)
+        printf("Nenhum aluno cursou 5 ou mais disciplinas. \n");
+    else
+        printf("Melhor CR dos alunos que cursaram 5 ou mais disciplinas: %.2f \n", melhorcr);
 }
 
 //28. Construa um programa que receba a idade, a altura e o peso de várias pessoas,
