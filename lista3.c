@@ -1095,7 +1095,7 @@ void q29()
 
     printf("Digite o código da mercadoria. \n");
     printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
-    scanf("%c", &cod);
+    scanf(" %c", &cod);
 
     while(cod != '0')
     {
@@ -1105,7 +1105,7 @@ void q29()
 
             printf("Digite o código da mercadoria. \n");
             printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
-            scanf("%c", &cod);
+            scanf(" %c", &cod);
 
             continue;
         }
@@ -1162,7 +1162,7 @@ void q30()
     {
         printf("Digite seu estado civil. \n");
         printf("C - Casado, S - Solteiro, V - Viúvo, D - Desquitado ou separado. \n");
-        scanf("%c", &ec);
+        scanf(" %c", &ec);
 
         switch(ec)
         {
