@@ -124,49 +124,97 @@ void q05()
 
     for(i = 0; i < 15; i ++)
     {
-        printf(" %d        %.2f      %.2f       %.2f    ", i + 1, n1[i], n2[i], media[i]);
+        printf("%-8d %-10.2f %-10.2f %-8.2f", i + 1, n1[i], n2[i], media[i]);
 
         if(situacao[i] == 1)
-            printf("Aprovado \n");
+            printf("Aprovado\n");
         else
-            printf("Reprovado \n");
+            printf("Reprovado\n");
     }
 }
 
 //6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
-//e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
-//li]stagemnumerada com o salário e o novo salário. Declare quantos vetores forem
-//necessários.
+//   e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
+//   listagem numerada com o salário e o novo salário. Declare quantos vetores forem
+//   necessários.
 
 void q06()
 {
-    
+    float salario[20], novosalario[20];
+    int i;
+
+    for(i = 0; i < 20; i ++)
+    {
+        printf("Digite o salário do trabalhador %d. \n", i + 1);
+        scanf("%f", &salario[i]);
+
+        novosalario[i] = salario[i] * 1.08;
+    }
+
+    printf("Trabalhador    Salário Antigo    Salário Novo \n");
+
+    for(i = 0; i < 20; i ++)
+        printf("%-14d %-17.2f %-13.2f \n", i + 1, salario[i], novosalario[i]);
 }
 
-//7. Crie umprograma que leia o preço de compra e o preço de venda de 100mercadorias
-//(utilize vetores). Ao final, o programa deverá imprimir quantas mercadorias
-//proporcionam:
-//• lucro < 10%
-//• 10% <= lucro <= 20%
-//• lucro > 20%
+//7. Crie um programa que leia o preço de compra e o preço de venda de 100 mercadorias
+//   (utilize vetores). Ao final, o programa deverá imprimir quantas mercadorias
+//   proporcionam:
+//   • lucro < 10%
+//   • 10% <= lucro <= 20%
+//   • lucro > 20%
 
 void q07()
 {
-    
+    int i, cont1 = 0, cont2 = 0, cont3 = 0;
+    float pc[100], pv[100];
+
+    for(i = 0; i < 100; i ++)
+    {
+        printf("Digite o preço de compra e o preço de venda da mercadoria %d. \n", i + 1);
+        scanf("%f", &pc[i]);
+        scanf("%f", &pv[i]);
+
+        if(pv[i] < pc[i] * 1.1)
+            cont1 ++;
+        if(pv[i] >= pc[i] * 1.1 && pv[i] <= pc[i] * 1.2)
+            cont2 ++;
+        if(pv[i] > pc[i] * 1.2)
+            cont3 ++;
+    }
+
+    printf("Quantidade de mercadorias que proporcionam menos de 10%% de lucro: %d \n", cont1);
+    printf("Quantidade de mercadorias que proporcionam entre 10%% e 20%% de lucro: %d \n", cont2);
+    printf("Quantidade de mercadorias que proporcionam mais de 20%% de lucro: %d \n", cont3);
 }
 
-//8. Construa umprograma que armazene o código, a quantidade, o valor de compra
-//e o valor de venda de 30 produtos. A listagempode ser de todos os produtos ou
-//somente de umao se digitar o código.
+//8. Construa um programa que armazene o código, a quantidade, o valor de compra
+//   e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
+//   somente de um ao se digitar o código.
 
 void q08()
 {
-    
+    int cod[30], quant[30], i;
+    float vc[30], vv[30];
+
+    for(i = 0; i < 3; i ++)
+    {
+        printf("Digite o código, a quantidade, o valor de compra e o valor de venda do produto. \n");
+        scanf("%d", &cod[i]);
+        scanf("%d", &quant[i]);
+        scanf("%f", &vc[i]);
+        scanf("%f", &vv[i]);
+    }
+
+    printf("Código    Quantidade    Valor de Compra    Valor de Venda \n");
+
+    for(i = 0; i < 3; i ++)
+        printf("%-10d %-13d R$%-17.2f R$%-14.2f \n", cod[i], quant[i], vc[i], vv[i]);
 }
 
 //9. Faça um programa em C que leia dois conjuntos de números inteiros, tendo
-//cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
-//conjuntos.
+//   cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
+//   conjuntos.
 
 void q09()
 {
