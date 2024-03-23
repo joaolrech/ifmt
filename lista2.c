@@ -192,14 +192,12 @@ void q11()
     scanf("%d", &b);
     scanf("%d", &c);
 
-    if(a > b && a > c)
+    if(a >= b && a >= c)
     	printf("Maior número: %d \n", a);
-    else if(b > a && b > c)
+    else if(b >= a && b >= c)
     	printf("Maior número: %d \n", b);
-    else if(c > a && c > b)
+    else if(c >= a && c >= b)
     	printf("Maior número: %d \n", c);
-    else
-    	printf("Números iguais foram digitados. \n");
 }
 
 //12. Faça um programa que leia a idade de uma pessoa e informe:
