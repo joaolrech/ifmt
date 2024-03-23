@@ -197,7 +197,7 @@ void q08()
     int cod[30], quant[30], i;
     float vc[30], vv[30];
 
-    for(i = 0; i < 3; i ++)
+    for(i = 0; i < 30; i ++)
     {
         printf("Digite o código, a quantidade, o valor de compra e o valor de venda do produto. \n");
         scanf("%d", &cod[i]);
@@ -208,7 +208,7 @@ void q08()
 
     printf("Código    Quantidade    Valor de Compra    Valor de Venda \n");
 
-    for(i = 0; i < 3; i ++)
+    for(i = 0; i < 30; i ++)
         printf("%-10d %-13d R$%-17.2f R$%-14.2f \n", cod[i], quant[i], vc[i], vv[i]);
 }
 
