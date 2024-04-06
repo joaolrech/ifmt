@@ -218,24 +218,76 @@ void q08()
 
 void q09()
 {
-    
+    int i, j, c1[10], c2[10];
+
+    for(i = 0; i < 10; i ++)
+    {
+        printf("Digite o número %d do conjunto 1. \n", i + 1);
+        scanf("%d", &c1[i]);
+        printf("Digite o número %d do conjunto 2. \n", i + 1);
+        scanf("%d", &c2[i]);
+    }
+
+    printf("Elementos comuns aos dois conjuntos: \n");
+
+    for(i = 0; i < 10; i ++)
+    {
+        for(j = 0; j < 10; j ++)
+        {
+            if(c1[i] == c2[j])
+            printf("%d \n", c2[j]);
+        }
+    }
 }
 
-//10. Faça umprograma que leia um vetor vet de 10 elementos e obtenha um vetor w
-//cujos componentes são os fatoriais dos respectivos componentes de vet.
+//10. Faça um programa que leia um vetor vet de 10 elementos e obtenha um vetor w
+//    cujos componentes são os fatoriais dos respectivos componentes de vet.
 
 void q10()
 {
-    
+    int w[10], vet[10], i, j;
+
+    for(i = 0; i < 10; i ++)
+    {
+        printf("Digite o elemento %d do vetor. \n", i + 1);
+        scanf("%d", &vet[i]);
+
+        w[i] = 1;
+
+        for(j = 1; j <= vet[i]; j ++)
+            w[i] *= j;
+    }
+
+    printf("Vetor w: \n");
+
+    for(i = 0; i < 10; i++)
+        printf("%d \n", w[i]);
 }
 
-//11. Construa um programa que leia dados para umvetor de 100 elementos inteiros.
-//Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
-//média dos elementos do vetor.
+//11. Construa um programa que leia dados para um vetor de 100 elementos inteiros.
+//    Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
+//    média dos elementos do vetor.
 
 void q11()
 {
-    
+    int i, vet[100], soma = 0, maior, menor;
+
+    for(i = 0; i < 100; i ++);
+    {
+        printf("Digite o valor do elemento %d. \n", i = 1);
+        scanf("%d", &vet[i]);
+
+        if(i == 0)
+            maior = menor = vet[i];
+        else
+        {
+            
+        }
+
+        soma += vet[i];
+
+
+    }
 }
 
 //12. Crie umprograma para gerenciar umsistema de reservas de mesas em uma casa
