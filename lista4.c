@@ -270,8 +270,7 @@ void q10()
 
 void q11()
 {
-    int i, vet[100], maior, menor;
-    float soma = 0, pares = 0;
+    int i, vet[100], maior, menor, soma = 0, pares = 0;
 
     for(i = 0; i < 100; i ++)
     {
@@ -295,8 +294,8 @@ void q11()
 
     printf("Maior: %d \n", maior);
     printf("Menor: %d \n", menor);
-    printf("Percentual de números pares: %.2f%% \n", (pares / 100) * 100);
-    printf("Média: %.2f \n", soma / 100);
+    printf("Percentual de números pares: %.2f%% \n", (pares / 100.0) * 100);
+    printf("Média: %.2f \n", soma / 100.0);
 }
 
 //12. Crie um programa para gerenciar um sistema de reservas de mesas em uma casa
