@@ -270,34 +270,43 @@ void q10()
 
 void q11()
 {
-    int i, vet[100], soma = 0, maior, menor;
+    int i, vet[100], maior, menor;
+    float soma = 0, pares = 0;
 
-    for(i = 0; i < 100; i ++);
+    for(i = 0; i < 100; i ++)
     {
-        printf("Digite o valor do elemento %d. \n", i = 1);
+        printf("Digite o valor do elemento %d. \n", i + 1);
         scanf("%d", &vet[i]);
 
         if(i == 0)
             maior = menor = vet[i];
         else
         {
-            
+            if(vet[i] > maior)
+                maior = vet[i];
+            if(vet[i] < menor)
+                menor = vet[i];
+            if(vet[i] % 2 == 0)
+                pares ++;
         }
 
         soma += vet[i];
-
-
     }
+
+    printf("Maior: %d \n", maior);
+    printf("Menor: %d \n", menor);
+    printf("Percentual de números pares: %.2f%% \n", (pares / 100) * 100);
+    printf("Média: %.2f \n", soma / 100);
 }
 
-//12. Crie umprograma para gerenciar umsistema de reservas de mesas em uma casa
-//de espetáculo. A casa possui 30 mesas de 5 lugares cada. O programa deverá
-//permitir que o usuário escolha o código de uma mesa (100 a 129) e forneça a
-//quantidade de lugares desejados. O programa deverá informar se foi possível
-//realizar a reserva e atualizar a reserva. Se não for possível, o programa deverá
-//emitir uma mensagem. O programa deve terminar quando o usuário digitar
-//o código 0 (zero) para uma mesa ou quando todos os 150 lugares estiverem
-//ocupados.
+//12. Crie um programa para gerenciar um sistema de reservas de mesas em uma casa
+//    de espetáculo. A casa possui 30 mesas de 5 lugares cada. O programa deverá
+//    permitir que o usuário escolha o código de uma mesa (100 a 129) e forneça a
+//    quantidade de lugares desejados. O programa deverá informar se foi possível
+//    realizar a reserva e atualizar a reserva. Se não for possível, o programa deverá
+//    emitir uma mensagem. O programa deve terminar quando o usuário digitar
+//    o código 0 (zero) para uma mesa ou quando todos os 150 lugares estiverem
+//    ocupados.
 
 void q12()
 {
@@ -347,7 +356,7 @@ void q16()
     
 }
 
-//17. Faça umprograma que leia umconjunto de 30 valores inteiros, armazene-os em
+//17. Faça um programa que leia umconjunto de 30 valores inteiros, armazene-os em
 //um vetor e os imprima ao contrário da ordem de leitura.
 
 void q17()
@@ -355,7 +364,7 @@ void q17()
     
 }
 
-//18. Faça umprograma em C que permita entrar com dados para um vetor VET do tipo
+//18. Faça um programa em C que permita entrar com dados para um vetor VET do tipo
 //inteiro com 20 posições, em que podem existir vários elementos repetidos. Gere
 //um vetor VET2 ordenado a partir do vetor VET e que terá apenas os elementos
 //não repetidos.
@@ -373,7 +382,7 @@ void q19()
     
 }
 
-//20. Faça umprograma que leia a matrícula e a média de 100 alunos. Ordene da maior
+//20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 //para a menor nota e imprima uma relação contendo todas as matrículas e médias.
 
 void q20()
