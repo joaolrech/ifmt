@@ -534,7 +534,7 @@ void q22()
 
 void q23()
 {
-    int prato, sobremesa, bebida, cal = 0, keepprato = 0, keepsobremesa = 0, keepbebida = 0;
+    int prato, sobremesa, bebida, cal = 0;
 
     do
     {
@@ -543,20 +543,20 @@ void q23()
         scanf("%d", &prato);
 
         if(prato == 1)
-            cal = cal + 180;
+            cal += 180;
         else if(prato == 2)
-            cal = cal + 230;
+            cal += 230;
         else if(prato == 3)
-            cal = cal + 250;
+            cal += 250;
         else if(prato == 4)
-            cal = cal + 350;
+            cal += 350;
         else
         {
             printf("Opção inválida. \n");
-            keepprato = 1;
+            prato = 0;
         }
     }
-    while(keepprato == 1);
+    while(prato == 0);
 
     do
     {
@@ -565,20 +565,20 @@ void q23()
         scanf("%d", &sobremesa);
 
         if(sobremesa == 1)
-            cal = cal + 75;
+            cal += 75;
         else if(sobremesa == 2)
-            cal = cal + 110;
+            cal += 110;
         else if(sobremesa == 3)
-            cal = cal + 170;
+            cal += 170;
         else if(sobremesa == 4)
-            cal = cal + 200;
+            cal += 200;
         else
         {
             printf("Opção inválida. \n");
-            keepsobremesa = 1;
+            sobremesa = 0;
         }
     }
-    while(keepsobremesa == 1);
+    while(sobremesa == 0);
 
     do
     {
@@ -587,20 +587,20 @@ void q23()
         scanf("%d", &bebida);
 
         if(bebida == 1)
-            cal = cal + 20;
+            cal += 20;
         else if(bebida == 2)
-            cal = cal + 70;
+            cal += 70;
         else if(bebida == 3)
-            cal = cal + 100;
+            cal += 100;
         else if(bebida == 4)
-            cal = cal + 75;
+            cal += 65;
         else
         {
             printf("Opção inválida. \n");
-            keepbebida = 1;
+            bebida = 0;
         }
     }
-    while(keepbebida == 1);
+    while(bebida == 0);
 
     printf("Quantidade total de calorias: %d \n", cal);
 }

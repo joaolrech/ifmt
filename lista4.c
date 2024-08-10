@@ -309,7 +309,48 @@ void q11()
 
 void q12()
 {
-    
+    int mesa[30], num, quant, i, j, soma;
+
+    for(i = 0; i < 30; i ++)
+        mesa[i] = 0;
+
+    while(1)
+    {
+        printf("Escolha o número da sua mesa (100 a 129) e a quantidade de lugares. \n");
+        scanf("%d", &num);
+        scanf("%d", &quant);
+
+        if(num == 0)
+            break;
+
+        if (num < 100 || num > 129)
+        {
+            printf("Código da mesa inválido. \n");
+            continue;
+        }
+
+        if(quant < 1)
+        {
+            printf("Quantidade de lugares inválida. \n");
+            continue;
+        }
+
+        num -= 100;
+
+        if((mesa[num] + quant) > 5)
+            printf("A mesa escolhida não tem essa quantidade de lugares disponíveis. \n");
+        else
+        {
+            mesa[num] += quant;
+            printf("Sua reserva foi feita. \n");
+        }
+
+        soma = 0;
+        for(j = 0; j < 30; j ++)
+            soma += mesa[j];
+        if(soma == 150)
+            break;
+    }
 }
 
 //13. Construa um programa que realize as reservas de passagens áreas de uma companhia.
