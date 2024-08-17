@@ -354,50 +354,106 @@ void q12()
 }
 
 //13. Construa um programa que realize as reservas de passagens áreas de uma companhia.
-//O programa deve permitir cadastrar o número de 10 voos e definir a
-//quantidade de lugares disponíveis para cada um. Após o cadastro, leia vários
-//pedidos de reserva, constituídos do número da carteira de identidade do cliente e
-//do número do voo desejado. Para cada cliente, verificar se há possibilidade no
-//voo desejado. Emcaso afirmativo, imprimir o número da identidade do cliente e
-//o número do voo, atualizando o número de lugares disponíveis. Caso contrário,
-//avisar ao cliente a inexistência de lugares. A leitura do número 0 (zero) para o voo
-//desejado indica o término da leitura de reservas.
+//    O programa deve permitir cadastrar o número de 10 voos e definir a
+//    quantidade de lugares disponíveis para cada um. Após o cadastro, leia vários
+//    pedidos de reserva, constituídos do número da carteira de identidade do cliente e
+//    do número do voo desejado. Para cada cliente, verificar se há possibilidade no
+//    voo desejado. Em caso afirmativo, imprimir o número da identidade do cliente e
+//    o número do voo, atualizando o número de lugares disponíveis. Caso contrário,
+//    avisar ao cliente a inexistência de lugares. A leitura do número 0 (zero) para o voo
+//    desejado indica o término da leitura de reservas.
 
 void q13()
 {
     
 }
 
-//14. Faça um programa que armazene 50 números inteiros em umvetor. O programa
-//deve gerar e imprimir um segundo vetor em que cada elemento é o quadrado do
-//elemento do primeiro vetor.
+//14. Faça um programa que armazene 50 números inteiros em um vetor. O programa
+//    deve gerar e imprimir um segundo vetor em que cada elemento é o quadrado do
+//    elemento do primeiro vetor.
 
 void q14()
 {
-    
+    int vet1[50], vet2[50], i;
+
+    for(i = 0; i < 50; i ++)
+    {
+        printf("Digite o número %d \n", i);
+        scanf("%d", &vet1[i]);
+    }
+
+    for(i = 0; i < 50; i ++)
+    {
+        vet2[i] = vet1[i] * vet1[i];
+        printf("%d \n", vet2[i]);
+    }
 }
 
-//15. Faça um programa que leia e armazene vários números, até digitar o número
-//0. Imprimir quantos números iguais ao último número foram lidos. O limite de
-//números é 100.
+//15. Faça um programa que leia e armazene vários números, até digitar o número 0.
+//    Imprimir quantos números iguais ao último número foram lidos. O limite de
+//    números é 100.
 
-void q15()
+void q15()AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 {
-    
+    int i, j, num[100], ultimo, quant = 0;
+
+    for(i = 0; i < 100; i ++)
+    {
+        printf("Digite o número %d \n", i);
+        scanf("%d", &num[i]);
+
+        if(num[i] == 0)
+            break;
+
+        ultimo = num[i];
+    }
+
+    for(j = 0; j < i; j ++)
+    {
+        if(num[j] == ultimo)
+            quant ++;
+    }
+
+    printf("Quantidade de números iguais ao último número inserido: %d \n", quant - 1);
 }
 
 //16. Crie um programa em C para ler um conjunto de 100 números reais e informe:
-//• quantos números lidos são iguais a 30
-//• quantos são maior que a média
-//• quantos são iguais amédia
+//    • quantos números lidos são iguais a 30
+//    • quantos são maior que a média
+//    • quantos são iguais a média
 
 void q16()
 {
+    int i, somaigual30 = 0, somamaiormedia = 0, somaigualmedia = 0;
+    float num[100], soma = 0, media;
+
+    for(i = 0; i < 100; i ++)
+    {
+        printf("Digite o número %d \n", i);
+        scanf("%f", &num[i]);
+
+        soma += num[i];
+    }
     
+    media = soma / 100;
+
+    for(i = 0; i < 100; i ++)
+    {
+        if(num[i] == 30)
+            somaigual30 ++;
+        if(num[i] > media)
+            somamaiormedia ++;
+        if(num[i] == media)
+            somaigualmedia ++;
+    }
+
+    printf("Quantidade de números iguais a 30: %d \n", somaigual30);
+    printf("Quantidade de números maiores que a média: %d \n", somamaiormedia);
+    printf("Quantidade de números iguais a média: %d \n", somaigualmedia);
 }
 
-//17. Faça um programa que leia umconjunto de 30 valores inteiros, armazene-os em
-//um vetor e os imprima ao contrário da ordem de leitura.
+//17. Faça um programa que leia um conjunto de 30 valores inteiros, armazene-os em
+//    um vetor e os imprima ao contrário da ordem de leitura.
 
 void q17()
 {
@@ -405,9 +461,9 @@ void q17()
 }
 
 //18. Faça um programa em C que permita entrar com dados para um vetor VET do tipo
-//inteiro com 20 posições, em que podem existir vários elementos repetidos. Gere
-//um vetor VET2 ordenado a partir do vetor VET e que terá apenas os elementos
-//não repetidos.
+//    inteiro com 20 posições, em que podem existir vários elementos repetidos. Gere
+//    um vetor VET2 ordenado a partir do vetor VET e que terá apenas os elementos
+//    não repetidos.
 
 void q18()
 {
@@ -415,7 +471,7 @@ void q18()
 }
 
 //19. Suponha dois vetores de 30 elementos cada, contendo: código e telefone. Faça
-//um programa que permita buscar pelo código e imprimir o telefone.
+//    um programa que permita buscar pelo código e imprimir o telefone.
 
 void q19()
 {
@@ -423,7 +479,7 @@ void q19()
 }
 
 //20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
-//para a menor nota e imprima uma relação contendo todas as matrículas e médias.
+//    para a menor nota e imprima uma relação contendo todas as matrículas e médias.
 
 void q20()
 {
