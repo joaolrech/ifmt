@@ -393,13 +393,13 @@ void q14()
 //    Imprimir quantos números iguais ao último número foram lidos. O limite de
 //    números é 100.
 
-void q15()AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+void q15()
 {
     int i, j, num[100], ultimo, quant = 0;
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o número %d \n", i);
+        printf("Digite o número %d \n", i + 1);
         scanf("%d", &num[i]);
 
         if(num[i] == 0)
@@ -408,13 +408,13 @@ void q15()AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         ultimo = num[i];
     }
 
-    for(j = 0; j < i; j ++)
+    for(j = 0; j < i - 1; j ++)
     {
         if(num[j] == ultimo)
             quant ++;
     }
 
-    printf("Quantidade de números iguais ao último número inserido: %d \n", quant - 1);
+    printf("Quantidade de números iguais ao último número inserido: %d \n", quant);
 }
 
 //16. Crie um programa em C para ler um conjunto de 100 números reais e informe:
