@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
 
 //1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois
 //   permita que o usuário digite um número inteiro para ser buscado no vetor, se
@@ -231,13 +228,11 @@ void q09()
     printf("Elementos comuns aos dois conjuntos: \n");
 
     for(i = 0; i < 10; i ++)
-    {
         for(j = 0; j < 10; j ++)
         {
             if(c1[i] == c2[j])
             printf("%d \n", c2[j]);
         }
-    }
 }
 
 //10. Faça um programa que leia um vetor vet de 10 elementos e obtenha um vetor w
