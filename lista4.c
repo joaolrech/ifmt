@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 //1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois
 //   permita que o usuário digite um número inteiro para ser buscado no vetor, se
@@ -404,10 +406,8 @@ void q15()
     }
 
     for(j = 0; j < i - 1; j ++)
-    {
         if(num[j] == ultimo)
             quant ++;
-    }
 
     printf("Quantidade de números iguais ao último número inserido: %d \n", quant);
 }
@@ -452,7 +452,16 @@ void q16()
 
 void q17()
 {
-    
+    int i, num[30];
+
+    for(i = 0; i < 30; i ++)
+    {
+        printf("Digite o número %d \n", i + 1);
+        scanf("%d", &num[i]);
+    }
+
+    for(i = 29; i >= 0; i --)
+        printf("%d \n", num[i]);
 }
 
 //18. Faça um programa em C que permita entrar com dados para um vetor VET do tipo
@@ -470,7 +479,23 @@ void q18()
 
 void q19()
 {
-    
+    int i, cod[30], tel[30], busca;
+    srand(time(NULL));
+
+    for(i = 0; i < 30; i ++)
+    {
+        cod[i] = i + 1;
+        tel[i] = 900000000 + rand() % 100000000;
+    }
+
+    printf("Digite o código (1 a 30). \n");
+    scanf("%d", &busca);
+
+    for(i = 0; i < 30; i ++)
+        if(cod[i] == busca)
+            printf("Telefone: %d \n", tel[i]);
+        else
+            printf("Código inválido. \n");
 }
 
 //20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
