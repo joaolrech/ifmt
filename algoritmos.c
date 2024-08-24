@@ -69,16 +69,12 @@ void q03()
     int x;
 
     for(x = 111; x <= 213; x ++)
-    {
         if(x % 2 == 0)
             printf("%d \n", x);
-    }
     
     for(x = 1; x <= 99; x ++)
-    {
         if(x % 2 == 1)
             printf("%d \n", x * 2);
-    }
 }
 
 //4. Faça um algoritmo para imprimir todos os divisores de um número.
@@ -92,10 +88,8 @@ void q04()
     scanf("%d", &n);
 
     for(i = 1; i <= n; i ++)
-    {
         if(n % i == 0)
             printf("%d \n", i);
-    }
 }
 
 //5. Faça um algoritmo que receba a idade, a altura e o peso de 20 pessoas, calcule e mostre: 
@@ -161,10 +155,8 @@ void q07()
     int i;
 
     for(i = 1000; i <= 2000; i ++)
-    {
         if(i % 11 == 5)
             printf("%d \n", i);
-    }
 }
 
 //8. Criar um algoritmo que leia um número (NUM) e então imprima os
@@ -178,10 +170,8 @@ void q08()
     scanf("%d", &n);
 
     for(x = 1; x <= n; x ++)
-    {
         if(x % 3 == 0 && x % 5 == 0)
             printf("%d \n", x);
-    }
 }
 
 //9. Escreva um algoritmo que leia 200 números inteiros e imprima
@@ -372,23 +362,17 @@ void q14()
 
     printf("Alunos aprovados em todas as matérias: \n");
     for(i = 1; i <= q; i ++)
-    {
         if(n[i][0] >= 7 && n[i][1] >= 7 && n[i][2] >= 7 && n[i][3] >= 7 && n[i][4] >= 7)
             printf("%s \n", nome[i]);
-    }
 
     printf("Alunos aprovados nas matérias 1 e 4: \n");
     for(i = 1; i <= q; i ++)
-    {
         if(n[i][0] >= 7 && n[i][3] >= 7)
             printf("%s \n", nome[i]);
-    }
 
     for(i = 1; i <= q; i ++)
-    {
         if(n[i][2] >= 7)
             c ++;
-    }
     printf("Porcentagem de alunos aprovados na matéria 3: %.2f%% \n", c / q * 100);
 }
 
@@ -648,7 +632,7 @@ void q19()
         m = s / q;
         p = r / q * 100;
 
-        printf("Quantidade de alunos aprovados: %d \n", a);
+        printf("Quantidade de alunos aprovados: %.0f \n", a);
         printf("Média da turma: %.2f \n", m);
         printf("Percentual de alunos reprovados: %.2f%% \n", p);
 
