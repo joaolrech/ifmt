@@ -123,7 +123,7 @@ void q05()
 
     for(i = 0; i < 15; i ++)
     {
-        printf("%-8d %-10.2f %-10.2f %-8.2f", i + 1, n1[i], n2[i], media[i]);
+        printf("%-8d %-10.2f %-10.2f %-9.2f", i + 1, n1[i], n2[i], media[i]);
 
         if(situacao[i] == 1)
             printf("Aprovado\n");
