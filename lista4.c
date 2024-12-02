@@ -375,7 +375,7 @@ void q14()
 
     for(i = 0; i < 50; i ++)
     {
-        printf("Digite o número %d \n", i);
+        printf("Digite o número %d \n", i + 1);
         scanf("%d", &vet1[i]);
     }
 
@@ -424,7 +424,7 @@ void q16()
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o número %d \n", i);
+        printf("Digite o número %d \n", i + 1);
         scanf("%f", &num[i]);
 
         soma += num[i];
