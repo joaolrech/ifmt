@@ -491,11 +491,12 @@ void q19()
     printf("Digite o código (1 a 30). \n");
     scanf("%d", &busca);
 
-    for(i = 0; i < 30; i ++)
-        if(cod[i] == busca)
-            printf("Telefone: %d \n", tel[i]);
-        else
-            printf("Código inválido. \n");
+    if(busca < 1 || busca > 30)
+        printf("Código inválido. \n");
+    else
+        for(i = 0; i < 30; i ++)
+            if(cod[i] == busca)
+                printf("Telefone: %d \n", tel[i]);
 }
 
 //20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
