@@ -8,7 +8,7 @@ void q01()
     int i;
 
     for(i = 0; i < 100; i ++)
-        printf("%d \n", i + 1);
+        printf("%d\n", i + 1);
 }
 
 //2. Faça um programa que imprima todos os números pares de 100 até 1.
@@ -19,7 +19,7 @@ void q02()
 
     for(i = 0; i < 100; i ++)
         if((i + 1) % 2 == 0)
-            printf("%d \n", i + 1);
+            printf("%d\n", i + 1);
 }
 
 //3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
@@ -30,7 +30,7 @@ void q03()
 
     for(i = 0; i < 500; i ++)
         if((i + 1) % 5 == 0)
-            printf("%d \n", i + 1);
+            printf("%d\n", i + 1);
 }
         
 //4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
@@ -44,14 +44,14 @@ void q04()
 
     for(i = 0; i < 20; i ++)
     {
-        printf("Digite seu nome, sua idade, e seu gênero. \n");
-        printf("0 - Feminino, 1 - Masculino \n");
+        printf("Digite seu nome, sua idade, e seu gênero.\n");
+        printf("0 - Feminino, 1 - Masculino\n");
         scanf(" %99[^\n]", nome);
         scanf("%d", &idade);
         scanf("%d", &sexo);
 
         if(idade > 21 && sexo == 1)
-            printf("%s \n", nome);
+            printf("%s\n", nome);
     }
 }
 
@@ -63,14 +63,14 @@ void q05()
 {
     int a, b, i, soma = 0;
 
-    printf("Digite dois números inteiros. \n");
+    printf("Digite dois números inteiros.\n");
     scanf("%d", &a);
     scanf("%d", &b);
 
     for(i = 0; i < b; i ++)
         soma += a;
 
-    printf("Produto: %d \n", soma);
+    printf("Produto: %d\n", soma);
 }
 
 //6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
@@ -83,7 +83,7 @@ void q06()
 {
     int i, t1 = 0, t2 = 1, r;
 
-    printf("%d \n", t2);
+    printf("%d\n", t2);
     
     for(i = 0; i < 19; i ++)
     {
@@ -92,7 +92,7 @@ void q06()
         t1 = t2;
         t2 = r;
 
-        printf("%d \n", r);
+        printf("%d\n", r);
     }
 }
 
@@ -109,11 +109,11 @@ void q07()
 
     for(i = 0; i < 15; i ++)
     {
-        printf("Digite o nome do aluno. \n");
+        printf("Digite o nome do aluno.\n");
         scanf(" %99[^\n]", nome[i]);
-        printf("Digite a nota da prova 1. \n");
+        printf("Digite a nota da prova 1.\n");
         scanf("%f", &p1[i]);
-        printf("Digite a nota da prova 2. \n");
+        printf("Digite a nota da prova 2.\n");
         scanf("%f", &p2[i]);
 
         media[i] = (p1[i] + p2[i]) / 2;
@@ -123,15 +123,15 @@ void q07()
 
     for(i = 0; i < 15; i ++)
     {
-        printf("Nome do aluno: %s \n", nome[i]);
-        printf("Nota da prova 1: %.2f \n", p1[i]);
-        printf("Nota da prova 2: %.2f \n", p2[i]);
-        printf("Média do aluno: %.2f \n", media[i]);
+        printf("Nome do aluno: %s\n", nome[i]);
+        printf("Nota da prova 1: %.2f\n", p1[i]);
+        printf("Nota da prova 2: %.2f\n", p2[i]);
+        printf("Média do aluno: %.2f\n", media[i]);
 
         printf("\n");
     }
 
-    printf("Média geral: %.2f \n", somageral / 15);
+    printf("Média geral: %.2f\n", somageral / 15);
 }
 
 //8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
@@ -152,9 +152,9 @@ void q08()
     {
         al[i] = 0;
 
-        printf("Digite o nome. \n");
+        printf("Digite o nome.\n");
         scanf(" %99[^\n]", nome[i]);
-        printf("Digite o salário bruto. \n");
+        printf("Digite o salário bruto.\n");
         scanf("%f", &sal[i]);
 
         if(sal[i] >= 2300)
@@ -165,12 +165,12 @@ void q08()
 
     for(i = 0; i < 10; i ++)
     {
-        printf("Nome: %s \n", nome[i]);
+        printf("Nome: %s\n", nome[i]);
         
         if(al[i] == 0)
-            printf("Isento. \n");
+            printf("Isento.\n");
         else
-            printf("Valor da alíquota: R$%.2f \n", al[i]);
+            printf("Valor da alíquota: R$%.2f\n", al[i]);
 
         printf("\n");
     }
@@ -193,11 +193,11 @@ void q09()
 
     for(x = 0; x < 20; x ++)
     {
-        printf("Digite sua idade. \n");
+        printf("Digite sua idade.\n");
         scanf("%f", &idade);
 
-        printf("Qual sua opinião em relação ao filme assistido? \n");
-        printf("1 - Regular, 2 - Bom, 3 - Excelente \n");
+        printf("Qual sua opinião em relação ao filme assistido?\n");
+        printf("1 - Regular, 2 - Bom, 3 - Excelente\n");
         scanf("%d", &o);
 
         if(o == 1)
@@ -211,14 +211,14 @@ void q09()
         }
         else
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
             x--;
         }
     }
 
-    printf("Quantidade de pessoas que responderam 'Regular': %.0f \n", cont1);
-    printf("Média de idade das pessoas que responderam 'Excelente': %.2f \n", somaidades / cont3);
-    printf("Porcentagem de pessoas que responderam 'Bom': %.2f%% \n", (cont2 / 20) * 100);
+    printf("Quantidade de pessoas que responderam 'Regular': %.0f\n", cont1);
+    printf("Média de idade das pessoas que responderam 'Excelente': %.2f\n", somaidades / cont3);
+    printf("Porcentagem de pessoas que responderam 'Bom': %.2f%%\n", (cont2 / 20) * 100);
 }
 
 //10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
@@ -239,12 +239,12 @@ void q10()
         somapeso = 0;
         somaidade = 0;
 
-        printf("Digite o nome do país. \n");
+        printf("Digite o nome do país.\n");
         scanf(" %99[^\n]", nomepais[i]);
 
         for(j = 0; j < 12; j ++)
         {   
-            printf("Digite o nome, o peso e a idade do atleta número %d \n", j + 1);
+            printf("Digite o nome, o peso e a idade do atleta número %d\n", j + 1);
             scanf(" %99[^\n]", nomeatleta[j]);
             scanf("%f", &peso);
             scanf("%d", &idade);
@@ -268,14 +268,14 @@ void q10()
         somageralidade += somaidade;
         somageralpeso += somapeso;
 
-        printf("Peso médio dos atletas do(a) %s: %f \n", nomepais[i], somapeso / 12);
-        printf("Idade média dos atletas do(a) %s: %f \n", nomepais[i], somaidade / 12);
-        printf("Atleta mais pesado do(a) %s: %s \n", nomepais[i], atletapesado);
-        printf("Atleta mais jovem do(a) %s: %s \n", nomepais[i], atletajovem);
+        printf("Peso médio dos atletas do(a) %s: %f\n", nomepais[i], somapeso / 12);
+        printf("Idade média dos atletas do(a) %s: %f\n", nomepais[i], somaidade / 12);
+        printf("Atleta mais pesado do(a) %s: %s\n", nomepais[i], atletapesado);
+        printf("Atleta mais jovem do(a) %s: %s\n", nomepais[i], atletajovem);
     }
 
-    printf("Peso médio de todos os participantes: %f \n", somageralpeso / (12 * 30));
-    printf("Idade média de todos os participantes: %f \n", somageralidade / (12 * 30));
+    printf("Peso médio de todos os participantes: %f\n", somageralpeso / (12 * 30));
+    printf("Idade média de todos os participantes: %f\n", somageralidade / (12 * 30));
 }
 
 //11. Construa um programa que leia vários números e informe quantos números
@@ -286,7 +286,7 @@ void q11()
 {
     int x, num, cont = 0;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &num);
 
     while(x != 0)
@@ -294,11 +294,11 @@ void q11()
         if(num >= 100 && num <= 200)
             cont ++;
 
-        printf("Digite um número inteiro. \n");
+        printf("Digite um número inteiro.\n");
         scanf("%d", &num);
     }
 
-    printf("Quantidade de números digitados entre 100 e 200: %d \n", cont);
+    printf("Quantidade de números digitados entre 100 e 200: %d\n", cont);
 }
 
 //12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
@@ -319,7 +319,7 @@ void q12()
         anos ++;
     }
     
-    printf("Tempo necessário: %d anos. \n", anos);
+    printf("Tempo necessário: %d anos.\n", anos);
 }
 
 //13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
@@ -341,19 +341,19 @@ void q13()
     int nc, tc, i, count = 0, keep = 0;
     float c, p, sres = 0, scom = 0, sind = 0;
 
-    printf("Digite o número do consumidor. \n");
+    printf("Digite o número do consumidor.\n");
     scanf("%d", &nc);
 
     while(nc != 0)
     {
         if(keep == 0)
         {
-            printf("Digite a quantidade de kWh consumidos. \n");
+            printf("Digite a quantidade de kWh consumidos.\n");
             scanf("%f", &c);
         }
 
-        printf("Digite o tipo do consumidor. \n");
-        printf("1 - Residencial, 2 - Comercial, 3 - Industrial. \n");
+        printf("Digite o tipo do consumidor.\n");
+        printf("1 - Residencial, 2 - Comercial, 3 - Industrial.\n");
         scanf("%d", &tc);
 
         switch(tc)
@@ -376,22 +376,22 @@ void q13()
                 keep = 0;
                 break;
             default:
-                printf("Tipo inválido. \n");
+                printf("Tipo inválido.\n");
                 keep = 1;
         }
 
         if(keep == 0)
         {
-            printf("Custo do consumidor %d: R$%.2f \n", nc, p);
-            printf("Digite o número do consumidor. \n");
+            printf("Custo do consumidor %d: R$%.2f\n", nc, p);
+            printf("Digite o número do consumidor.\n");
             scanf("%d", &nc);
         }
     }
 
-    printf("Consumo total residencial: %.0fkWh \n", sres);
-    printf("Consumo total comercial: %.0fkWh \n", scom);
-    printf("Consumo total industrial: %.0fkWh \n", sind);
-    printf("Consumo médio de residencial e comercial: %.2fkWh \n", (sres + scom) / count);
+    printf("Consumo total residencial: %.0fkWh\n", sres);
+    printf("Consumo total comercial: %.0fkWh\n", scom);
+    printf("Consumo total industrial: %.0fkWh\n", sind);
+    printf("Consumo médio de residencial e comercial: %.2fkWh\n", (sres + scom) / count);
 }
 
 //14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
@@ -402,7 +402,7 @@ void q14()
     int num, i;
     unsigned long fatorial;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &num);
 
     while(num > 1)
@@ -412,9 +412,9 @@ void q14()
         for(i = 1; i <= num; i ++)
             fatorial *= i;
 
-        printf("%lu \n", fatorial);
+        printf("%lu\n", fatorial);
 
-        printf("Digite um número inteiro. \n");
+        printf("Digite um número inteiro.\n");
         scanf("%d", &num);
     }
 }
@@ -428,12 +428,12 @@ void q15()
 {
     int i, novos = 0, velhos = 0, idade, quant;
 
-    printf("Digite a quantidade de pessoas. \n");
+    printf("Digite a quantidade de pessoas.\n");
     scanf("%d", &quant);
 
     for(i = 0; i < quant; i ++)
     {
-        printf("Digite sua idade. \n");
+        printf("Digite sua idade.\n");
         scanf("%d", &idade);
 
         if(i < 21)
@@ -442,8 +442,8 @@ void q15()
             velhos ++;
     }
 
-    printf("Total de pessoas com menos de 21 anos: %d \n", novos);
-    printf("Total de pessoas com mais de 50 anos: %d \n", velhos);
+    printf("Total de pessoas com menos de 21 anos: %d\n", novos);
+    printf("Total de pessoas com mais de 50 anos: %d\n", velhos);
 }
 
 //16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
@@ -458,7 +458,7 @@ void q16()
 {
     int a, b, cont = 0;
 
-    printf("Digite dois números inteiros positivos, em ordem decrescente. \n");
+    printf("Digite dois números inteiros positivos, em ordem decrescente.\n");
     scanf("%d", &a);
     scanf("%d", &b);
 
@@ -469,8 +469,8 @@ void q16()
         cont ++;
     }
 
-    printf("Quociente: %d \n", cont);
-    printf("Resto: %d \n", a);
+    printf("Quociente: %d\n", cont);
+    printf("Resto: %d\n", a);
 }
 
 //17. Crie um programa que possa ler um conjunto de pedidos de compra e
@@ -488,23 +488,23 @@ void q17()
     float preco, precototal = 0;
     int quant, num;
 
-    printf("Digite o número do pedido. \n");
+    printf("Digite o número do pedido.\n");
     scanf("%d", &num);
 
     while(num != 0)
     {
-        printf("Digite a data, o preço unitário e a quantidade desejada. \n");
+        printf("Digite a data, o preço unitário e a quantidade desejada.\n");
         scanf(" %10[^\n]", data);
         scanf("%f", &preco);
         scanf("%d", &quant);
 
         precototal += (preco * quant);
 
-        printf("Digite o número do pedido. \n");
+        printf("Digite o número do pedido.\n");
         scanf("%d", &num);
     }
 
-    printf("Valor total: R$%.2f \n", precototal);
+    printf("Valor total: R$%.2f\n", precototal);
 }
 
 //18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
@@ -521,12 +521,12 @@ void q18()
     char nome[99];
     int num, preco, dias, total = 0;
 
-    printf("Digite o número da sua conta. \n");
+    printf("Digite o número da sua conta.\n");
     scanf("%d", &num);
 
     while(num != 0)
     {
-        printf("Digite seu nome e a quantidade de diárias. \n");
+        printf("Digite seu nome e a quantidade de diárias.\n");
         scanf(" %99[^\n]", nome);
         scanf("%d", &dias);
 
@@ -539,15 +539,15 @@ void q18()
 
         total += preco;
 
-        printf("Nome: %s \n", nome);
-        printf("Número da conta: %d \n", num);
-        printf("Valor: R$%d.00 \n", preco);
+        printf("Nome: %s\n", nome);
+        printf("Número da conta: %d\n", num);
+        printf("Valor: R$%d.00\n", preco);
 
-        printf("Digite o número da sua conta. \n");
+        printf("Digite o número da sua conta.\n");
         scanf("%d", &num);
     }
 
-    printf("Total faturado pela pousada: R$%d.00 \n", total);
+    printf("Total faturado pela pousada: R$%d.00\n", total);
 }
 
 //19. Em uma Universidade, os alunos das turmas de informática fizeram uma prova
@@ -563,7 +563,7 @@ void q19()
     int turmas, alunos, i, j, aprovados = 0, reprovados = 0;
     float nota, totalalunos = 0;
 
-    printf("Digite o número de turmas. \n");
+    printf("Digite o número de turmas.\n");
     scanf("%d", &turmas);
 
     float media[turmas];
@@ -572,14 +572,14 @@ void q19()
     {
         media[i] = 0;
 
-        printf("Digite o número de alunos na turma %d. \n", i + 1);
+        printf("Digite o número de alunos na turma %d.\n", i + 1);
         scanf("%d", &alunos);
 
         totalalunos += alunos;
 
         for(j = 0; j < alunos; j ++)
         {
-            printf("Digite a nota do aluno %d. \n", j + 1);
+            printf("Digite a nota do aluno %d.\n", j + 1);
             scanf("%f", &nota);
 
             media[i] += nota / alunos;
@@ -591,10 +591,10 @@ void q19()
         }
     }
 
-    printf("Quantidade de alunos aprovados: %d \n", aprovados);
+    printf("Quantidade de alunos aprovados: %d\n", aprovados);
     for(i = 0; i < turmas; i ++)
-        printf("Média da turma %d: %.2f \n", i + 1, media[i]);
-    printf("Percentual de alunos reprovados: %.2f%% \n", (reprovados / totalalunos) * 100);
+        printf("Média da turma %d: %.2f\n", i + 1, media[i]);
+    printf("Percentual de alunos reprovados: %.2f%%\n", (reprovados / totalalunos) * 100);
 }
 
 //20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
@@ -621,28 +621,28 @@ void q20()
     int time, endereco, contflu = 0, contbot = 0, contvas = 0, contfla = 0, contoutro = 0, contnitflu = 0;
     float salario, somasalariobot;
 
-    printf("Qual o seu time de coração? \n");
-    printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+    printf("Qual o seu time de coração?\n");
+    printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro\n");
     scanf("%d", &time);
 
     while(time != 0)
     {
         if(time < 1 || time > 5)
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
 
-            printf("Qual o seu time de coração? \n");
-            printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+            printf("Qual o seu time de coração?\n");
+            printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro\n");
             scanf("%d", &time);
 
             continue;
         }
 
-        printf("Onde você mora? \n");
-        printf("1 - Rio de Janeiro, 2 - Niterói, 3 - Outro \n");
+        printf("Onde você mora?\n");
+        printf("1 - Rio de Janeiro, 2 - Niterói, 3 - Outro\n");
         scanf("%d", &endereco);
 
-        printf("Qual o seu salário? \n");
+        printf("Qual o seu salário?\n");
         scanf("%f", &salario);
 
         switch(time)
@@ -668,21 +668,21 @@ void q20()
                 break;
         }
 
-        printf("Qual o seu time de coração? \n");
-        printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro \n");
+        printf("Qual o seu time de coração?\n");
+        printf("1 - Fluminense, 2 - Botafogo, 3 - Vasco, 4 - Flamengo, 5 - Outro\n");
         scanf("%d", &time);
     }
 
-    printf("Quantidade de torcedores do Fluminense: %d \n", contflu);
-    printf("Quantidade de torcedores do Botafogo: %d \n", contbot);
-    printf("Quantidade de torcedores do Vasco: %d \n", contvas);
-    printf("Quantidade de torcedores do Flamengo: %d \n", contfla);
+    printf("Quantidade de torcedores do Fluminense: %d\n", contflu);
+    printf("Quantidade de torcedores do Botafogo: %d\n", contbot);
+    printf("Quantidade de torcedores do Vasco: %d\n", contvas);
+    printf("Quantidade de torcedores do Flamengo: %d\n", contfla);
     if(contbot == 0)
-        printf("Não há dados suficientes para calcular a média salarial dos torcedores do Botafogo. \n");
+        printf("Não há dados suficientes para calcular a média salarial dos torcedores do Botafogo.\n");
     else
-        printf("Média salarial dos torcedores do Botafogo: R$%.2f \n", somasalariobot / contbot);
-    printf("Quantidade de pessoas que moram no Rio de Janeiro e torcem para outros clubes: %d \n", contoutro);
-    printf("Quantidade de pessoas que moram em Niterói e torcem para o Fluminense: %d \n", contnitflu);
+        printf("Média salarial dos torcedores do Botafogo: R$%.2f\n", somasalariobot / contbot);
+    printf("Quantidade de pessoas que moram no Rio de Janeiro e torcem para outros clubes: %d\n", contoutro);
+    printf("Quantidade de pessoas que moram em Niterói e torcem para o Fluminense: %d\n", contnitflu);
 }
 
 //21. Em uma universidade cada aluno possui os seguintes dados:
@@ -701,12 +701,12 @@ void q21()
     float rp, rf, ga, go, contgeral = 0;
     int contgo = 0, contrico = 0;
 
-    printf("Digite sua renda pessoal. \n");
+    printf("Digite sua renda pessoal.\n");
     scanf("%f", &rp);
 
     while(rp != 0)
     {
-        printf("Digite sua renda familiar, o total gasto com alimentação e o total gasto com outras despesas. \n");
+        printf("Digite sua renda familiar, o total gasto com alimentação e o total gasto com outras despesas.\n");
         scanf("%f", &rf);
         scanf("%f", &ga);
         scanf("%f", &go);
@@ -721,12 +721,12 @@ void q21()
 
         printf("Percentual de gastos do aluno %.0f: %.2f%%", contgeral, ((ga + go) / (rf + rp)) * 100);
 
-        printf("Digite sua renda pessoal. \n");
+        printf("Digite sua renda pessoal.\n");
         scanf("%f", &rp);
     }
 
-    printf("Percentual de alunos que gastam acima de R$200.00 com outras despesas: %.2f%% \n", (contgo / contgeral) * 100);
-    printf("Número de alunos com renda pessoal maior do que a renda familiar: %d \n", contrico);
+    printf("Percentual de alunos que gastam acima de R$200.00 com outras despesas: %.2f%%\n", (contgo / contgeral) * 100);
+    printf("Número de alunos com renda pessoal maior do que a renda familiar: %d\n", contrico);
 }
 
 //22. Crie um programa que ajude o DETRAN a saber o total de recursos que foram
@@ -746,33 +746,33 @@ void q22()
     int num, quant, i;
     float somageral = 0, soma, valor;
 
-    printf("Digite o número da carteira de motorista. \n");
+    printf("Digite o número da carteira de motorista.\n");
     scanf("%d", &num);
 
     while(num != 0)
     {
-        printf("Digite o número de multas. \n");
+        printf("Digite o número de multas.\n");
         scanf("%d", &quant);
 
         soma = 0;
 
         for(i = 0; i < quant; i ++)
         {
-            printf("Digite o valor da multa %d. \n", i + 1);
+            printf("Digite o valor da multa %d.\n", i + 1);
             scanf("%f", &valor);
 
             soma += valor;
         }
 
-        printf("Dívida do motorista %d: R$%.2f \n", num, soma);
+        printf("Dívida do motorista %d: R$%.2f\n", num, soma);
 
         somageral += soma;
 
-        printf("Digite o número da carteira de motorista. \n");
+        printf("Digite o número da carteira de motorista.\n");
         scanf("%d", &num);
     }
 
-    printf("Total de recursos arrecadados: R$%.2f \n", somageral);
+    printf("Total de recursos arrecadados: R$%.2f\n", somageral);
 }
 
 //23. Crie um programa que leia um conjunto de informações (nome, sexo, idade, peso
@@ -791,15 +791,15 @@ void q23()
     int sexo, idade, contador = 0;
     float peso, altura, somaidade = 0, maioralturamulher = -1, maiorpesohomem = -1;
 
-    printf("Digite o nome do atleta. \n");
+    printf("Digite o nome do atleta.\n");
     scanf(" %99[^\n]", nome);
 
     while(nome[0] != '@')
     {
-        printf("Digite o gênero do atleta. \n");
-        printf("0 - Feminino, 1 - Masculino. \n");
+        printf("Digite o gênero do atleta.\n");
+        printf("0 - Feminino, 1 - Masculino.\n");
         scanf("%d", &sexo);
-        printf("Digite a idade, a altura e o peso do atleta. \n");
+        printf("Digite a idade, a altura e o peso do atleta.\n");
         scanf("%d", &idade);
         scanf("%f", &altura);
         scanf("%f", &peso);
@@ -819,13 +819,13 @@ void q23()
         somaidade += idade;
         contador++;
 
-        printf("Digite o nome do atleta. \n");
+        printf("Digite o nome do atleta.\n");
         scanf(" %99[^\n]", nome);
     }
 
-    printf("Atleta do sexo feminino mais alta: %s \n", mulheralta);
-    printf("Atleta do sexo masculino mais pesado: %s \n", homempesado);
-    printf("Média de idade dos atletas: %.2f \n", somaidade / contador);
+    printf("Atleta do sexo feminino mais alta: %s\n", mulheralta);
+    printf("Atleta do sexo masculino mais pesado: %s\n", homempesado);
+    printf("Média de idade dos atletas: %.2f\n", somaidade / contador);
 }
 
 //24. Faça um programa que calcule quantos litros de gasolina são usados em uma
@@ -842,22 +842,22 @@ void q24()
 {
     float velocidade, distancia = 0, tempo;
 
-    printf("Digite a velocidade (km/h). \n");
+    printf("Digite a velocidade (km/h).\n");
     scanf("%f", &velocidade);
 
     while(velocidade >= 0)
     {
-        printf("Digite quanto tempo permaneceu na velocidade digitada (h). \n");
+        printf("Digite quanto tempo permaneceu na velocidade digitada (h).\n");
         scanf("%f", &tempo);
 
         distancia += velocidade * tempo;
 
-        printf("Digite a velocidade (km/h). \n");
+        printf("Digite a velocidade (km/h).\n");
         scanf("%f", &velocidade);
     }
 
-    printf("Distância percorrida: %.2fkm \n", distancia);
-    printf("Consumo de combustível: %.2fL \n", distancia / 10);
+    printf("Distância percorrida: %.2fkm\n", distancia);
+    printf("Consumo de combustível: %.2fL\n", distancia / 10);
 }
 
 //25. Faça um programa que calcule o imposto de renda de um grupo de contribuintes,
@@ -885,12 +885,12 @@ void q25()
     int cic, dependentes, i, contisento = 0;
     float renda, imposto, somaimposto = 0;
 
-    printf("Digite o seu CIC. \n");
+    printf("Digite o seu CIC.\n");
     scanf("%d", &cic);
 
     while(cic != 0)
     {
-        printf("Digite o número de dependentes e a renda bruta anual. \n");
+        printf("Digite o número de dependentes e a renda bruta anual.\n");
         scanf("%d", &dependentes);
         scanf("%f", &renda);
 
@@ -911,19 +911,19 @@ void q25()
 
         somaimposto += imposto;
 
-        printf("Número do CIC: %d \n", cic);
+        printf("Número do CIC: %d\n", cic);
 
         if(imposto == 0)
-        printf("Isento. \n");
+        printf("Isento.\n");
         else
-        printf("Imposto a ser pago: R$%.2f \n", imposto);
+        printf("Imposto a ser pago: R$%.2f\n", imposto);
 
-        printf("Digite o seu CIC. \n");
+        printf("Digite o seu CIC.\n");
         scanf("%d", &cic);
     }
 
-    printf("Total de imposto arrecadado pela Receita Federal: R$%.2f \n", somaimposto);
-    printf("Quantidade de contribuintes isentos: %d \n", contisento);
+    printf("Total de imposto arrecadado pela Receita Federal: R$%.2f\n", somaimposto);
+    printf("Quantidade de contribuintes isentos: %d\n", contisento);
 }
 
 //26. Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma
@@ -941,22 +941,22 @@ void q26()
     int canal, cont4 = 0, cont5 = 0, cont7 = 0, cont12 = 0, audiencia;
     float contgeral = 0;
 
-    printf("Digite o canal que está sendo assistido. \n");
+    printf("Digite o canal que está sendo assistido.\n");
     scanf("%d", &canal);
 
     while(canal != 0)
     {
         if(canal != 4 && canal != 5 && canal != 7 && canal != 12)
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
 
-            printf("Digite o canal que está sendo assistido. \n");
+            printf("Digite o canal que está sendo assistido.\n");
             scanf("%d", &canal);
 
             continue;
         }
 
-        printf("Digite quantas pessoas estão assistindo. \n");
+        printf("Digite quantas pessoas estão assistindo.\n");
         scanf("%d", &audiencia);
 
         switch(canal)
@@ -977,14 +977,14 @@ void q26()
 
         contgeral += audiencia;
 
-        printf("Digite o canal que está sendo assistido. \n");
+        printf("Digite o canal que está sendo assistido.\n");
         scanf("%d", &canal);
     }
 
-    printf("Percentual de audiência do canal 4: %.2f%% \n", (cont4 / contgeral) * 100);
-    printf("Percentual de audiência do canal 5: %.2f%% \n", (cont5 / contgeral) * 100);
-    printf("Percentual de audiência do canal 7: %.2f%% \n", (cont7 / contgeral) * 100);
-    printf("Percentual de audiência do canal 12: %.2f%% \n", (cont12 / contgeral) * 100);
+    printf("Percentual de audiência do canal 4: %.2f%%\n", (cont4 / contgeral) * 100);
+    printf("Percentual de audiência do canal 5: %.2f%%\n", (cont5 / contgeral) * 100);
+    printf("Percentual de audiência do canal 7: %.2f%%\n", (cont7 / contgeral) * 100);
+    printf("Percentual de audiência do canal 12: %.2f%%\n", (cont12 / contgeral) * 100);
 }
 
 //27. Crie um programa que calcule e imprima o CR do período para os alunos de
@@ -1003,19 +1003,19 @@ void q27()
     int matricula, disciplinas, i;
     float nota, somanota, cr, melhorcr = -1;
 
-    printf("Digite o número da matrícula. \n");
+    printf("Digite o número da matrícula.\n");
     scanf("%d", &matricula);
 
     while(matricula >= 1 && matricula <=5000)
     {
-        printf("Digite a quantidade de disciplinas cursadas. \n");
+        printf("Digite a quantidade de disciplinas cursadas.\n");
         scanf("%d", &disciplinas);
 
         somanota = 0;
 
         for(i = 0; i < disciplinas; i ++)
         {
-            printf("Digite a nota da disciplina %d. \n", i + 1);
+            printf("Digite a nota da disciplina %d.\n", i + 1);
             scanf("%f", &nota);
 
             somanota += nota;
@@ -1023,19 +1023,19 @@ void q27()
 
         cr = somanota / disciplinas;
 
-        printf("CR: %.2f \n", cr);
+        printf("CR: %.2f\n", cr);
 
         if(disciplinas >= 5 && cr > melhorcr)
             melhorcr = cr;
 
-        printf("Digite o número da matrícula. \n");
+        printf("Digite o número da matrícula.\n");
         scanf("%d", &matricula);
     }
 
     if(cr == -1)
-        printf("Nenhum aluno cursou 5 ou mais disciplinas. \n");
+        printf("Nenhum aluno cursou 5 ou mais disciplinas.\n");
     else
-        printf("Melhor CR dos alunos que cursaram 5 ou mais disciplinas: %.2f \n", melhorcr);
+        printf("Melhor CR dos alunos que cursaram 5 ou mais disciplinas: %.2f\n", melhorcr);
 }
 
 //28. Construa um programa que receba a idade, a altura e o peso de várias pessoas,
@@ -1050,12 +1050,12 @@ void q28()
     int i, idade, quant, contmais50 = 0, contmid = 0, contleve = 0;
     float altura, peso, somaalturamid = 0, contgeral = 0;
 
-    printf("Digite a quantidade de pessoas. \n");
+    printf("Digite a quantidade de pessoas.\n");
     scanf("%d", &quant);
 
     for(i = 0; i < quant; i ++)
     {
-        printf("Digite sua idade, altura e peso. \n");
+        printf("Digite sua idade, altura e peso.\n");
         scanf("%d", &idade);
         scanf("%f", &altura);
         scanf("%f", &peso);
@@ -1073,9 +1073,9 @@ void q28()
         contgeral ++;
     }
 
-    printf("Quantidade de pessoas com idade superior a 50 anos: %d \n", contmais50);
-    printf("Média das alturas das pessoas com idade entre 10 e 20 anos: %.2f \n", somaalturamid / contmid);
-    printf("Percentual de pessoas com peso inferior a 40 quilos: %.2f%% \n", (contleve / contgeral) * 100);
+    printf("Quantidade de pessoas com idade superior a 50 anos: %d\n", contmais50);
+    printf("Média das alturas das pessoas com idade entre 10 e 20 anos: %.2f\n", somaalturamid / contmid);
+    printf("Percentual de pessoas com peso inferior a 40 quilos: %.2f%%\n", (contleve / contgeral) * 100);
 }
 
 //29. Construa um programa que receba o valor e o código de várias mercadorias
@@ -1093,24 +1093,24 @@ void q29()
     char cod;
     float preco, totalgeral = 0, totall = 0, totala = 0, totalh = 0;
 
-    printf("Digite o código da mercadoria. \n");
-    printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+    printf("Digite o código da mercadoria.\n");
+    printf("L - Limpeza, A - Alimentação, H - Higiene.\n");
     scanf(" %c", &cod);
 
     while(cod != '0')
     {
         if(cod != 'L' && cod != 'A'  && cod != 'H')
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
 
-            printf("Digite o código da mercadoria. \n");
-            printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+            printf("Digite o código da mercadoria.\n");
+            printf("L - Limpeza, A - Alimentação, H - Higiene.\n");
             scanf(" %c", &cod);
 
             continue;
         }
 
-        printf("Digite o preço da mercadoria. \n");
+        printf("Digite o preço da mercadoria.\n");
         scanf("%f", &preco);
 
         totalgeral += preco;
@@ -1128,15 +1128,15 @@ void q29()
                 break;
         }
 
-        printf("Digite o código da mercadoria. \n");
-        printf("L - Limpeza, A - Alimentação, H - Higiene. \n");
+        printf("Digite o código da mercadoria.\n");
+        printf("L - Limpeza, A - Alimentação, H - Higiene.\n");
         scanf(" %c", &cod);
     }
 
-    printf("Total vendido: R$%.2f \n", totalgeral);
-    printf("Total vendido em limpeza: R$%.2f \n", totall);
-    printf("Total vendido em alimentação: R$%.2f \n", totala);
-    printf("Total vendido em higiene: R$%.2f \n", totalh);
+    printf("Total vendido: R$%.2f\n", totalgeral);
+    printf("Total vendido em limpeza: R$%.2f\n", totall);
+    printf("Total vendido em alimentação: R$%.2f\n", totala);
+    printf("Total vendido em higiene: R$%.2f\n", totalh);
 }
 
 //30. Faça um programa que receba a idade e o estado civil (C - casado, S - solteiro, V - viúvo
@@ -1155,13 +1155,13 @@ void q30()
     float somaidadeviuvo = 0, contgeral = 0;
     char ec;
 
-    printf("Digite sua idade. \n");
+    printf("Digite sua idade.\n");
     scanf("%d", &idade);
 
     while(idade >= 0)
     {
-        printf("Digite seu estado civil. \n");
-        printf("C - Casado, S - Solteiro, V - Viúvo, D - Desquitado ou separado. \n");
+        printf("Digite seu estado civil.\n");
+        printf("C - Casado, S - Solteiro, V - Viúvo, D - Desquitado ou separado.\n");
         scanf(" %c", &ec);
 
         switch(ec)
@@ -1183,21 +1183,21 @@ void q30()
 
         contgeral ++;
 
-        printf("Digite sua idade. \n");
+        printf("Digite sua idade.\n");
         scanf("%d", &idade);
     }
 
-    printf("Quantidade de pessoas casadas: %d \n", contcasado);
-    printf("Quantidade de pessoas solteiras: %d \n", contsolteiro);
-    printf("Média das idades as pessoas viúvas: %.2f \n", somaidadeviuvo / contviuvo);
-    printf("Percentual de pessoas desquitadas ou separadas: %.2f%% \n", (contseparado / contgeral) * 100);
+    printf("Quantidade de pessoas casadas: %d\n", contcasado);
+    printf("Quantidade de pessoas solteiras: %d\n", contsolteiro);
+    printf("Média das idades as pessoas viúvas: %.2f\n", somaidadeviuvo / contviuvo);
+    printf("Percentual de pessoas desquitadas ou separadas: %.2f%%\n", (contseparado / contgeral) * 100);
 }
 
 int main()
 {
     int questao;
 
-    printf("Digite a questão a ser executada. \n");
+    printf("Digite a questão a ser executada.\n");
     scanf("%d", &questao);
 
     switch(questao)
@@ -1293,7 +1293,7 @@ int main()
     	    q30();
     	    break;
         default:
-    	    printf("Opção inválida. \n");
+    	    printf("Opção inválida.\n");
     }
     
     return 0;

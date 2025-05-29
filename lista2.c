@@ -6,16 +6,16 @@ void q01()
 {
     int x, y, soma;
 
-    printf("Digite dois números inteiros. \n");
+    printf("Digite dois números inteiros.\n");
     scanf("%d", &x);
     scanf("%d", &y);
 
     soma = x + y;
 
     if(soma > 10)
-        printf("Soma dos números digitados: %d \n", soma);
+        printf("Soma dos números digitados: %d\n", soma);
     else
-        printf("A soma dos números digitados é menor que 10. \n");
+        printf("A soma dos números digitados é menor que 10.\n");
 }
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20,
@@ -26,16 +26,16 @@ void q02()
 {
     int x, y, soma;
 
-    printf("Digite dois números inteiros. \n");
+    printf("Digite dois números inteiros.\n");
     scanf("%d", &x);
     scanf("%d", &y);
 
     soma = x + y;
 
     if(soma > 20)
-        printf("%d \n", soma + 8);
+        printf("%d\n", soma + 8);
     else
-        printf("%d \n", soma - 5);
+        printf("%d\n", soma - 5);
 }
 
 //3. Faça um programa que leia um número e imprima uma das duas mensagens: "É múltiplo de 3"ou "Não é múltiplo de 3".
@@ -44,13 +44,13 @@ void q03()
 {
     int x;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &x);
 
     if(x % 3 == 0)
-        printf("%d múltiplo de 3. \n", x);
+        printf("%d múltiplo de 3.\n", x);
     else
-        printf("%d não é múltiplo de 3. \n", x);
+        printf("%d não é múltiplo de 3.\n", x);
 }
 
 //4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
@@ -59,13 +59,13 @@ void q04()
 {
     int x;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &x);
 
     if(x % 5 == 0)
-        printf("%d é divisível por 5. \n", x);
+        printf("%d é divisível por 5.\n", x);
     else
-        printf("%d não é divisível por 5. \n", x);
+        printf("%d não é divisível por 5.\n", x);
 }
 
 //5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
@@ -74,13 +74,13 @@ void q05()
 {
     int x;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &x);
 
     if((x % 3 == 0) && (x % 7 == 0))
-        printf("%d é divisível por 3 e por 7. \n", x);
+        printf("%d é divisível por 3 e por 7.\n", x);
     else
-        printf("%d não é divisível por 3 e por 7. \n", x);
+        printf("%d não é divisível por 3 e por 7.\n", x);
 }
 
 //6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
@@ -92,14 +92,14 @@ void q06()
 {
     float salario, prestacao;
 
-    printf("Digite seu salário e o valor da prestação desejada. \n");
+    printf("Digite seu salário e o valor da prestação desejada.\n");
     scanf("%f", &salario);
     scanf("%f", &prestacao);
 
     if(prestacao > (salario * 0.3))
-        printf("O empréstimo não pode ser concedido. \n");
+        printf("O empréstimo não pode ser concedido.\n");
     else
-        printf("O empréstimo pode ser concedido. \n");
+        printf("O empréstimo pode ser concedido.\n");
 }
 
 //7. Faça um programa que leia um número e indique se o número está compreendido
@@ -109,13 +109,13 @@ void q07()
 {
     int x;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &x);
 
     if((x >= 20) && (x <= 50))
-        printf("%d está entre 20 e 50. \n", x);
+        printf("%d está entre 20 e 50.\n", x);
     else
-        printf("%d não está entre 20 e 50. \n", x);
+        printf("%d não está entre 20 e 50.\n", x);
 }
 
 //8. Faça um programa que leia um número e imprima uma das mensagens: 
@@ -125,15 +125,15 @@ void q08()
 {
     int x;
 
-    printf("Digite um número inteiro. \n");
+    printf("Digite um número inteiro.\n");
     scanf("%d", &x);
 
     if(x > 20)
-        printf("O número digitado é maior do que 20. \n");
+        printf("O número digitado é maior do que 20.\n");
     else if(x < 20)
-        printf("O número digitado é menor do que 20. \n");
+        printf("O número digitado é menor do que 20.\n");
     else
-        printf("O número digitado é igual a 20. \n");
+        printf("O número digitado é igual a 20.\n");
 }
 
 //9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o ano
@@ -144,16 +144,16 @@ void q09()
 {
     int nascimento, idade, anoatual;
 
-    printf("Digite o ano em que você nasceu e o ano em que estamos. \n");
+    printf("Digite o ano em que você nasceu e o ano em que estamos.\n");
     scanf("%d", &nascimento);
     scanf("%d", &anoatual);
 
     idade = anoatual - nascimento;
 
     if(idade > 150 || idade < 0)
-        printf("Ano de nascimento inválido. \n");
+        printf("Ano de nascimento inválido.\n");
     else
-        printf("Idade: %d \n", idade);
+        printf("Idade: %d\n", idade);
 }
 
 //10. Faça um programa que leia três números inteiros e imprima os três em ordem crescente.
@@ -162,23 +162,23 @@ void q10()
 {
     int a, b, c;
 
-    printf("Digite 3 números inteiros. \n");
+    printf("Digite 3 números inteiros.\n");
     scanf("%d", &a);
     scanf("%d", &b);
     scanf("%d", &c);
 
     if(a <= b && b <= c)
-        printf("%d, %d, %d \n", a, b, c);
+        printf("%d, %d, %d\n", a, b, c);
     else if(a <= c && c <= b)
-        printf("%d, %d, %d \n", a, c, b);
+        printf("%d, %d, %d\n", a, c, b);
     else if(b <= a && a <= c)
-        printf("%d, %d, %d \n", b, a, c);
+        printf("%d, %d, %d\n", b, a, c);
     else if(b <= c && c <= a)
-        printf("%d, %d, %d \n", b, c, a);
+        printf("%d, %d, %d\n", b, c, a);
     else if(c <= a && a <= b)
-        printf("%d, %d, %d \n", c, a, b);
+        printf("%d, %d, %d\n", c, a, b);
     else if(c <= b && b <= a)
-        printf("%d, %d, %d \n", c, b, a);
+        printf("%d, %d, %d\n", c, b, a);
 }
 
 //11. Faça um programa que leia 3 números e imprima o maior deles.
@@ -187,17 +187,17 @@ void q11()
 {
     int a, b, c;
 
-    printf("Digite 3 números inteiros. \n");
+    printf("Digite 3 números inteiros.\n");
     scanf("%d", &a);
     scanf("%d", &b);
     scanf("%d", &c);
 
     if(a >= b && a >= c)
-    	printf("Maior número: %d \n", a);
+    	printf("Maior número: %d\n", a);
     else if(b >= a && b >= c)
-    	printf("Maior número: %d \n", b);
+    	printf("Maior número: %d\n", b);
     else if(c >= a && c >= b)
-    	printf("Maior número: %d \n", c);
+    	printf("Maior número: %d\n", c);
 }
 
 //12. Faça um programa que leia a idade de uma pessoa e informe:
@@ -209,15 +209,15 @@ void q12()
 {
     int idade;
 
-    printf("Digite sua idade. \n");
+    printf("Digite sua idade.\n");
     scanf("%d", &idade);
 
     if(idade < 18)
-        printf("Você é menor de idade. \n");
+        printf("Você é menor de idade.\n");
     else if(idade >= 18 && idade < 65)
-        printf("Você é maior de idade. \n");
+        printf("Você é maior de idade.\n");
     else if (idade >= 65)
-        printf("Você é idoso. \n");
+        printf("Você é idoso.\n");
 }
 
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
@@ -229,22 +229,22 @@ void q13()
     char nome[99];
     float p1, p2, m;
 
-    printf("Digite o nome, a nota da prova 1 e a nota da prova 2. \n");
+    printf("Digite o nome, a nota da prova 1 e a nota da prova 2.\n");
     scanf(" %99[^\n]", nome);
     scanf("%f", &p1);
     scanf("%f", &p2);
 
     m = (p1 + p2) / 2;
 
-    printf("Nome: %s \n", nome);
-    printf("Média: %.2f \n", m);
+    printf("Nome: %s\n", nome);
+    printf("Média: %.2f\n", m);
 
     if(m >= 7)
-        printf("Aprovado. \n");
+        printf("Aprovado.\n");
     else if(m < 3)
-        printf("Reprovado. \n");
+        printf("Reprovado.\n");
     else
-        printf("Prova final. \n");
+        printf("Prova final.\n");
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
@@ -259,17 +259,17 @@ void q14()
 {
     float salario;
 
-    printf("Digite seu salário. \n");
+    printf("Digite seu salário.\n");
     scanf("%f", &salario);
 
     if(salario <= 600)
-        printf("Isento. \n");
+        printf("Isento.\n");
     else if(salario > 600 && salario <= 1200)
-        printf("Desconto: R$%.2f \n", salario * 0.2);
+        printf("Desconto: R$%.2f\n", salario * 0.2);
     else if(salario > 1200 && salario <= 2000)
-        printf("Desconto: R$%.2f \n", salario * 0.25);
+        printf("Desconto: R$%.2f\n", salario * 0.25);
     else
-        printf("Desconto: R$%.2f \n", salario * 0.3);
+        printf("Desconto: R$%.2f\n", salario * 0.3);
 }
 
 //15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o valor
@@ -279,13 +279,13 @@ void q15()
 {
     float valor;
 
-    printf("Digite o valor de compra produto. \n");
+    printf("Digite o valor de compra produto.\n");
     scanf("%f", &valor);
 
     if(valor < 20)
-        printf("Valor de venda: R$%.2f \n", valor * 1.45);
+        printf("Valor de venda: R$%.2f\n", valor * 1.45);
     else
-        printf("Valor de venda: R$%.2f \n", valor * 1.3);
+        printf("Valor de venda: R$%.2f\n", valor * 1.3);
 }
 
 //16. A confederação brasileira de natação irá promover eliminatórias para o próximo
@@ -301,21 +301,21 @@ void q16()
 {
     int i;
 
-    printf("Digite a idade do nadador. \n");
+    printf("Digite a idade do nadador.\n");
     scanf("%d", &i);
 
     if(i >= 5 && i <= 7)
-    	printf("Categoria infantil A. \n");
+    	printf("Categoria infantil A.\n");
     else if(i >= 8 && i <= 10)
-    	printf("Categoria infantil B. \n");
+    	printf("Categoria infantil B.\n");
     else if(i >= 11 && i <= 13)
-    	printf("Categoria juvenil A. \n");
+    	printf("Categoria juvenil A.\n");
     else if(i >= 14 && i <= 17)
-    	printf("Categoria juvenil B. \n");
+    	printf("Categoria juvenil B.\n");
     else if(i >= 18)
-    	printf("Categoria sênior. \n");
+    	printf("Categoria sênior.\n");
     else
-    	printf("O nadador não possui a idade mínima de 5 anos. \n");
+    	printf("O nadador não possui a idade mínima de 5 anos.\n");
 }
 
 //17. Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer
@@ -334,24 +334,24 @@ void q17()
     char nome[99];
     int idade;
 
-    printf("Digite seu nome e sua idade. \n");
+    printf("Digite seu nome e sua idade.\n");
     scanf(" %99[^\n]", nome);
     scanf("%d", &idade);
 
-    printf("Nome: %s \n", nome);
+    printf("Nome: %s\n", nome);
 
     if(idade <= 10)
-        printf("Valor: R$30.00 \n");
+        printf("Valor: R$30.00\n");
     else if(idade <= 29)
-        printf("Valor: R$60.00 \n");
+        printf("Valor: R$60.00\n");
     else if(idade <= 45)
-        printf("Valor: R$120.00 \n");
+        printf("Valor: R$120.00\n");
     else if(idade <= 59)
-        printf("Valor: R$150.00 \n");
+        printf("Valor: R$150.00\n");
     else if(idade <= 65)
-        printf("Valor: R$250.00 \n");
+        printf("Valor: R$250.00\n");
     else
-        printf("Valor: R$400.00 \n");
+        printf("Valor: R$400.00\n");
 }
 
 //18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente.
@@ -362,49 +362,49 @@ void q18()
 {
     int x;
 
-    printf("Digite um número inteiro entre 1 e 12. \n");
+    printf("Digite um número inteiro entre 1 e 12.\n");
     scanf("%d", &x);
 
     switch(x)
     {
         case 1:
-            printf("Janeiro. \n");
+            printf("Janeiro.\n");
             break;
         case 2:
-            printf("Fevereiro. \n");
+            printf("Fevereiro.\n");
             break;
         case 3:
-            printf("Março. \n");
+            printf("Março.\n");
             break;
         case 4:
-            printf("Abril. \n");
+            printf("Abril.\n");
             break;
         case 5:
-            printf("Maio. \n");
+            printf("Maio.\n");
             break;
         case 6:
-            printf("Junho. \n");
+            printf("Junho.\n");
             break;
         case 7:
-            printf("Julho. \n");
+            printf("Julho.\n");
             break;
         case 8:
-            printf("Agosto. \n");
+            printf("Agosto.\n");
             break;
         case 9:
-            printf("Setembro. \n");
+            printf("Setembro.\n");
             break;
         case 10:
-            printf("Outubro. \n");
+            printf("Outubro.\n");
             break;
         case 11:
-            printf("Novembro. \n");
+            printf("Novembro.\n");
             break;
         case 12:
-            printf("Dezembro. \n");
+            printf("Dezembro.\n");
             break;
         default:
-            printf("Não existe mês com este número. \n");
+            printf("Não existe mês com este número.\n");
     }
 }
 
@@ -421,27 +421,27 @@ void q19()
 
     for(i = 0; i < 3; i++)
     {
-        printf("Digite os pontos do jogador %d. \n", i + 1);
+        printf("Digite os pontos do jogador %d.\n", i + 1);
         scanf("%d", &pontos[i]);
     }
 
     if(pontos[0] >= pontos[1] && pontos[1] >= pontos[2])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[0], pontos[1], pontos[2]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[0], pontos[1], pontos[2]);
     else if(pontos[0] >= pontos[2] && pontos[2] >= pontos[1])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[0], pontos[2], pontos[1]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[0], pontos[2], pontos[1]);
     else if(pontos[1] >= pontos[0] && pontos[0] >= pontos[2])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[1], pontos[0], pontos[2]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[1], pontos[0], pontos[2]);
     else if(pontos[1] >= pontos[2] && pontos[2] >= pontos[0])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[1], pontos[2], pontos[0]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[1], pontos[2], pontos[0]);
     else if(pontos[2] >= pontos[0] && pontos[0] >= pontos[1])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[2], pontos[0], pontos[1]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[2], pontos[0], pontos[1]);
     else if(pontos[2] >= pontos[1] && pontos[1] >= pontos[0])
-        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d. \n", pontos[2], pontos[1], pontos[0]);
+        printf("Pontos dos três jogadores, em ordem decrescente: %d, %d, %d.\n", pontos[2], pontos[1], pontos[0]);
 
     if(pontos[0] + pontos[1] + pontos[2] > 100)
-        printf("Média: %.2f \n", (pontos[0] + pontos[1] + pontos[2]) / 3.0);
+        printf("Média: %.2f\n", (pontos[0] + pontos[1] + pontos[2]) / 3.0);
     else
-        printf("Equipe desclassificada. \n");
+        printf("Equipe desclassificada.\n");
 }
 
 //20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de acordo com o saldo médio no último ano.
@@ -457,7 +457,7 @@ void q20()
 {
     float saldo, credito;
 
-    printf("Digite seu saldo médio no último ano. \n");
+    printf("Digite seu saldo médio no último ano.\n");
     scanf("%f", &saldo);
 
     if(saldo <= 500)
@@ -469,8 +469,8 @@ void q20()
     else
         credito = saldo * 0.5;
 
-    printf("Saldo médio: R$%.2f \n", saldo);
-    printf("Crédito disponível: R$%.2f \n", credito);
+    printf("Saldo médio: R$%.2f\n", saldo);
+    printf("Crédito disponível: R$%.2f\n", credito);
 }
 
 //21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do livro que será emprestado,
@@ -485,19 +485,19 @@ void q21()
     int tipo;
     char nome[99];
 
-    printf("Digite o nome do livro e o tipo de usuário. \n");
-    printf("0 - Professor, 1 - Aluno \n");
+    printf("Digite o nome do livro e o tipo de usuário.\n");
+    printf("0 - Professor, 1 - Aluno\n");
     scanf(" %99[^\n]", nome);
     scanf("%d", &tipo);
 
-    printf("Nome do livro: %s \n", nome);
+    printf("Nome do livro: %s\n", nome);
 
     if(tipo == 0)
-        printf("Você terá 10 dias para devolver o livro emprestado. \n")
+        printf("Você terá 10 dias para devolver o livro emprestado.\n")
     else if(tipo == 1)
-        printf("Você terá 3 dias para devolver o livro emprestado. \n");
+        printf("Você terá 3 dias para devolver o livro emprestado.\n");
     else
-        printf("Tipo inválido. \n");
+        printf("Tipo inválido.\n");
 }
 
 //22. Construa um programa que leia o percurso em quilómetros, o tipo do carro e informe o consumo estimado de
@@ -508,7 +508,7 @@ void q22()
     char tipo;
     float km, consumo;
 
-    printf("Digite a distância do percurso (km) e o tipo de carro. \n");
+    printf("Digite a distância do percurso (km) e o tipo de carro.\n");
     scanf("%f", &km);
     scanf(" %c", &tipo);
 
@@ -519,9 +519,9 @@ void q22()
     else if(tipo == 'C')
         consumo = km / 8.0;
     else
-        printf("Tipo de carro inválido. \n");
+        printf("Tipo de carro inválido.\n");
 
-    printf("Consumo estimado de combustível: %.1fL \n", consumo);
+    printf("Consumo estimado de combustível: %.1fL\n", consumo);
 }
 
 //23. Crie um programa que informe a quantidade total de calorias de uma refeição a partir da escolha do
@@ -538,8 +538,8 @@ void q23()
 
     do
     {
-        printf("Digite o prato desejado. \n");
-        printf("1 - Vegetariano, 2 - Peixe, 3 - Frango, 4 - Carne \n");
+        printf("Digite o prato desejado.\n");
+        printf("1 - Vegetariano, 2 - Peixe, 3 - Frango, 4 - Carne\n");
         scanf("%d", &prato);
 
         if(prato == 1)
@@ -552,7 +552,7 @@ void q23()
             cal += 350;
         else
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
             prato = 0;
         }
     }
@@ -560,8 +560,8 @@ void q23()
 
     do
     {
-        printf("Digite a sobremesa desejada. \n");
-        printf("1 - Abacaxi, 2 - Sorvete diet, 3 - Mousse diet, 4 - Mousse chocolate \n");
+        printf("Digite a sobremesa desejada.\n");
+        printf("1 - Abacaxi, 2 - Sorvete diet, 3 - Mousse diet, 4 - Mousse chocolate\n");
         scanf("%d", &sobremesa);
 
         if(sobremesa == 1)
@@ -574,7 +574,7 @@ void q23()
             cal += 200;
         else
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
             sobremesa = 0;
         }
     }
@@ -582,8 +582,8 @@ void q23()
 
     do
     {
-        printf("Digite a bebida desejada. \n");
-        printf("1 - Chá, 2 - Suco de laranja, 3 - Suco de melão, 4 - Refrigerante diet \n");
+        printf("Digite a bebida desejada.\n");
+        printf("1 - Chá, 2 - Suco de laranja, 3 - Suco de melão, 4 - Refrigerante diet\n");
         scanf("%d", &bebida);
 
         if(bebida == 1)
@@ -596,13 +596,13 @@ void q23()
             cal += 65;
         else
         {
-            printf("Opção inválida. \n");
+            printf("Opção inválida.\n");
             bebida = 0;
         }
     }
     while(bebida == 0);
 
-    printf("Quantidade total de calorias: %d \n", cal);
+    printf("Quantidade total de calorias: %d\n", cal);
 }
 
 //24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dos motoristas o DUT.
@@ -613,42 +613,42 @@ void q24()
 {
     char placa[7];
 
-    printf("Digite a placa do veículo. \n");
+    printf("Digite a placa do veículo.\n");
     scanf(" %s", placa);
 
-    printf("%s \n", placa);
+    printf("%s\n", placa);
 
     switch(placa[6])
     {
         case '1':
-            printf("O emplacamento deve ser renovado em janeiro. \n");
+            printf("O emplacamento deve ser renovado em janeiro.\n");
             break;
         case '2':
-            printf("O emplacamento deve ser renovado em fevereiro. \n");
+            printf("O emplacamento deve ser renovado em fevereiro.\n");
             break;
         case '3':
-            printf("O emplacamento deve ser renovado em março. \n");
+            printf("O emplacamento deve ser renovado em março.\n");
             break;
         case '4':
-            printf("O emplacamento deve ser renovado em abril. \n");
+            printf("O emplacamento deve ser renovado em abril.\n");
             break;
         case '5':
-            printf("O emplacamento deve ser renovado em maio. \n");
+            printf("O emplacamento deve ser renovado em maio.\n");
             break;
         case '6':
-            printf("O emplacamento deve ser renovado em junho. \n");
+            printf("O emplacamento deve ser renovado em junho.\n");
             break;
         case '7':
-            printf("O emplacamento deve ser renovado em julho. \n");
+            printf("O emplacamento deve ser renovado em julho.\n");
             break;
         case '8':
-            printf("O emplacamento deve ser renovado em agosto. \n");
+            printf("O emplacamento deve ser renovado em agosto.\n");
             break;
         case '9':
-            printf("O emplacamento deve ser renovado em setembro. \n");
+            printf("O emplacamento deve ser renovado em setembro.\n");
             break;
         case '0':
-            printf("O emplacamento deve ser renovado em outubro. \n");
+            printf("O emplacamento deve ser renovado em outubro.\n");
             break;
     }
 }
@@ -666,24 +666,24 @@ void q25()
 {
     float indice;
 
-    printf("Digite o índice de poluição. \n");
+    printf("Digite o índice de poluição.\n");
     scanf("%f", &indice);
 
     if (indice >= 0.3 && indice < 0.4)
-        printf("1º grupo. \n");
+        printf("1º grupo.\n");
     else if (indice >= 0.4 && indice < 0.5)
-        printf("1º e 2º grupo. \n");
+        printf("1º e 2º grupo.\n");
     else if (indice >= 0.5)
-        printf("1º, 2º e 3º grupo. \n");
+        printf("1º, 2º e 3º grupo.\n");
     else
-        printf("Índice de poluição aceitável. \n");
+        printf("Índice de poluição aceitável.\n");
 }
 
 int main()
 {
     int questao;
 
-    printf("Digite a questão a ser executada. \n");
+    printf("Digite a questão a ser executada.\n");
     scanf("%d", &questao);
 
     switch(questao)
@@ -764,7 +764,7 @@ int main()
     	    q25();
     	    break;
         default:
-    	    printf("Opção inválida. \n");
+    	    printf("Opção inválida.\n");
     }
     
     return 0;

@@ -13,11 +13,11 @@ void q01()
 
     for(i = 0; i < 15; i ++)
     {
-        printf("Digite o número da posição %d. \n", i + 1);
+        printf("Digite o número da posição %d.\n", i + 1);
         scanf("%d", &x[i]);
     }
 
-    printf("Digite o número a ser encontrado. \n");
+    printf("Digite o número a ser encontrado.\n");
     scanf("%d", &num);
 
     for(i = 0; i < 15; i ++)
@@ -25,9 +25,9 @@ void q01()
             pos = i;
 
     if(pos == 0)
-        printf("Não encontrado. \n");
+        printf("Não encontrado.\n");
     else
-        printf("Posição do número %d: %d \n", num, pos);
+        printf("Posição do número %d: %d\n", num, pos);
 }
     
 //2. Faça um programa que armazene 10 letras em um vetor e imprima uma listagem
@@ -40,12 +40,12 @@ void q02()
 
     for(i = 0; i < 10; i ++)
     {
-        printf("Digite a letra da posição %d. \n", i + 1);
+        printf("Digite a letra da posição %d.\n", i + 1);
         scanf(" %c", &x[i]);
     }
 
     for(i = 0; i < 10; i ++)
-        printf("Letra da posição %d: %c \n", i + 1, x[i]);
+        printf("Letra da posição %d: %c\n", i + 1, x[i]);
 }
 
 //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
@@ -57,7 +57,7 @@ void q03()
 
     for(i = 0; i < 10; i ++)
     {
-        printf("Digite o número da posição %d. \n", i + 1);
+        printf("Digite o número da posição %d.\n", i + 1);
         scanf("%d", &x[i]);
     }
 
@@ -66,9 +66,9 @@ void q03()
         printf("Número da posição %d: %d", i + 1, x[i]);
 
         if(x[i] % 2 == 0)
-            printf(" (par) \n");
+            printf(" (par)\n");
         else
-            printf(" (ímpar) \n");
+            printf(" (ímpar)\n");
     }
 }
 
@@ -81,7 +81,7 @@ void q04()
 
     for(i = 0; i < 8; i ++)
     {
-        printf("Digite o número da posição %d. \n", i + 1);
+        printf("Digite o número da posição %d.\n", i + 1);
         scanf("%d", &x[i]);
 
         if(x[i] % 6 == 0)
@@ -89,9 +89,9 @@ void q04()
     }
 
     for(i = 0; i < 8; i ++)
-        printf("Número da posição %d: %d \n", i + 1, x[i]);
+        printf("Número da posição %d: %d\n", i + 1, x[i]);
 
-    printf("Quantidade de números múltiplos de 6: %d \n", cont);
+    printf("Quantidade de números múltiplos de 6: %d\n", cont);
 }
 
 //5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
@@ -107,7 +107,7 @@ void q05()
 
     for(i = 0; i < 15; i ++)
     {
-        printf("Digite a nota da prova 1 e a nota da prova 2 do aluno %d. \n", i + 1);
+        printf("Digite a nota da prova 1 e a nota da prova 2 do aluno %d.\n", i + 1);
         scanf("%f", &n1[i]);
         scanf("%f", &n2[i]);
 
@@ -119,7 +119,7 @@ void q05()
             situacao[i] = 2;
     }
 
-    printf("Aluno    Prova 1    Prova 2    Média    Situação \n");
+    printf("Aluno    Prova 1    Prova 2    Média    Situação\n");
 
     for(i = 0; i < 15; i ++)
     {
@@ -144,16 +144,16 @@ void q06()
 
     for(i = 0; i < 20; i ++)
     {
-        printf("Digite o salário do trabalhador %d. \n", i + 1);
+        printf("Digite o salário do trabalhador %d.\n", i + 1);
         scanf("%f", &salario[i]);
 
         novosalario[i] = salario[i] * 1.08;
     }
 
-    printf("Trabalhador    Salário Antigo    Salário Novo \n");
+    printf("Trabalhador    Salário Antigo    Salário Novo\n");
 
     for(i = 0; i < 20; i ++)
-        printf("%-14d %-17.2f %-13.2f \n", i + 1, salario[i], novosalario[i]);
+        printf("%-14d %-17.2f %-13.2f\n", i + 1, salario[i], novosalario[i]);
 }
 
 //7. Crie um programa que leia o preço de compra e o preço de venda de 100 mercadorias
@@ -170,7 +170,7 @@ void q07()
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o preço de compra e o preço de venda da mercadoria %d. \n", i + 1);
+        printf("Digite o preço de compra e o preço de venda da mercadoria %d.\n", i + 1);
         scanf("%f", &pc[i]);
         scanf("%f", &pv[i]);
 
@@ -182,9 +182,9 @@ void q07()
             cont3 ++;
     }
 
-    printf("Quantidade de mercadorias que proporcionam menos de 10%% de lucro: %d \n", cont1);
-    printf("Quantidade de mercadorias que proporcionam entre 10%% e 20%% de lucro: %d \n", cont2);
-    printf("Quantidade de mercadorias que proporcionam mais de 20%% de lucro: %d \n", cont3);
+    printf("Quantidade de mercadorias que proporcionam menos de 10%% de lucro: %d\n", cont1);
+    printf("Quantidade de mercadorias que proporcionam entre 10%% e 20%% de lucro: %d\n", cont2);
+    printf("Quantidade de mercadorias que proporcionam mais de 20%% de lucro: %d\n", cont3);
 }
 
 //8. Construa um programa que armazene o código, a quantidade, o valor de compra
@@ -198,17 +198,17 @@ void q08()
 
     for(i = 0; i < 30; i ++)
     {
-        printf("Digite o código, a quantidade, o valor de compra e o valor de venda do produto. \n");
+        printf("Digite o código, a quantidade, o valor de compra e o valor de venda do produto.\n");
         scanf("%d", &cod[i]);
         scanf("%d", &quant[i]);
         scanf("%f", &vc[i]);
         scanf("%f", &vv[i]);
     }
 
-    printf("Código    Quantidade    Valor de Compra    Valor de Venda \n");
+    printf("Código    Quantidade    Valor de Compra    Valor de Venda\n");
 
     for(i = 0; i < 30; i ++)
-        printf("%-10d %-13d R$%-17.2f R$%-14.2f \n", cod[i], quant[i], vc[i], vv[i]);
+        printf("%-10d %-13d R$%-17.2f R$%-14.2f\n", cod[i], quant[i], vc[i], vv[i]);
 }
 
 //9. Faça um programa em C que leia dois conjuntos de números inteiros, tendo
@@ -221,19 +221,19 @@ void q09()
 
     for(i = 0; i < 10; i ++)
     {
-        printf("Digite o número %d do conjunto 1. \n", i + 1);
+        printf("Digite o número %d do conjunto 1.\n", i + 1);
         scanf("%d", &c1[i]);
-        printf("Digite o número %d do conjunto 2. \n", i + 1);
+        printf("Digite o número %d do conjunto 2.\n", i + 1);
         scanf("%d", &c2[i]);
     }
 
-    printf("Elementos comuns aos dois conjuntos: \n");
+    printf("Elementos comuns aos dois conjuntos:\n");
 
     for(i = 0; i < 10; i ++)
         for(j = 0; j < 10; j ++)
         {
             if(c1[i] == c2[j])
-            printf("%d \n", c2[j]);
+            printf("%d\n", c2[j]);
         }
 }
 
@@ -246,7 +246,7 @@ void q10()
 
     for(i = 0; i < 10; i ++)
     {
-        printf("Digite o elemento %d do vetor. \n", i + 1);
+        printf("Digite o elemento %d do vetor.\n", i + 1);
         scanf("%d", &vet[i]);
 
         w[i] = 1;
@@ -255,10 +255,10 @@ void q10()
             w[i] *= j;
     }
 
-    printf("Vetor w: \n");
+    printf("Vetor w:\n");
 
     for(i = 0; i < 10; i++)
-        printf("%d \n", w[i]);
+        printf("%d\n", w[i]);
 }
 
 //11. Construa um programa que leia dados para um vetor de 100 elementos inteiros.
@@ -271,7 +271,7 @@ void q11()
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o valor do elemento %d. \n", i + 1);
+        printf("Digite o valor do elemento %d.\n", i + 1);
         scanf("%d", &vet[i]);
 
         if(i == 0)
@@ -289,10 +289,10 @@ void q11()
         soma += vet[i];
     }
 
-    printf("Maior: %d \n", maior);
-    printf("Menor: %d \n", menor);
-    printf("Percentual de números pares: %.2f%% \n", (pares / 100.0) * 100);
-    printf("Média: %.2f \n", soma / 100.0);
+    printf("Maior: %d\n", maior);
+    printf("Menor: %d\n", menor);
+    printf("Percentual de números pares: %.2f%%\n", (pares / 100.0) * 100);
+    printf("Média: %.2f\n", soma / 100.0);
 }
 
 //12. Crie um programa para gerenciar um sistema de reservas de mesas em uma casa
@@ -313,7 +313,7 @@ void q12()
 
     while(1)
     {
-        printf("Escolha o número da sua mesa (100 a 129) e a quantidade de lugares. \n");
+        printf("Escolha o número da sua mesa (100 a 129) e a quantidade de lugares.\n");
         scanf("%d", &num);
         scanf("%d", &quant);
 
@@ -322,24 +322,24 @@ void q12()
 
         if (num < 100 || num > 129)
         {
-            printf("Código da mesa inválido. \n");
+            printf("Código da mesa inválido.\n");
             continue;
         }
 
         if(quant < 1)
         {
-            printf("Quantidade de lugares inválida. \n");
+            printf("Quantidade de lugares inválida.\n");
             continue;
         }
 
         num -= 100;
 
         if((mesa[num] + quant) > 5)
-            printf("A mesa escolhida não tem essa quantidade de lugares disponíveis. \n");
+            printf("A mesa escolhida não tem essa quantidade de lugares disponíveis.\n");
         else
         {
             mesa[num] += quant;
-            printf("Sua reserva foi feita. \n");
+            printf("Sua reserva foi feita.\n");
         }
 
         soma = 0;
@@ -375,14 +375,14 @@ void q14()
 
     for(i = 0; i < 50; i ++)
     {
-        printf("Digite o número %d \n", i + 1);
+        printf("Digite o número %d\n", i + 1);
         scanf("%d", &vet1[i]);
     }
 
     for(i = 0; i < 50; i ++)
     {
         vet2[i] = vet1[i] * vet1[i];
-        printf("%d \n", vet2[i]);
+        printf("%d\n", vet2[i]);
     }
 }
 
@@ -396,7 +396,7 @@ void q15()
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o número %d \n", i + 1);
+        printf("Digite o número %d\n", i + 1);
         scanf("%d", &num[i]);
 
         if(num[i] == 0)
@@ -409,7 +409,7 @@ void q15()
         if(num[j] == ultimo)
             quant ++;
 
-    printf("Quantidade de números iguais ao último número inserido: %d \n", quant);
+    printf("Quantidade de números iguais ao último número inserido: %d\n", quant);
 }
 
 //16. Crie um programa em C para ler um conjunto de 100 números reais e informe:
@@ -424,7 +424,7 @@ void q16()
 
     for(i = 0; i < 100; i ++)
     {
-        printf("Digite o número %d \n", i + 1);
+        printf("Digite o número %d\n", i + 1);
         scanf("%f", &num[i]);
 
         soma += num[i];
@@ -442,9 +442,9 @@ void q16()
             somaigualmedia ++;
     }
 
-    printf("Quantidade de números iguais a 30: %d \n", somaigual30);
-    printf("Quantidade de números maiores que a média: %d \n", somamaiormedia);
-    printf("Quantidade de números iguais a média: %d \n", somaigualmedia);
+    printf("Quantidade de números iguais a 30: %d\n", somaigual30);
+    printf("Quantidade de números maiores que a média: %d\n", somamaiormedia);
+    printf("Quantidade de números iguais a média: %d\n", somaigualmedia);
 }
 
 //17. Faça um programa que leia um conjunto de 30 valores inteiros, armazene-os em
@@ -456,12 +456,12 @@ void q17()
 
     for(i = 0; i < 30; i ++)
     {
-        printf("Digite o número %d \n", i + 1);
+        printf("Digite o número %d\n", i + 1);
         scanf("%d", &num[i]);
     }
 
     for(i = 29; i >= 0; i --)
-        printf("%d \n", num[i]);
+        printf("%d\n", num[i]);
 }
 
 //18. Faça um programa em C que permita entrar com dados para um vetor VET do tipo
@@ -488,15 +488,15 @@ void q19()
         tel[i] = 900000000 + rand() % 100000000;
     }
 
-    printf("Digite o código (1 a 30). \n");
+    printf("Digite o código (1 a 30).\n");
     scanf("%d", &busca);
 
     if(busca < 1 || busca > 30)
-        printf("Código inválido. \n");
+        printf("Código inválido.\n");
     else
         for(i = 0; i < 30; i ++)
             if(cod[i] == busca)
-                printf("Telefone: %d \n", tel[i]);
+                printf("Telefone: %d\n", tel[i]);
 }
 
 //20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
@@ -511,7 +511,7 @@ int main()
 {
     int questao;
 
-    printf("Digite a questão a ser executada. \n");
+    printf("Digite a questão a ser executada.\n");
     scanf("%d", &questao);
 
     switch(questao)
@@ -577,7 +577,7 @@ int main()
     	    q20();
     	    break;
         default:
-    	    printf("Opção inválida. \n");
+    	    printf("Opção inválida.\n");
     }
     
     return 0;
