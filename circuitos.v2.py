@@ -6,19 +6,10 @@ def inptassociacao():
     while True:
         try:
             print('Selecione a associação do circuito:')
-            print('1 - R')
-            print('2 - L')
-            print('3 - C')
-            print('4 - R+L')
-            print('5 - R+C')
-            print('6 - L+C')
-            print('7 - R+L+C')
-            print('8 - R//L')
-            print('9 - R//C')
-            print('10 - L//C')
-            print('11 - R//L//C\n')
-            inpt = int(input())
-            if inpt < 1 or inpt > 11:
+            print('S - Série')
+            print('P - Paralelo\n')
+            inpt = input().upper()
+            if inpt not in ['S', 'P']:
                 raise ValueError
             os.system('clear')
             return inpt
@@ -62,9 +53,23 @@ def inptfonte():
             os.system('clear')
             print('Entrada inválida. Tente novamente.\n')
 
-grupor = [1, 4, 5, 7, 8, 9, 11]
-grupol = [2, 4, 6, 7, 8, 10, 11]
-grupoc = [3, 5, 6, 7, 9, 10, 11]
+def zeqserie(r, xl, xc):
+    return r + 1j * xl - 1j * xc
+
+def zeqparalelo(r, xl, xc):
+    yr = 0; yl = 0; yc = 0
+
+    if r != 0:
+        yr = 1 / r
+    if xl != 0:
+        yl  = 1 / (1j * xl)
+    if xc != 0:
+        yc  = 1 / (1j * xc)
+    
+    if yr == 0 and yl == 0 and yc == 0:
+        return 0
+    else:
+        return 1 / (yr + yl - yc)
 
 os.system('clear')
 print('Bem vindo ao simulador de circuitos CA!\n')
@@ -72,40 +77,21 @@ print('Bem vindo ao simulador de circuitos CA!\n')
 associacao = inptassociacao()
 
 f = inptfloat('F')
+r = inptfloat('R')
+l = inptfloat('L')
+c = inptfloat('C')
+
 ω = 2 * math.pi * f
-
-if associacao in grupor:
-    r = inptfloat('R')
-if associacao in grupol:
-    l = inptfloat('L')
-    xl = wω * l
-if associacao in grupoc:
-    c = inptfloat('C')
+xl = ω * l
+if c != 0 and ω != 0:
     xc = 1 / (ω * c)
+else:
+    xc = 0
 
-match associacao:
-    case 1:
-        z = r
-    case 2:
-        z = 1j * xl
-    case 3:
-        z = - 1j * xc
-    case 4:
-        z = r + 1j * xl
-    case 5:
-        z = r - 1j * xc
-    case 6:
-        z = 1j * xl - 1j * xc
-    case 7:
-        z = r + 1j * xl - 1j * xc
-    case 8:
-        z = 1 / (1 / r + 1 / (1j * xl))
-    case 9:
-        z = 1 / (1 / r + 1 / (- 1j * xc))
-    case 10:
-        z = 1 / (1 / (1j * xl) + 1 / (- 1j * xc))
-    case 11:
-        z = 1 / (1 / r + 1 / (1j * xl) + 1 / (- 1j * xc))
+if associacao == 'S':
+    z = zeqserie(r, xl, xc)
+else:
+    z = zeqparalelo(r, xl, xc)
 
 os.system('clear')
 tipofonte = inptfonte()
