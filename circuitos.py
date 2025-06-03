@@ -58,20 +58,16 @@ def inptfonte():
 def zeqserie(r, xl, xc):
     return r + 1j * xl - 1j * xc
 
+# corrigir essa funcao
 def zeqparalelo(r, xl, xc):
-    yr = 0; yl = 0; yc = 0
-
-    if r != 0:
-        yr = 1 / r
-    if xl != 0:
-        yl  = 1 / (1j * xl)
-    if xc != 0:
-        yc  = 1 / (1j * xc)
+    yr = 1 / r if r != 0 else 0
+    yl = 1 / (1j * xl) if xl != 0 else 0
+    yc = 1 / (- 1j * xc) if xc != 0 else 0
     
     if yr == 0 and yl == 0 and yc == 0:
         return 0
     else:
-        return 1 / (yr + yl - yc)
+        return 1 / (yr + yl + yc)
 
 def triangulodepotencia():
     plt.figure(figsize = (8, 6))
@@ -142,19 +138,25 @@ def onda():
     plt.show()
 
 def output():
+    print(f'Impedância retangular: {z:.3g} Ω')
+    print(f'Impedância polar: {cmath.polar(z)[0]:.3g} ∠ {math.degrees(cmath.polar(z)[1]):.3g}° Ω\n')
+
+    print(f'Tensão retangular: {v:.3g} V')
+    print(f'Tensão polar: {cmath.polar(v)[0]:.3g} ∠ {math.degrees(cmath.polar(v)[1]):.3g}° V\n')
+    
+    print(f'Corrente retangular: {i:.3g} A')
+    print(f'Corrente polar: {cmath.polar(i)[0]:.3g} ∠ {math.degrees(cmath.polar(i)[1]):.3g}° A\n')
+    
+    print(f'Velocidade angular: {ω:.3g} rad/s')
     print(f'Defasagem: {math.degrees(φ):.3g}°')
+    print(f'Fator de potência: {fp:.3g}\n')
+
     print(f'Potência ativa: {p:.3g} W')
     print(f'Potência reativa: {q:.3g} VAr')
-    print(f'Potência aparente retangular: {s:.3g} VA')
-    print(f'Potência aparente polar: {cmath.polar(s)[0]:.3g} ∠ {math.degrees(cmath.polar(s)[1]):.3g}° VA')
-    print(f'Fator de potência: {fp:.3g}')
-    print(f'Impedância retangular: {z:.3g} Ω')
-    print(f'Impedância polar: {cmath.polar(z)[0]:.3g} ∠ {math.degrees(cmath.polar(z)[1]):.3g}° Ω')
-    print(f'Tensão retangular: {v:.3g} V')
-    print(f'Tensão polar: {cmath.polar(v)[0]:.3g} ∠ {math.degrees(cmath.polar(v)[1]):.3g}° V')
-    print(f'Corrente retangular: {i:.3g} A')
-    print(f'Corrente polar: {cmath.polar(i)[0]:.3g} ∠ {math.degrees(cmath.polar(i)[1]):.3g}° A')
-    print(f'Velocidade angular: {ω:.3g} rad/s')
+    print(f'Potência aparente: {abs(s):.3g} VAr')
+    
+    print(f'Potência complexa retangular: {s:.3g} VA')
+    print(f'Potência complexa polar: {cmath.polar(s)[0]:.3g} ∠ {math.degrees(cmath.polar(s)[1]):.3g}° VA')
 
 os.system('clear')
 print('Bem vindo ao simulador de circuitos CA!\n')
@@ -168,10 +170,7 @@ c = inptfloat('C')
 
 ω = 2 * math.pi * f
 xl = ω * l
-if c != 0 and ω != 0:
-    xc = 1 / (ω * c)
-else:
-    xc = 0
+xc = 1 / (ω * c) if c != 0 and ω != 0 else 0
 
 if associacao == 'S':
     z = zeqserie(r, xl, xc)
