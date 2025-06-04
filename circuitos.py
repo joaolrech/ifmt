@@ -8,13 +8,18 @@ def inptassociacao():
     while True:
         try:
             print('Selecione a associação do circuito:')
-            print('S - Série')
-            print('P - Paralelo\n')
-            inpt = input().upper()
-            if inpt not in ['S', 'P']:
-                raise ValueError
+            print()
+            print('1 - Série')
+            print('2 - Paralelo\n')
+
+            inpt = int(input())
+
+            if inpt < 1 or inpt > 2:
+                raise ValueError  
+            
             os.system('clear')
             return inpt
+        
         except ValueError:
             os.system('clear')
             print('Entrada inválida. Tente novamente.\n')
@@ -23,9 +28,12 @@ def inptfloat(x):
     while True:
         try:
             inpt = float(input(f'Digite o valor de {x} (SI): '))
+
             if inpt < 0:
                 raise ValueError
+            
             return inpt
+        
         except ValueError:
             print('Entrada inválida. Tente novamente.')
 
@@ -33,12 +41,17 @@ def inptpolar(x):
     while True:
         try:
             modulo = float(input(f'Digite o módulo de {x}: '))
+
             if modulo < 0:
                 raise ValueError
+            
             angulo = float(input(f'Digite o ângulo de {x}: '))
+
             retangular = cmath.rect(modulo, math.radians(angulo))
+
             os.system('clear')
             return retangular
+        
         except ValueError:
             print('Entrada inválida. Tente novamente.')
 
@@ -48,11 +61,34 @@ def inptfonte():
             print('A fonte é de tensão ou de corrente?')
             print('V - Tensão')
             print('I - Corrente\n')
+
             inpt = input().upper()
+
             if inpt not in ['I', 'V']:
                 raise ValueError
+            
             os.system('clear')
             return inpt
+        
+        except ValueError:
+            os.system('clear')
+            print('Entrada inválida. Tente novamente.\n')
+
+def inptnovamente():
+    while True:
+        try:
+            print('Deseja simular novamente?\n')
+            print('1 - Sim')
+            print('2 - Não\n')
+
+            inpt = int(input())
+
+            if inpt < 1 or inpt > 2:
+                raise ValueError  
+             
+            os.system('clear')
+            return inpt
+        
         except ValueError:
             os.system('clear')
             print('Entrada inválida. Tente novamente.\n')
@@ -163,40 +199,47 @@ def output():
 os.system('clear')
 print('Bem vindo ao simulador de circuitos CA!\n')
 
-associacao = inptassociacao()
+while(True):
+    associacao = inptassociacao()
 
-f = inptfloat('F')
-r = inptfloat('R')
-l = inptfloat('L')
-c = inptfloat('C')
+    f = inptfloat('F')
+    r = inptfloat('R')
+    l = inptfloat('L')
+    c = inptfloat('C')
 
-ω = 2 * math.pi * f
-xl = ω * l
-xc = 1 / (ω * c) if c != 0 and ω != 0 else 0
+    ω = 2 * math.pi * f
+    xl = ω * l
+    xc = 1 / (ω * c) if c != 0 and ω != 0 else 0
 
-if associacao == 'S':
-    z = zeqserie(r, xl, xc)
-else:
-    z = zeqparalelo(r, xl, xc)
+    if associacao == '1':
+        z = zeqserie(r, xl, xc)
+    else:
+        z = zeqparalelo(r, xl, xc)
 
-os.system('clear')
-tipofonte = inptfonte()
-if tipofonte == 'V':
-    v = inptpolar(tipofonte)
-    i = v / z
-if tipofonte == 'I':
-    i = inptpolar(tipofonte)
-    v = i * z
+    os.system('clear')
+    tipofonte = inptfonte()
+    if tipofonte == 'V':
+        v = inptpolar(tipofonte)
+        i = v / z
+    if tipofonte == 'I':
+        i = inptpolar(tipofonte)
+        v = i * z
 
-modulov, angulov = cmath.polar(v)
-moduloi, anguloi = cmath.polar(i)
-φ = ((angulov - anguloi) + math.pi) % (2 * math.pi) - math.pi
-fp = math.cos(φ)
-s = v * i.conjugate()
-p = s.real
-q = s.imag
+    modulov, angulov = cmath.polar(v)
+    moduloi, anguloi = cmath.polar(i)
+    φ = ((angulov - anguloi) + math.pi) % (2 * math.pi) - math.pi
+    fp = math.cos(φ)
+    s = v * i.conjugate()
+    p = s.real
+    q = s.imag
 
-output()
-triangulodepotencia()
-diagramafasorial()
-onda()
+    output()
+    triangulodepotencia()
+    diagramafasorial()
+    onda()
+
+    novamente = inptnovamente()
+    if novamente == 2:
+        break
+
+    
