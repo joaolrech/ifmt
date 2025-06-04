@@ -60,7 +60,6 @@ def inptfonte():
 def zeqserie(r, xl, xc):
     return r + 1j * xl - 1j * xc
 
-# corrigir essa funcao
 def zeqparalelo(r, xl, xc):
     yr = 1 / r if r != 0 else 0
     yl = 1 / (1j * xl) if xl != 0 else 0
@@ -140,25 +139,25 @@ def onda():
     plt.show()
 
 def output():
-    print(f'Impedância retangular: {z:.3g} Ω')
-    print(f'Impedância polar: {cmath.polar(z)[0]:.3g} ∠ {math.degrees(cmath.polar(z)[1]):.3g}° Ω')
+    print(f'Impedância retangular: {z:.2f} Ω')
+    print(f'Impedância polar: {cmath.polar(z)[0]:.2f} ∠ {math.degrees(cmath.polar(z)[1]):.2f}° Ω')
     print()
-    print(f'Tensão retangular: {v:.3g} V')
-    print(f'Tensão polar: {cmath.polar(v)[0]:.3g} ∠ {math.degrees(cmath.polar(v)[1]):.3g}° V')
+    print(f'Tensão retangular: {v:.2f} V')
+    print(f'Tensão polar: {cmath.polar(v)[0]:.2f} ∠ {math.degrees(cmath.polar(v)[1]):.2f}° V')
     print()
-    print(f'Corrente retangular: {i:.3g} A')
-    print(f'Corrente polar: {cmath.polar(i)[0]:.3g} ∠ {math.degrees(cmath.polar(i)[1]):.3g}° A')
+    print(f'Corrente retangular: {i:.2f} A')
+    print(f'Corrente polar: {cmath.polar(i)[0]:.2f} ∠ {math.degrees(cmath.polar(i)[1]):.2f}° A')
     print()
-    print(f'Velocidade angular: {ω:.3g} rad/s')
-    print(f'Defasagem: {math.degrees(φ):.3g}°')
-    print(f'Fator de potência: {fp:.3g}')
+    print(f'Velocidade angular: {ω:.2f} rad/s')
+    print(f'Defasagem: {math.degrees(φ):.2f}°')
+    print(f'Fator de potência: {fp:.2f}')
     print()
-    print(f'Potência ativa: {p:.3g} W')
-    print(f'Potência reativa: {q:.3g} VAr')
-    print(f'Potência aparente: {abs(s):.3g} VAr')
+    print(f'Potência ativa: {p:.2f} W')
+    print(f'Potência reativa: {q:.2f} VAr')
+    print(f'Potência aparente: {abs(s):.2f} VAr')
     print()
-    print(f'Potência complexa retangular: {s:.3g} VA')
-    print(f'Potência complexa polar: {cmath.polar(s)[0]:.3g} ∠ {math.degrees(cmath.polar(s)[1]):.3g}° VA')
+    print(f'Potência complexa retangular: {s:.2f} VA')
+    print(f'Potência complexa polar: {cmath.polar(s)[0]:.2f} ∠ {math.degrees(cmath.polar(s)[1]):.2f}° VA')
     print()
 
 os.system('clear')
