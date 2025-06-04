@@ -23,22 +23,24 @@ def inptfloat(x):
     while True:
         try:
             inpt = float(input(f'Digite o valor de {x} (SI): '))
+            if inpt < 0:
+                raise ValueError
             return inpt
         except ValueError:
-            os.system('clear')
-            print('Entrada inválida. Tente novamente.\n')
+            print('Entrada inválida. Tente novamente.')
 
 def inptpolar(x):
     while True:
         try:
             modulo = float(input(f'Digite o módulo de {x}: '))
+            if modulo < 0:
+                raise ValueError
             angulo = float(input(f'Digite o ângulo de {x}: '))
             retangular = cmath.rect(modulo, math.radians(angulo))
             os.system('clear')
             return retangular
         except ValueError:
-            os.system('clear')
-            print('Entrada inválida. Tente novamente.\n')
+            print('Entrada inválida. Tente novamente.')
 
 def inptfonte():
     while True:
@@ -139,24 +141,25 @@ def onda():
 
 def output():
     print(f'Impedância retangular: {z:.3g} Ω')
-    print(f'Impedância polar: {cmath.polar(z)[0]:.3g} ∠ {math.degrees(cmath.polar(z)[1]):.3g}° Ω\n')
-
+    print(f'Impedância polar: {cmath.polar(z)[0]:.3g} ∠ {math.degrees(cmath.polar(z)[1]):.3g}° Ω')
+    print()
     print(f'Tensão retangular: {v:.3g} V')
-    print(f'Tensão polar: {cmath.polar(v)[0]:.3g} ∠ {math.degrees(cmath.polar(v)[1]):.3g}° V\n')
-    
+    print(f'Tensão polar: {cmath.polar(v)[0]:.3g} ∠ {math.degrees(cmath.polar(v)[1]):.3g}° V')
+    print()
     print(f'Corrente retangular: {i:.3g} A')
-    print(f'Corrente polar: {cmath.polar(i)[0]:.3g} ∠ {math.degrees(cmath.polar(i)[1]):.3g}° A\n')
-    
+    print(f'Corrente polar: {cmath.polar(i)[0]:.3g} ∠ {math.degrees(cmath.polar(i)[1]):.3g}° A')
+    print()
     print(f'Velocidade angular: {ω:.3g} rad/s')
     print(f'Defasagem: {math.degrees(φ):.3g}°')
-    print(f'Fator de potência: {fp:.3g}\n')
-
+    print(f'Fator de potência: {fp:.3g}')
+    print()
     print(f'Potência ativa: {p:.3g} W')
     print(f'Potência reativa: {q:.3g} VAr')
     print(f'Potência aparente: {abs(s):.3g} VAr')
-    
+    print()
     print(f'Potência complexa retangular: {s:.3g} VA')
     print(f'Potência complexa polar: {cmath.polar(s)[0]:.3g} ∠ {math.degrees(cmath.polar(s)[1]):.3g}° VA')
+    print()
 
 os.system('clear')
 print('Bem vindo ao simulador de circuitos CA!\n')
@@ -188,7 +191,7 @@ if tipofonte == 'I':
 
 modulov, angulov = cmath.polar(v)
 moduloi, anguloi = cmath.polar(i)
-φ = angulov - anguloi
+φ = ((angulov - anguloi) + math.pi) % (2 * math.pi) - math.pi
 fp = math.cos(φ)
 s = v * i.conjugate()
 p = s.real
