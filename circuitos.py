@@ -99,13 +99,41 @@ def zeqserie(r, xl, xc):
 
 def zeqparalelo(r, xl, xc):
     yr = 1 / r if r != 0 else 0
-    yl = 1 / (1j * xl) if xl != 0 else float('inf')
-    yc = 1 / (- 1j * xc) if xc != 0 or xc != float('inf') else 0
-    
-    if yr + yl + yc == 0:
-        return float('inf')
+
+    if l == 0:
+        yl = 0
+    elif xl == 0:
+        yl = float('inf')
     else:
-        return 1 / (yr + yl + yc)
+        yl = 1 / (1j * xl)
+
+    if c == 0 or xc == float('inf'):
+        yc = 0
+    else:
+        yc = 1 / (-1j * xc)
+
+    return float('inf') if yr + yl + yc == 0 else 1 / (yr + yl + yc)
+
+def output():
+    print(f'Impedância retangular: {z:.2f} Ω')
+    print(f'Impedância polar: {cmath.polar(z)[0]:.2f} ∠ {math.degrees(cmath.polar(z)[1]):.2f}° Ω')
+    print()
+    print(f'Tensão retangular: {v:.2f} V')
+    print(f'Tensão polar: {cmath.polar(v)[0]:.2f} ∠ {math.degrees(cmath.polar(v)[1]):.2f}° V')
+    print()
+    print(f'Corrente retangular: {i:.2f} A')
+    print(f'Corrente polar: {cmath.polar(i)[0]:.2f} ∠ {math.degrees(cmath.polar(i)[1]):.2f}° A')
+    print()
+    print(f'Velocidade angular: {ω:.2f} rad/s')
+    print(f'Defasagem: {math.degrees(φ):.2f}°')
+    print(f'Fator de potência: {fp:.2f}')
+    print()
+    print(f'Potência ativa: {p:.2f} W')
+    print(f'Potência reativa: {q:.2f} VAr')
+    print(f'Potência aparente: {abs(s):.2f} VAr')
+    print()
+    print(f'Potência complexa retangular: {s:.2f} VA')
+    print(f'Potência complexa polar: {cmath.polar(s)[0]:.2f} ∠ {math.degrees(cmath.polar(s)[1]):.2f}° VA')
 
 def triangulodepotencia():
     if not (math.isfinite(p) and math.isfinite(q) and math.isfinite(abs(s))):
@@ -192,27 +220,6 @@ def onda():
 
     plt.show()
 
-def output():
-    print(f'Impedância retangular: {z:.2f} Ω')
-    print(f'Impedância polar: {cmath.polar(z)[0]:.2f} ∠ {math.degrees(cmath.polar(z)[1]):.2f}° Ω')
-    print()
-    print(f'Tensão retangular: {v:.2f} V')
-    print(f'Tensão polar: {cmath.polar(v)[0]:.2f} ∠ {math.degrees(cmath.polar(v)[1]):.2f}° V')
-    print()
-    print(f'Corrente retangular: {i:.2f} A')
-    print(f'Corrente polar: {cmath.polar(i)[0]:.2f} ∠ {math.degrees(cmath.polar(i)[1]):.2f}° A')
-    print()
-    print(f'Velocidade angular: {ω:.2f} rad/s')
-    print(f'Defasagem: {math.degrees(φ):.2f}°')
-    print(f'Fator de potência: {fp:.2f}')
-    print()
-    print(f'Potência ativa: {p:.2f} W')
-    print(f'Potência reativa: {q:.2f} VAr')
-    print(f'Potência aparente: {abs(s):.2f} VAr')
-    print()
-    print(f'Potência complexa retangular: {s:.2f} VA')
-    print(f'Potência complexa polar: {cmath.polar(s)[0]:.2f} ∠ {math.degrees(cmath.polar(s)[1]):.2f}° VA')
-
 os.system('clear')
 print('Bem vindo ao simulador de circuitos CA!\n')
 
@@ -237,7 +244,7 @@ while(True):
 
     if associacao == 1:
         z = zeqserie(r, xl, xc)
-    else:
+    if associacao == 2:
         z = zeqparalelo(r, xl, xc)
 
     os.system('clear')
@@ -257,8 +264,13 @@ while(True):
     p = s.real
     q = s.imag
 
-    output()
-    
+    if math.isinf(abs(z)):
+        print('Circuito aberto.')
+    elif z == 0:
+        print('Curto-circuito.')
+    else:
+        output()
+
     if ω == 0:
         print("\nCircuito em corrente contínua. Não se aplicam fasores, forma de onda senoidal ou triângulo de potência.")
     else:
