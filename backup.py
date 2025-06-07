@@ -1,21 +1,21 @@
 import os
 import math
 import cmath
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 def inptassociacao():
     while True:
         try:
             print('Selecione a associação do circuito:')
             print()
-            print('1 - Série')
-            print('2 - Paralelo\n')
+            print('S - Série')
+            print('P - Paralelo\n')
 
-            inpt = int(input())
+            inpt = input().upper()
 
-            if inpt < 1 or inpt > 2:
-                raise ValueError  
+            if inpt not in ['S', 'P']:
+                raise ValueError
             
             os.system('clear')
             return inpt
@@ -99,22 +99,18 @@ def zeqserie(r, xl, xc):
 
 def zeqparalelo(r, xl, xc):
     yr = 1 / r if r != 0 else 0
-    yl = 1 / (1j * xl) if xl != 0 else float('inf')
-    yc = 1 / (- 1j * xc) if xc != 0 or xc != float('inf') else 0
+    yl = 1 / (1j * xl) if xl != 0 else 0
+    yc = 1 / (- 1j * xc) if xc != 0 else 0
     
-    if yr + yl + yc == 0:
-        return float('inf')
+    if yr == 0 and yl == 0 and yc == 0:
+        return 0
     else:
         return 1 / (yr + yl + yc)
 
 def triangulodepotencia():
-    if not (math.isfinite(p) and math.isfinite(q) and math.isfinite(abs(s))):
-        print('Triângulo de potência não pode ser exibido (valores infinitos ou inválidos).')
-        return
-
     plt.figure(figsize = (8, 6))
 
-    plt.plot([0, p], [0, 0], 'b-', label = 'Potência Ativa (P)')
+    plt.plot([0, p], [0, 0], 'b-', label = 'potência Ativa (P)')
     plt.plot([p, p], [0, q], 'r-', label = 'Potência Reativa (Q)')
     plt.plot([0, p], [0, q], 'g--', label = 'Potência Aparente (S)')
 
@@ -136,11 +132,6 @@ def triangulodepotencia():
     plt.show()
 
 def diagramafasorial():
-    if not (math.isfinite(v.real) and math.isfinite(v.imag) and 
-            math.isfinite(i.real) and math.isfinite(i.imag)):
-        print('Diagrama fasorial não pode ser exibido (valores infinitos ou inválidos).')
-        return
-
     plt.figure(figsize = (8, 8))
 
     plt.quiver(0, 0, v.real, v.imag, angles = 'xy', scale_units = 'xy', scale = 1, color = 'b', label = 'Tensão (V)')
@@ -168,20 +159,12 @@ def diagramafasorial():
 def onda():
     t = np.linspace(0, 2 / f, 1000)
 
+    onda_v = modulov * np.cos(ω * t + angulov)
+    onda_i = moduloi * np.cos(ω * t + anguloi)
+
     plt.figure(figsize = (10, 6))
-
-    if math.isfinite(modulov) and math.isfinite(angulov):
-        onda_v = modulov * np.cos(ω * t + angulov)
-        plt.plot(t, onda_v, label = 'Tensão (V)', color = 'b')
-
-    if math.isfinite(moduloi) and math.isfinite(anguloi):
-        onda_i = moduloi * np.cos(ω * t + anguloi)
-        plt.plot(t, onda_i, label = 'Corrente (I)', color = 'r', linestyle = '--')
-
-    if not (math.isfinite(modulov) or math.isfinite(moduloi)):
-        print('Forma de onda não pode ser exibida (valores infinitos ou inválidos).')
-        plt.close()
-        return
+    plt.plot(t, onda_v, label = 'Tensão (V)', color = 'b')
+    plt.plot(t, onda_i, label = 'Corrente (I)', color = 'r', linestyle = '--')
 
     plt.title('Forma de Onda no Tempo')
     plt.xlabel('Tempo (s)')
@@ -225,17 +208,10 @@ while(True):
     c = inptfloat('C')
 
     ω = 2 * math.pi * f
-
     xl = ω * l
+    xc = 1 / (ω * c) if c != 0 and ω != 0 else 0
 
-    if c == 0:
-        xc = 0
-    elif ω == 0:
-        xc = float('inf')
-    else:
-        xc = 1 / (ω * c)
-
-    if associacao == 1:
+    if associacao == 'S':
         z = zeqserie(r, xl, xc)
     else:
         z = zeqparalelo(r, xl, xc)
@@ -244,7 +220,7 @@ while(True):
     tipofonte = inptfonte()
     if tipofonte == 'V':
         v = inptpolar(tipofonte)
-        i = v / z if z != 0 else float('inf')
+        i = v / z
     if tipofonte == 'I':
         i = inptpolar(tipofonte)
         v = i * z
@@ -258,13 +234,9 @@ while(True):
     q = s.imag
 
     output()
-    
-    if ω == 0:
-        print("\nCircuito em corrente contínua. Não se aplicam fasores, forma de onda senoidal ou triângulo de potência.")
-    else:
-        triangulodepotencia()
-        diagramafasorial()
-        onda()
+    triangulodepotencia()
+    diagramafasorial()
+    onda()
 
     novamente = inptnovamente()
     if novamente == 2:
