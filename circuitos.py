@@ -194,6 +194,11 @@ def diagramafasorial():
     plt.show()
 
 def onda():
+    if not (math.isfinite(modulov) and math.isfinite(angulov) and
+            math.isfinite(moduloi) and math.isfinite(anguloi)):
+        print('Forma de onda não pode ser exibida (valores infinitos ou inválidos).')
+        return
+
     t = np.linspace(0, 2 / f, 1000)
 
     plt.figure(figsize = (10, 6))
@@ -221,7 +226,7 @@ def onda():
     plt.show()
 
 os.system('clear')
-print('Bem vindo ao simulador de circuitos CA!\n')
+print('Bem vindo ao simulador de circuitos!\n')
 
 while(True):
     associacao = inptassociacao()
