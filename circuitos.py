@@ -98,7 +98,7 @@ def zeqserie(r, xl, xc):
     return r + 1j * xl - 1j * xc
 
 def zeqparalelo(r, xl, xc):
-    yr = 1 / r if r != 0 else 0
+    yr = 0 if r == 0 else 1 / r
 
     if l == 0:
         yl = 0
@@ -126,7 +126,12 @@ def output():
     print()
     print(f'Velocidade angular: {ω:.2f} rad/s')
     print(f'Defasagem: {math.degrees(φ):.2f}°')
-    print(f'Fator de potência: {fp:.2f}')
+    if φ > 0:
+        print(f'Fator de potência: {fp:.2f} indutivo')
+    elif φ < 0:
+        print(f'Fator de potência: {fp:.2f} capacitivo')
+    else:
+        print(f'Fator de potência: {fp:.2f} resistivo')
     print()
     print(f'Potência ativa: {p:.2f} W')
     print(f'Potência reativa: {q:.2f} VAr')
@@ -136,10 +141,6 @@ def output():
     print(f'Potência complexa polar: {cmath.polar(s)[0]:.2f} ∠ {math.degrees(cmath.polar(s)[1]):.2f}° VA')
 
 def triangulodepotencia():
-    if not (math.isfinite(p) and math.isfinite(q) and math.isfinite(abs(s))):
-        print('Triângulo de potência não pode ser exibido (valores infinitos ou inválidos).')
-        return
-
     plt.figure(figsize = (8, 6))
 
     plt.plot([0, p], [0, 0], 'b-', label = 'Potência Ativa (P)')
@@ -164,11 +165,6 @@ def triangulodepotencia():
     plt.show()
 
 def diagramafasorial():
-    if not (math.isfinite(v.real) and math.isfinite(v.imag) and 
-            math.isfinite(i.real) and math.isfinite(i.imag)):
-        print('Diagrama fasorial não pode ser exibido (valores infinitos ou inválidos).')
-        return
-
     plt.figure(figsize = (8, 8))
 
     plt.quiver(0, 0, v.real, v.imag, angles = 'xy', scale_units = 'xy', scale = 1, color = 'b', label = 'Tensão (V)')
@@ -194,11 +190,6 @@ def diagramafasorial():
     plt.show()
 
 def onda():
-    if not (math.isfinite(modulov) and math.isfinite(angulov) and
-            math.isfinite(moduloi) and math.isfinite(anguloi)):
-        print('Forma de onda não pode ser exibida (valores infinitos ou inválidos).')
-        return
-
     t = np.linspace(0, 2 / f, 1000)
 
     plt.figure(figsize = (10, 6))
@@ -256,7 +247,7 @@ while(True):
     tipofonte = inptfonte()
     if tipofonte == 'V':
         v = inptpolar(tipofonte)
-        i = v / z if z != 0 else float('inf')
+        i = float('inf') if z == 0 else v / z
     if tipofonte == 'I':
         i = inptpolar(tipofonte)
         v = i * z
@@ -278,6 +269,8 @@ while(True):
 
     if ω == 0:
         print("\nCircuito em corrente contínua. Não se aplicam fasores, forma de onda senoidal ou triângulo de potência.")
+    elif not (math.isfinite(abs(v)) and math.isfinite(abs(i))):
+        print('\nNão é possível exibir os gráficos (valores de tensão ou corrente são infinitos ou inválidos).')
     else:
         triangulodepotencia()
         diagramafasorial()
