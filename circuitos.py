@@ -198,15 +198,15 @@ def onda():
     i_pico = moduloi * math.sqrt(2)
 
     onda_v = v_pico * np.cos(ω * t + angulov)
-    plt.plot(t, onda_v, label='Tensão (V)', color='b')
+    plt.plot(t, onda_v, label = 'Tensão (V)', color = 'b')
 
     onda_i = i_pico * np.cos(ω * t + anguloi)
-    plt.plot(t, onda_i, label='Corrente (I)', color='r', linestyle='--')
+    plt.plot(t, onda_i, label = 'Corrente (I)', color = 'r', linestyle = '--')
 
     plt.title('Forma de Onda no Tempo')
     plt.xlabel('Tempo (s)')
     plt.ylabel('Amplitude')
-    plt.grid(True, linestyle='--', alpha=0.6)
+    plt.grid(True, linestyle = '--', alpha = 0.6)
     plt.legend()
     plt.tight_layout()
 
