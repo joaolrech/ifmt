@@ -40,7 +40,7 @@ def inptfloat(x):
 def inptpolar(x):
     while True:
         try:
-            modulo = float(input(f'Digite o módulo de {x}: '))
+            modulo = float(input(f'Digite o módulo de {x} (RMS): '))
 
             if modulo < 0:
                 raise ValueError
@@ -192,25 +192,21 @@ def diagramafasorial():
 def onda():
     t = np.linspace(0, 2 / f, 1000)
 
-    plt.figure(figsize = (10, 6))
+    plt.figure(figsize=(10, 6))
 
-    if math.isfinite(modulov) and math.isfinite(angulov):
-        onda_v = modulov * np.cos(ω * t + angulov)
-        plt.plot(t, onda_v, label = 'Tensão (V)', color = 'b')
+    v_pico = modulov * math.sqrt(2)
+    i_pico = moduloi * math.sqrt(2)
 
-    if math.isfinite(moduloi) and math.isfinite(anguloi):
-        onda_i = moduloi * np.cos(ω * t + anguloi)
-        plt.plot(t, onda_i, label = 'Corrente (I)', color = 'r', linestyle = '--')
+    onda_v = v_pico * np.cos(ω * t + angulov)
+    plt.plot(t, onda_v, label='Tensão (V)', color='b')
 
-    if not (math.isfinite(modulov) or math.isfinite(moduloi)):
-        print('Forma de onda não pode ser exibida (valores infinitos ou inválidos).')
-        plt.close()
-        return
+    onda_i = i_pico * np.cos(ω * t + anguloi)
+    plt.plot(t, onda_i, label='Corrente (I)', color='r', linestyle='--')
 
     plt.title('Forma de Onda no Tempo')
     plt.xlabel('Tempo (s)')
     plt.ylabel('Amplitude')
-    plt.grid(True, linestyle = '--', alpha = 0.6)
+    plt.grid(True, linestyle='--', alpha=0.6)
     plt.legend()
     plt.tight_layout()
 
