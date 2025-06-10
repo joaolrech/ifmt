@@ -45,7 +45,7 @@ def inptpolar(x):
             if modulo < 0:
                 raise ValueError
             
-            angulo = float(input(f'Digite o ângulo de {x}: '))
+            angulo = float(input(f'Digite o ângulo de {x} (°): '))
 
             retangular = cmath.rect(modulo, math.radians(angulo))
 
